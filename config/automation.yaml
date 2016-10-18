@@ -1,0 +1,214 @@
+- alias: "Plex Media Server Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.plexmediaserver
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Plex Media Server has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Plex Media Server"
+- alias: "Headphones Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.headphones
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Headphones daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Headphones"
+- alias: "Sonarr Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.sonarr
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Sonarr daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Sonarr"
+- alias: "Couch Potato Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.couch_potato
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Couch Potato daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Couch Potato"
+#    - service: switch.turn_on
+#      entity_id: switch.couch_potato
+- alias: "Deluge Daemon Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.deluged
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Deluge daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Deluge"
+- alias: "Deluge Web Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.delugeweb
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Deluge Web daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Deluge Web"
+- alias: "Jackett Stopped"
+  trigger:
+    platform: state
+    entity_id: switch.jackett
+    to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The Jackett daemon has stopped! Please check it's status and/or restart it."
+        title: "Home Assistant: Jackett"
+- alias: "TV Playback"
+  trigger:
+    platform: state
+#    entity_id: media_player.tv_un55h6300
+    entity_id: media_player.rasplex
+  action:
+    - service: shell_command.plex_title
+    - service: notify.pushbullet
+      data:
+#        message: "The video is now {{ states.media_player.tv_un55h6300.state }}."
+        message: "The video {{ states.media_player.rasplex.media_series_title }} is now {{ states.media_player.rasplex.state }}."
+#        title: "Plex: {{ states.media_player.tv_un55h6300.attributes.media_title }}"
+        title: "Plex: {{ states.media_player.rasplex.attributes.media_title }}"
+        target: "channel/alipaz-media"
+- alias: "Turn Front Porch Lights On"
+  trigger:
+    platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: sun.sun
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: -2.5
+      - condition: state
+        entity_id: switch.front_porch_light 
+        state: 'off'
+  action:
+    service: switch.turn_on
+    entity_id: switch.front_porch_light
+- alias: "Turn Front Porch Lights Off"
+  trigger:
+    platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: sun.sun
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        above: -2.6
+      - condition: state
+        entity_id: switch.front_porch_light
+        state: 'on'
+  action:
+    service: switch.turn_off
+    entity_id: switch.front_porch_light
+- alias: "Ensure Front Porch Lights Stay On"
+  initial_state: False
+  trigger:
+    platform: state
+    entity_id: switch.front_porch_light
+    to: 'off'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: -2.5
+  action:
+    service: switch.turn_on
+    entity_id: switch.front_porch_light
+- alias: "Ensure Front Porch Lights Stay Off"
+  initial_state: False
+  trigger:
+    platform: state
+    entity_id: switch.front_porch_light
+    to: 'on'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: -2.6
+  action:
+    service: switch.turn_off
+    entity_id: switch.front_porch_light
+- alias: Living room tv paused/stopped
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_un55h6300
+      from: 'playing'
+  condition:
+    - condition: or
+      conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: sun.sun
+              state: 'below_horizon'
+            - condition: state
+              entity_id: input_select.theater_mode
+              state: 'After Sunset'
+        - condition: state
+          entity_id: input_select.theater_mode
+          state: 'Always On'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.livingroom_normal
+- alias: Living room tv playing tvshow
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_un55h6300
+      to: 'playing'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: template
+        value_template: '{{ states.media_player.tv_un55h6300.attributes.media_content_type == "tvshow" }}'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.livingroom_dim
+- alias: Living room tv playing movie
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_un55h6300
+      to: 'playing'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: template
+        value_template: '{{ states.media_player.tv_un55h6300.attributes.media_content_type == "movie" }}'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.livingroom_dark
+- alias: Theater Mode
+  trigger:
+    - platform: state
+      entity_id: input_select.theater_mode
+  action:
+    - service: scene.turn_on
+      data_template:
+        entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}"

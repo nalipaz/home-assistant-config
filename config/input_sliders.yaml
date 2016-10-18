@@ -1,0 +1,6 @@
+slider1:
+  name: Slider 1
+  initial: 30
+  min: -20
+  max: 35
+  step: 1

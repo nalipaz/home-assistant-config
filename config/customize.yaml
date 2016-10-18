@@ -1,0 +1,38 @@
+sensor.forecastio_daily_high_temperature:
+  friendly_name: High
+sensor.forecastio_daily_low_temperature:
+  friendly_name: Low
+sensor.forecastio_humidity:
+  friendly_name: Humidity
+sensor.forecastio_ozone:
+  friendly_name: Ozone
+sensor.forecastio_temperature:
+  friendly_name: Temperature
+sensor.forecastio_wind_speed:
+  friendly_name: Wind Speed
+sensor.los_angeles:
+  friendly_name: Torrance
+sensor.tokyo:
+  friendly_name: Yokohama
+automation.automation_0:
+  hidden: true
+automation.automation_1:
+  hidden: true
+automation.automation_2:
+  hidden: true
+automation.automation_3:
+  hidden: true
+automation.automation_4:
+  hidden: true
+automation.automation_5:
+  hidden: true
+automation.automation_6:
+  hidden: true
+light.livingroomlights_level_2:
+  friendly_name: "Living Room Lights"
+switch.frontporchlight_switch_3:
+  hidden: true
+media_player.rasplex:
+  friendly_name: "Plex (Blue Room)"
+media_player.tv_un55h6300:
+  friendly_name: "Living Room TV"

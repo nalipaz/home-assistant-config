@@ -1,0 +1,8 @@
+/deps
+/*.db
+/plex.conf
+/zwcfg_*.xml
+/*.log
+/OZW_Log.txt
+/*.sqlite
+/zwscene.xml

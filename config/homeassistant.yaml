@@ -1,0 +1,7 @@
+name: Home
+latitude: 33.8667
+longitude: -118.3376
+elevation: 18
+unit_system: imperial
+time_zone: America/Los_Angeles
+customize: !include customize.yaml

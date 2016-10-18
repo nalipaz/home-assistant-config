@@ -1,0 +1,29 @@
+- platform: yr
+- platform: plex
+  name: Plex
+  host: 192.168.1.140
+  port: 32400
+  username: nicholasalipaz
+  password: XVr73utI3Fl7m&1I1MBGRaDXJuZ9ITroQWPAl2Xq7gw
+  server: alipaz-xu4
+- platform: forecast
+  api_key: c98fef2d1cea691ce256da04b38eb019
+  monitored_conditions:
+    - icon
+    - temperature
+    - wind_speed
+    - wind_bearing
+    - humidity
+    - ozone
+    - temperature_max
+    - temperature_min
+    - apparent_temperature
+- platform: worldclock
+  time_zone: America/Los_Angeles
+  name: los_angeles
+- platform: worldclock
+  time_zone: Asia/Tokyo
+  name: tokyo
+#- platform: command_line
+#  name: Plex Title
+#  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token=Lmpm6yYp83wvpP4z2m5q | xmlstarlet sel -t -v '//Video/@grandparentTitle'"

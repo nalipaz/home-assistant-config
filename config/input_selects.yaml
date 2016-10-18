@@ -1,0 +1,13 @@
+theater_mode:
+  name: Theater Mode
+  options:
+   - Disabled
+   - After Sunset
+   - Always On
+  initial: Disabled
+theater_style:
+  name: Theater Style
+  options:
+   - Hybrid
+   - Dim Everything
+   - Lights Out
