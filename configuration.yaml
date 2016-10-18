@@ -1,0 +1,30 @@
+homeassistant: !include config/homeassistant.yaml
+frontend:
+http:
+  api_password: !include .api_password
+updater:
+discovery:
+conversation:
+history:
+logbook:
+sun:
+
+automation: !include config/automation.yaml
+binary_sensor: !include config/binary_sensors.yaml
+group: !include config/groups.yaml
+sensor: !include config/sensors.yaml
+switch: !include config/switches.yaml
+zwave: !include config/zwave.yaml
+shell_command: !include config/shell_commands.yaml
+media_player: !include config/media_players.yaml
+notify: !include config/notifications.yaml
+script: !include config/scripts.yaml
+#input_slider: !include config/input_sliders.yaml
+scene: !include config/scenes.yaml
+light: !include config/lights.yaml
+input_select: !include config/input_selects.yaml
+input_slider: !include config/input_sliders.yaml
+
+#zone: !include config/zones.yaml
+#device_tracker: !include config/device_tracker.yaml
+

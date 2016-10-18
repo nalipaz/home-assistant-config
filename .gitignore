@@ -1,3 +1,4 @@
+/.api_password
 /deps
 /*.db
 /plex.conf
