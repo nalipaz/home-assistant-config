@@ -133,7 +133,7 @@
     - condition: numeric_state
       entity_id: sun.sun
       value_template: '{{ state.attributes.elevation }}'
-      below: -2.5 # exclusive; below = -2.51, -2.52, -2.53, etc
+      below: -2.50 # exclusive; below = -2.51, -2.52, -2.53, etc
   action:
     - service: switch.turn_on
       entity_id: switch.front_porch_light
@@ -149,7 +149,7 @@
     - condition: numeric_state
       entity_id: sun.sun
       value_template: '{{ state.attributes.elevation }}'
-      above: -2.51 # exclusive; above = -2.5, -2.49, -2.48, etc
+      above: -2.51 # exclusive; above = -2.50, -2.49, -2.48, etc
   action:
     - service: switch.turn_off
       entity_id: switch.front_porch_light
