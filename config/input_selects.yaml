@@ -1,5 +1,6 @@
 theater_mode:
   name: Theater Mode
+  initial: Disabled
   options:
    - Disabled
    - After Sunset
@@ -7,6 +8,7 @@ theater_mode:
   initial: Disabled
 theater_style:
   name: Theater Style
+  initial: Hybrid
   options:
    - Hybrid
    - Dim Everything
