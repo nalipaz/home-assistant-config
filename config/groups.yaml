@@ -2,8 +2,7 @@ theater_automations:
   name: Theater Automations
   entities:
     - automation.living_room_tv_pausedstopped
-    - automation.living_room_tv_playing_movie
-    - automation.living_room_tv_playing_tvshow
+    - automation.living_room_tv_playing
 zwave:
   name: Z-Wave
   entities:
