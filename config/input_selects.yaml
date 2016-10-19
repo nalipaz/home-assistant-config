@@ -5,7 +5,6 @@ theater_mode:
    - Disabled
    - After Sunset
    - Always On
-  initial: Disabled
 theater_style:
   name: Theater Style
   initial: Hybrid
