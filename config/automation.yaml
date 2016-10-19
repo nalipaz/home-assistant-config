@@ -150,11 +150,11 @@
   action:
     service: switch.turn_off
     entity_id: switch.front_porch_light
-- alias: Living room tv paused/stopped
+- alias: Living room tv playing
   trigger:
     - platform: state
       entity_id: media_player.tv_un55h6300
-      from: 'playing'
+      to: 'playing'
   condition:
     - condition: or
       conditions:
@@ -171,44 +171,27 @@
           state: 'Always On'
   action:
     - service: scene.turn_on
-      entity_id: scene.livingroom_normal
-- alias: Living room tv playing tvshow
-  trigger:
-    - platform: state
-      entity_id: media_player.tv_un55h6300
-      to: 'playing'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: sun.sun
-        state: 'below_horizon'
-      - condition: template
-        value_template: '{{ states.media_player.tv_un55h6300.attributes.media_content_type == "tvshow" }}'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.livingroom_dim
-- alias: Living room tv playing movie
-  trigger:
-    - platform: state
-      entity_id: media_player.tv_un55h6300
-      to: 'playing'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: sun.sun
-        state: 'below_horizon'
-      - condition: template
-        value_template: '{{ states.media_player.tv_un55h6300.attributes.media_content_type == "movie" }}'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.livingroom_dark
-- alias: Theater Mode
-  trigger:
-    - platform: state
-      entity_id: input_select.theater_mode
-  action:
-    - service: scene.turn_on
       data_template:
-        entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}"
+        entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}_{{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+- alias: Living room tv paused/stopped
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_un55h6300
+      from: 'playing'
+  condition:
+    - condition: or
+      conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: input_select.theater_mode
+              state: 'After Sunset'
+            - condition: state
+              entity_id: sun.sun
+              state: 'below_horizon'
+        - condition: state
+          entity_id: input_select.theater_mode
+          state: 'Always On'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.livingroom_normal

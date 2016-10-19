@@ -12,17 +12,33 @@
   entities:
     light.livingroomlights_level_2:
       state: off
-- name: Theater Mode Disabled
+#- name: Theater Mode Disabled
+#  entities:
+#    group.theater_automations:
+#      state: off
+#- name: Theater Mode Always On
+#  entities:
+#    group.theater_automations:
+#      state: on
+#- name: Theater Mode After Sunset TVShow
+#  entities:
+#    group.theater_automations:
+#      state: on
+- name: Theater Mode After Sunset TVShow
   entities:
-    group.theater_automations:
-      state: off
-- name: Theater Mode Always On
-  entities:
-    group.theater_automations:
+    scene.livingroom_dim:
       state: on
-- name: Theater Mode After Sunset
+- name: Theater Mode After Sunset Movie
   entities:
-    group.theater_automations:
+    scene.livingroom_dark:
+      state: on
+- name: Theater Mode Always On TVShow
+  entities:
+    scene.livingroom_dark:
+      state: on
+- name: Theater Mode Always On Movie
+  entities:
+    scene.livingroom_dark:
       state: on
 #- name: Theater Style Hybrid
 #- name: Theater Style Dim Everything
