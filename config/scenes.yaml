@@ -24,19 +24,27 @@
 #  entities:
 #    group.theater_automations:
 #      state: on
-- name: Theater Mode After Sunset TVShow
+- name: Theater Mode After Sunset Hybrid TVShow
   entities:
     scene.livingroom_dim:
       state: on
-- name: Theater Mode After Sunset Movie
+- name: Theater Mode After Sunset Hybrid Movie
   entities:
     scene.livingroom_dark:
       state: on
-- name: Theater Mode Always On TVShow
+- name: Theater Mode Always On Dim Everything TVShow
+  entities:
+    scene.livingroom_dim:
+      state: on
+- name: Theater Mode Always On Dim Everything Movie
+  entities:
+    scene.livingroom_dim:
+      state: on
+- name: Theater Mode After Sunset Lights Out TVShow
   entities:
     scene.livingroom_dark:
       state: on
-- name: Theater Mode Always On Movie
+- name: Theater Mode After Sunset Lights Out Movie
   entities:
     scene.livingroom_dark:
       state: on
