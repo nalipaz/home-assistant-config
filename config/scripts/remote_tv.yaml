@@ -1,255 +1,255 @@
 irsend_tv_key_power:
-   alias: Power
-   sequence:
-     - alias: Power
-       service: shell_command.irsend_tv_KEY_POWER
+  alias: Power
+  sequence:
+    - alias: Power
+      service: shell_command.irsend_tv_KEY_POWER
 irsend_tv_source:
-   alias: Source
-   sequence:
-     - alias: Source
-       service: shell_command.irsend_tv_SOURCE
+  alias: Source
+  sequence:
+    - alias: Source
+      service: shell_command.irsend_tv_SOURCE
 irsend_tv_stb_guide:
-   alias: STB Guide
-   sequence:
-     - alias: STB Guide
-       service: shell_command.irsend_tv_STB_GUIDE
+  alias: STB Guide
+  sequence:
+    - alias: STB Guide
+      service: shell_command.irsend_tv_STB_GUIDE
 irsend_tv_stb_menu:
-   alias: STB Menu
-   sequence:
-     - alias: STB Menu
-       service: shell_command.irsend_tv_STB_MENU
+  alias: STB Menu
+  sequence:
+    - alias: STB Menu
+      service: shell_command.irsend_tv_STB_MENU
 irsend_tv_key_1:
-   alias: 1
-   sequence:
-     - alias: KEY_1
-       service: shell_command.irsend_tv_KEY_1
+  alias: 1
+  sequence:
+    - alias: KEY_1
+      service: shell_command.irsend_tv_KEY_1
 irsend_tv_key_2:
-   alias: 2
-   sequence:
-     - alias: 2
-       service: shell_command.irsend_tv_KEY_2
+  alias: 2
+  sequence:
+    - alias: 2
+      service: shell_command.irsend_tv_KEY_2
 irsend_tv_key_3:
-   alias: 3
-   sequence:
-     - alias: 3
-       service: shell_command.irsend_tv_KEY_3
+  alias: 3
+  sequence:
+    - alias: 3
+      service: shell_command.irsend_tv_KEY_3
 irsend_tv_key_4:
-   alias: 4
-   sequence:
-     - alias: 4
-       service: shell_command.irsend_tv_KEY_4
+  alias: 4
+  sequence:
+    - alias: 4
+      service: shell_command.irsend_tv_KEY_4
 irsend_tv_key_5:
-   alias: 5
-   sequence:
-     - alias: KEY_5
-       service: shell_command.irsend_tv_KEY_5
+  alias: 5
+  sequence:
+    - alias: KEY_5
+      service: shell_command.irsend_tv_KEY_5
 irsend_tv_key_6:
-   alias: 6
-   sequence:
-     - alias: 6
-       service: shell_command.irsend_tv_KEY_6
+  alias: 6
+  sequence:
+    - alias: 6
+      service: shell_command.irsend_tv_KEY_6
 irsend_tv_key_7:
-   alias: 7
-   sequence:
-     - alias: 7
-       service: shell_command.irsend_tv_KEY_7
+  alias: 7
+  sequence:
+    - alias: 7
+      service: shell_command.irsend_tv_KEY_7
 irsend_tv_key_8:
-   alias: 8
-   sequence:
-     - alias: 8
-       service: shell_command.irsend_tv_KEY_8
+  alias: 8
+  sequence:
+    - alias: 8
+      service: shell_command.irsend_tv_KEY_8
 irsend_tv_key_9:
-   alias: 9
-   sequence:
-     - alias: 9
-       service: shell_command.irsend_tv_KEY_9
+  alias: 9
+  sequence:
+    - alias: 9
+      service: shell_command.irsend_tv_KEY_9
 irsend_tv_key_0:
-   alias: 0
-   sequence:
-     - alias: 0
-       service: shell_command.irsend_tv_KEY_0
+  alias: 0
+  sequence:
+    - alias: 0
+      service: shell_command.irsend_tv_KEY_0
 irsend_tv_key_minus:
-   alias: -
-   sequence:
-     - alias: -
-       service: shell_command.irsend_tv_KEY_MINUS
+  alias: -
+  sequence:
+    - alias: -
+      service: shell_command.irsend_tv_KEY_MINUS
 irsend_tv_pre_ch:
-   alias: Pre-CH
-   sequence:
-     - alias: Pre-CH
-       service: shell_command.irsend_tv_PRE_CH
+  alias: Pre-CH
+  sequence:
+    - alias: Pre-CH
+      service: shell_command.irsend_tv_PRE_CH
 irsend_tv_stb_power:
-   alias: STB Power
-   sequence:
-     - alias: STB Power
-       service: shell_command.irsend_tv_STB_POWER
+  alias: STB Power
+  sequence:
+    - alias: STB Power
+      service: shell_command.irsend_tv_STB_POWER
 irsend_tv_key_volumeup:
-   alias: Vol+
-   sequence:
-     - alias: Volume Up
-       service: shell_command.irsend_tv_KEY_VOLUMEUP
+  alias: Vol+
+  sequence:
+    - alias: Volume Up
+      service: shell_command.irsend_tv_KEY_VOLUMEUP
 irsend_tv_key_volumedown:
-   alias: Vol-
-   sequence:
-     - alias: Volume Down
-       service: shell_command.irsend_tv_KEY_VOLUMEDOWN
+  alias: Vol-
+  sequence:
+    - alias: Volume Down
+      service: shell_command.irsend_tv_KEY_VOLUMEDOWN
 irsend_tv_key_mute:
-   alias: Mute
-   sequence:
-     - alias: Mute
-       service: shell_command.irsend_tv_KEY_MUTE
+  alias: Mute
+  sequence:
+    - alias: Mute
+      service: shell_command.irsend_tv_KEY_MUTE
 irsend_tv_channel_list:
-   alias: Channel List
-   sequence:
-     - alias: Channel List
-       service: shell_command.irsend_tv_CHANNEL_LIST
+  alias: Channel List
+  sequence:
+    - alias: Channel List
+      service: shell_command.irsend_tv_CHANNEL_LIST
 irsend_tv_key_channelup:
-   alias: Ch+
-   sequence:
-     - alias: Ch+
-       service: shell_command.irsend_tv_KEY_CHANNELUP
+  alias: Ch+
+  sequence:
+    - alias: Ch+
+      service: shell_command.irsend_tv_KEY_CHANNELUP
 irsend_tv_key_channeldown:
-   alias: Ch-
-   sequence:
-     - alias: Ch-
-       service: shell_command.irsend_tv_KEY_CHANNELDOWN
+  alias: Ch-
+  sequence:
+    - alias: Ch-
+      service: shell_command.irsend_tv_KEY_CHANNELDOWN
 irsend_tv_key_menu:
-   alias: Menu
-   sequence:
-     - alias: Menu
-       service: shell_command.irsend_tv_KEY_MENU
+  alias: Menu
+  sequence:
+    - alias: Menu
+      service: shell_command.irsend_tv_KEY_MENU
 irsend_tv_smart_hub:
-   alias: Smart Hub
-   sequence:
-     - alias: Smart Hub
-       service: shell_command.irsend_tv_SMART_HUB
+  alias: Smart Hub
+  sequence:
+    - alias: Smart Hub
+      service: shell_command.irsend_tv_SMART_HUB
 irsend_tv_guide:
-   alias: Guide
-   sequence:
-     - alias: Guide
-       service: shell_command.irsend_tv_GUIDE
+  alias: Guide
+  sequence:
+    - alias: Guide
+      service: shell_command.irsend_tv_GUIDE
 irsend_tv_tools:
-   alias: Tools
-   sequence:
-     - alias: Tools
-       service: shell_command.irsend_tv_TOOLS
+  alias: Tools
+  sequence:
+    - alias: Tools
+      service: shell_command.irsend_tv_TOOLS
 irsend_tv_key_info:
-   alias: Info
-   sequence:
-     - alias: Info
-       service: shell_command.irsend_tv_KEY_INFO
+  alias: Info
+  sequence:
+    - alias: Info
+      service: shell_command.irsend_tv_KEY_INFO
 irsend_tv_key_return:
-   alias: Return
-   sequence:
-     - alias: Return
-       service: shell_command.irsend_tv_KEY_RETURN
+  alias: Return
+  sequence:
+    - alias: Return
+      service: shell_command.irsend_tv_KEY_RETURN
 irsend_tv_key_exit:
-   alias: Exit
-   sequence:
-     - alias: Exit
-       service: shell_command.irsend_tv_KEY_EXIT
+  alias: Exit
+  sequence:
+    - alias: Exit
+      service: shell_command.irsend_tv_KEY_EXIT
 irsend_tv_key_select:
-   alias: Enter
-   sequence:
-     - alias: Enter
-       service: shell_command.irsend_tv_KEY_SELECT
+  alias: Enter
+  sequence:
+    - alias: Enter
+      service: shell_command.irsend_tv_KEY_SELECT
 irsend_tv_key_up:
-   alias: Up
-   sequence:
-     - alias: Up
-       service: shell_command.irsend_tv_KEY_UP
+  alias: Up
+  sequence:
+    - alias: Up
+      service: shell_command.irsend_tv_KEY_UP
 irsend_tv_key_down:
-   alias: Down
-   sequence:
-     - alias: Down
-       service: shell_command.irsend_tv_KEY_DOWN
+  alias: Down
+  sequence:
+    - alias: Down
+      service: shell_command.irsend_tv_KEY_DOWN
 irsend_tv_key_left:
-   alias: Left
-   sequence:
-     - alias: Left
-       service: shell_command.irsend_tv_KEY_LEFT
+  alias: Left
+  sequence:
+    - alias: Left
+      service: shell_command.irsend_tv_KEY_LEFT
 irsend_tv_key_right:
-   alias: Right
-   sequence:
-     - alias: Right
-       service: shell_command.irsend_tv_KEY_RIGHT
+  alias: Right
+  sequence:
+    - alias: Right
+      service: shell_command.irsend_tv_KEY_RIGHT
 irsend_tv_key_a:
-   alias: A
-   sequence:
-     - alias: A
-       service: shell_command.irsend_tv_KEY_A
+  alias: A
+  sequence:
+    - alias: A
+      service: shell_command.irsend_tv_KEY_A
 irsend_tv_key_b:
-   alias: B
-   sequence:
-     - alias: B
-       service: shell_command.irsend_tv_KEY_B
+  alias: B
+  sequence:
+    - alias: B
+      service: shell_command.irsend_tv_KEY_B
 irsend_tv_key_c:
-   alias: C
-   sequence:
-     - alias: C
-       service: shell_command.irsend_tv_KEY_C
+  alias: C
+  sequence:
+    - alias: C
+      service: shell_command.irsend_tv_KEY_C
 irsend_tv_key_d:
-   alias: D
-   sequence:
-     - alias: D
-       service: shell_command.irsend_tv_KEY_D
+  alias: D
+  sequence:
+    - alias: D
+      service: shell_command.irsend_tv_KEY_D
 irsend_tv_key_help:
-   alias: E-Manual
-   sequence:
-     - alias: E-Manual
-       service: shell_command.irsend_tv_KEY_HELP
+  alias: E-Manual
+  sequence:
+    - alias: E-Manual
+      service: shell_command.irsend_tv_KEY_HELP
 irsend_tv_key_search:
-   alias: Search
-   sequence:
-     - alias: Search
-       service: shell_command.irsend_tv_KEY_SEARCH
+  alias: Search
+  sequence:
+    - alias: Search
+      service: shell_command.irsend_tv_KEY_SEARCH
 irsend_tv_key_keyboard:
-   alias: Keypad
-   sequence:
-     - alias: Keypad
-       service: shell_command.irsend_tv_KEY_KEYBOARD
+  alias: Keypad
+  sequence:
+    - alias: Keypad
+      service: shell_command.irsend_tv_KEY_KEYBOARD
 irsend_tv_psize:
-   alias: P-Size
-   sequence:
-     - alias: P-Size
-       service: shell_command.irsend_tv_PSIZE
+  alias: P-Size
+  sequence:
+    - alias: P-Size
+      service: shell_command.irsend_tv_PSIZE
 irsend_tv_mts:
-   alias: MTS
-   sequence:
-     - alias: MTS
-       service: shell_command.irsend_tv_MTS
+  alias: MTS
+  sequence:
+    - alias: MTS
+      service: shell_command.irsend_tv_MTS
 irsend_tv_key_cc:
-   alias: CC
-   sequence:
-     - alias: CC
-       service: shell_command.irsend_tv_KEY_CC
+  alias: CC
+  sequence:
+    - alias: CC
+      service: shell_command.irsend_tv_KEY_CC
 irsend_tv_key_rewind:
-   alias: Backward
-   sequence:
-     - alias: Backward
-       service: shell_command.irsend_tv_KEY_REWIND
+  alias: Backward
+  sequence:
+    - alias: Backward
+      service: shell_command.irsend_tv_KEY_REWIND
 irsend_tv_key_pause:
-   alias: Pause
-   sequence:
-     - alias: Pause
-       service: shell_command.irsend_tv_KEY_PAUSE
+  alias: Pause
+  sequence:
+    - alias: Pause
+      service: shell_command.irsend_tv_KEY_PAUSE
 irsend_tv_key_forward:
-   alias: Forward
-   sequence:
-     - alias: Forward
-       service: shell_command.irsend_tv_KEY_FORWARD
+  alias: Forward
+  sequence:
+    - alias: Forward
+      service: shell_command.irsend_tv_KEY_FORWARD
 irsend_tv_key_record:
-   alias: Record
-   sequence:
-     - alias: Record
-       service: shell_command.irsend_tv_KEY_RECORD
+  alias: Record
+  sequence:
+    - alias: Record
+      service: shell_command.irsend_tv_KEY_RECORD
 irsend_tv_key_play:
-   alias: Play
-   sequence:
-     - alias: Play
-       service: shell_command.irsend_tv_KEY_PLAY
+  alias: Play
+  sequence:
+    - alias: Play
+      service: shell_command.irsend_tv_KEY_PLAY
 irsend_tv_key_stop:
-   alias: Stop
-   sequence:
-     - alias: Stop
-       service: shell_command.irsend_tv_KEY_STOP
+  alias: Stop
+  sequence:
+    - alias: Stop
+      service: shell_command.irsend_tv_KEY_STOP
