@@ -1,28 +1,3 @@
-zwave_heal_network:
-  alias: Heal Network
-  sequence:
-    - alias: Heal Network
-      service: zwave.heal_network
-zwave_stop_network:
-  alias: Stop Network
-  sequence:
-    - alias: Stop Network
-      service: zwave.stop_network
-zwave_start_network:
-  alias: Start Network
-  sequence:
-    - alias: Start Network
-      service: zwave.start_network
-zwave_test_network:
-  alias: Test Network
-  sequence:
-    - alias: Test Network
-      service: zwave.test_network
-zwave_soft_reset:
-  alias: Soft Reset
-  sequence:
-    - alias: Soft Reset
-      service: zwave.soft_reset
 reboot:
   alias: Reboot Server
   sequence:
