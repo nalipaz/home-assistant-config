@@ -48,7 +48,7 @@ irsend_vaccuum_key_c:
    sequence:
      - alias: Timer
        service: shell_command.irsend_vaccuum_KEY_C
-irsend_vaccuum_key_:
+irsend_vaccuum_key_d:
    alias: Base
    sequence:
      - alias: Base
