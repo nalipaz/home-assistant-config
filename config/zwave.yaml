@@ -1,0 +1,8 @@
+usb_path: /dev/ttyUSB-zwave
+config_path: /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.1-py3.4-linux-armv7l.egg/config
+polling_interval: 60000
+customize:
+  light.livingroomlights_level_2:
+    polling_intensity: 1
+  switch.front_porch_light:
+    polling_intensity: 1

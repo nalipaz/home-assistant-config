@@ -1,0 +1,7 @@
+- condition: numeric_state
+  entity_id: sun.sun
+  value_template: '{{ state.attributes.elevation }}'
+  below: -2.5
+- condition: state
+  entity_id: switch.frontporchlight_switch_3
+  state: 'off'

@@ -1,0 +1,3 @@
+#plex_show: 'curl -s http://localhost:32400/library/metadata/{{ states.media_player.tv_un55h6300.attributes.media_content_id }}?X-Plex-Token=Lmpm6yYp83wvpP4z2m5q | xmlstarlet sel -t -v "//Video/@grandparentTitle"'
+plex_title: 'echo $(curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token=Lmpm6yYp83wvpP4z2m5q | xmlstarlet sel -t -v "//Video/@grandparentTitle") > /tmp/media_player.rasplex.title.txt'
+reboot_server: 'sudo shutdown -r now'

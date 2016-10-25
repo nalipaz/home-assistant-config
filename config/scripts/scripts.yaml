@@ -1,0 +1,5 @@
+reboot:
+  alias: Reboot Server
+  sequence:
+    - alias: Reboot Server
+      service: shell_command.reboot_server

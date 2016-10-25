@@ -1,0 +1,102 @@
+theater_automations:
+  name: Theater Automations
+  entities:
+    - automation.living_room_tv_pausedstopped
+    - automation.living_room_tv_playing
+#default_view:
+#  view: yes
+#  entities:
+#    - sensor.los_angeles
+#    - sensor.tokyo
+#    - group.lights
+#    - group.weather
+#
+#media_view:
+#  name: Media
+#  view: yes
+#  entities:
+#    - group.media
+#    - media_player.tv_un55h6300
+#
+#services_view:
+#  name: Services
+#  view: yes
+#  entities:
+#    - group.services
+#    - group.devices
+#
+#automations_view:
+#  name: Automations
+#  view: yes
+#  entities:
+#    - group.service_automations
+#    - group.light_automations
+#
+#clocks:
+#  name: Time
+#  entities:
+#    - sensor.los_angeles
+#    - sensor.tokyo
+#
+#lights:
+#  name: Lights
+#  entities:
+#    - light.livingroomlights_level_2
+#    - input_slider.living_brightness
+#    - switch.front_porch_light
+#
+#weather:
+#  name: Weather
+#  entities:
+#    - sensor.forecastio_daily_high_temperature
+#    - sensor.forecastio_daily_low_temperature
+#    - sensor.forecastio_humidity
+#    - sensor.forecastio_icon
+#    - sensor.forecastio_ozone
+#    - sensor.forecastio_temperature
+#    - sensor.forecastio_wind_speed
+#    - sensor.yr_symbol
+#    - sun.sun
+#
+#media:
+#  name: Media
+#  entities:
+#    - media_player.living_room_tv
+#    - media_player.rasplex
+#    - media_player.plex
+#
+#services:
+#  name: Services
+#  entities:
+#    - switch.couch_potato
+#    - switch.deluge_daemon
+#    - switch.deluge_web
+#    - switch.headphones
+#    - switch.jackett
+#    - switch.plex_media_center
+#    - switch.sonarr
+#
+#devices:
+#  name: Devices
+#  entities:
+#    - binary_sensor.obitalk
+#    - binary_sensor.plex_blue_room
+#    - binary_sensor.printer
+#
+#service_automations:
+#  name: Services
+#  entities:
+#    - automation.couch_potato_stopped
+#    - automation.deluge_daemon_stopped
+#    - automation.deluge_web_stopped
+#    - automation.headphones_stopped
+#    - automation.jackett_stopped
+#    - automation.plex_media_server_stopped
+#    - automation.sonarr_stopped
+#
+#light_automations:
+#  name: Lights
+#  entities:
+#    - automation.front_porch_lights_sunrise
+#    - automation.front_porch_lights_sunset
+#

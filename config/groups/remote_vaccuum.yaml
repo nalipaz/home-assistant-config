@@ -1,0 +1,17 @@
+vaccuum_script:
+  name: Vaccuum
+  entities:
+    - script.irsend_vaccuum_key_power
+    - script.irsend_vaccuum_key_play
+    - script.irsend_vaccuum_key_up
+    - script.irsend_vaccuum_key_down
+    - script.irsend_vaccuum_key_left
+    - script.irsend_vaccuum_key_right
+    - script.irsend_vaccuum_key_enter
+    - script.irsend_vaccuum_key_a
+    - script.irsend_vaccuum_key_b
+    - script.irsend_vaccuum_key_c
+    - script.irsend_vaccuum_key_d
+    - script.irsend_vaccuum_key_e
+    - script.irsend_vaccuum_key_f
+    - script.irsend_vaccuum_key_g

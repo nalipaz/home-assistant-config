@@ -1,0 +1,12 @@
+- platform: zwave
+  lights:
+    living_room_lights:
+      friendly_name: 'Living Room Lights'
+      value_template: '{{states.light.livingroomlights_level_2.state}}'
+      turn_on:
+        service: light.turn_on
+        entity_id: light.livingroomlights_level_2
+        brightness: '{{states.light.livingroomlights_level_2.attributes.brightness}}'
+      turn_off:
+        service: light.turn_off
+        entity_id: light.livingroomlights_level_2

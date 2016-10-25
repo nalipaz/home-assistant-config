@@ -1,0 +1,8 @@
+zwave:
+  name: Z-Wave
+  entities:
+    - script.zwave_heal_network
+    - script.zwave_start_network
+    - script.zwave_stop_network
+    - script.zwave_test_network
+    - script.zwave_soft_reset

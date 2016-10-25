@@ -1,0 +1,70 @@
+irsend_vaccuum_key_power:
+   alias: Power
+   sequence:
+     - alias: Power
+       service: shell_command.irsend_vaccuum_KEY_POWER
+irsend_vaccuum_key_play:
+   alias: Play/Pause
+   sequence:
+     - alias: Play/Pause
+       service: shell_command.irsend_vaccuum_KEY_PLAY
+irsend_vaccuum_key_up:
+   alias: Up
+   sequence:
+     - alias: Up
+       service: shell_command.irsend_vaccuum_KEY_UP
+irsend_vaccuum_key_down:
+   alias: Down
+   sequence:
+     - alias: Down
+       service: shell_command.irsend_vaccuum_KEY_DOWN
+irsend_vaccuum_key_left:
+   alias: Left
+   sequence:
+     - alias: Left
+       service: shell_command.irsend_vaccuum_KEY_LEFT
+irsend_vaccuum_key_right:
+   alias: Right
+   sequence:
+     - alias: Right
+       service: shell_command.irsend_vaccuum_KEY_RIGHT
+irsend_vaccuum_key_enter:
+   alias: Enter
+   sequence:
+     - alias: Enter
+       service: shell_command.irsend_vaccuum_KEY_ENTER
+irsend_vaccuum_key_a:
+   alias: Mode
+   sequence:
+     - alias: Mode
+       service: shell_command.irsend_vaccuum_KEY_A
+irsend_vaccuum_key_b:
+   alias: Clock
+   sequence:
+     - alias: Clock
+       service: shell_command.irsend_vaccuum_KEY_B
+irsend_vaccuum_key_c:
+   alias: Timer
+   sequence:
+     - alias: Timer
+       service: shell_command.irsend_vaccuum_KEY_C
+irsend_vaccuum_key_d:
+   alias: Base
+   sequence:
+     - alias: Base
+       service: shell_command.irsend_vaccuum_KEY_D
+irsend_vaccuum_key_e:
+   alias: Climb
+   sequence:
+     - alias: Climb
+       service: shell_command.irsend_vaccuum_KEY_E
+irsend_vaccuum_key_f:
+   alias: Spot
+   sequence:
+     - alias: Spot
+       service: shell_command.irsend_vaccuum_KEY_F
+irsend_vaccuum_key_g:
+   alias: Max
+   sequence:
+     - alias: Max
+       service: shell_command.irsend_vaccuum_KEY_G

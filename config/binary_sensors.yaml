@@ -1,0 +1,16 @@
+- platform: command_line
+  command: 'ping -c 1 192.168.1.120 | grep "1 received" | wc -l'
+  name: 'Plex (Blue Room)'
+  payload_on: 1
+  payload_off: 0
+- platform: command_line
+  command: 'ping -c 1 192.168.1.114 | grep "1 received" | wc -l'
+  name: 'Printer'
+  payload_on: 1
+  payload_off: 0
+- platform: command_line
+  command: 'ping -c 1 192.168.1.130 | grep "1 received" | wc -l'
+  name: 'ObiTalk'
+  payload_on: 1
+  payload_off: 0
+
