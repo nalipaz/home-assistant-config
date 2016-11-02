@@ -10,7 +10,7 @@
       - condition: numeric_state
         entity_id: sun.sun
         value_template: '{{ state.attributes.elevation }}'
-        below: -2.5
+        below: -3.5
       - condition: state
         entity_id: switch.front_porch_light
         state: 'off'
@@ -29,7 +29,7 @@
       - condition: numeric_state
         entity_id: sun.sun
         value_template: '{{ state.attributes.elevation }}'
-        above: -2.6
+        above: -3.6
       - condition: state
         entity_id: switch.front_porch_light
         state: 'on'
