@@ -9,7 +9,7 @@ history:
 logbook:
 sun:
 
-automation: !include config/automation.yaml
+automation: !include_dir_merge_named config/automations
 binary_sensor: !include config/binary_sensors.yaml
 group: !include_dir_merge_named config/groups
 sensor: !include config/sensors.yaml
