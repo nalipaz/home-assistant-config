@@ -1,4 +1,3 @@
-/.api_password
 /deps
 /*.db
 /plex.conf
@@ -7,3 +6,4 @@
 /OZW_Log.txt
 /*.sqlite
 /zwscene.xml
+/secrets.yaml

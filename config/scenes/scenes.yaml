@@ -1,0 +1,14 @@
+- name: Livingroom normal
+  entities:
+    light.livingroomlights_level_2:
+      state: on
+      brightness: 255
+- name: Livingroom dim
+  entities:
+    light.livingroomlights_level_2:
+      state: on
+      brightness: 75
+- name: Livingroom dark
+  entities:
+    light.livingroomlights_level_2:
+      state: off

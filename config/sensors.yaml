@@ -4,10 +4,10 @@
   host: 192.168.1.140
   port: 32400
   username: nicholasalipaz
-  password: XVr73utI3Fl7m&1I1MBGRaDXJuZ9ITroQWPAl2Xq7gw
+  password: !secret plex_api_key
   server: alipaz-xu4
 - platform: forecast
-  api_key: c98fef2d1cea691ce256da04b38eb019
+  api_key: !secret forecastio_api_key
   monitored_conditions:
     - icon
     - temperature
@@ -26,4 +26,4 @@
   name: tokyo
 #- platform: command_line
 #  name: Plex Title
-#  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token=Lmpm6yYp83wvpP4z2m5q | xmlstarlet sel -t -v '//Video/@grandparentTitle'"
+#  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token= | xmlstarlet sel -t -v '//Video/@grandparentTitle'"
