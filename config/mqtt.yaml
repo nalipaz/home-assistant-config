@@ -1,0 +1,7 @@
+broker: 127.0.0.1
+port: 8883
+client_id: home-assistant-1
+keepalive: 60
+username: plex
+password: !secret mqtt_password
+protocol: 3.1
