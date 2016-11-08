@@ -1,4 +1,4 @@
-broker: 127.0.0.1
+broker: localhost
 port: 1883
 client_id: home-assistant-1
 keepalive: 60
