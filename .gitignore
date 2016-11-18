@@ -7,3 +7,5 @@
 /*.sqlite
 /zwscene.xml
 /secrets.yaml
+/.HA_VERSION
+__pycache__

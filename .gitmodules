@@ -1,0 +1,3 @@
+[submodule "submodules/myq"]
+	path = submodules/myq
+	url = https://github.com/arraylabs/myq.git
