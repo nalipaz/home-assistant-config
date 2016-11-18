@@ -1,0 +1,18 @@
+garage_timer_init:
+  alias: "Initialize timer for garage closing"
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.garage_timer_close
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_timer_close
+
+garage_timer_close:
+  alias: "Close garage after being open for 10 minutes"
+  sequence:
+    - delay:
+        minutes: 10
+    - service: cover.close_cover
+      data:
+        entity_id: cover.garage_door
