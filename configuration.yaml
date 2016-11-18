@@ -24,6 +24,7 @@ light: !include config/lights.yaml
 input_select: !include config/input_selects.yaml
 mqtt: !include config/mqtt.yaml
 device_tracker: !include config/device_tracker.yaml
+cover: !include config/covers.yaml
 
 #input_slider: !include config/input_sliders.yaml
 #zone: !include config/zones.yaml
