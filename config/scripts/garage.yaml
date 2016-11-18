@@ -12,7 +12,7 @@ garage_timer_close:
   alias: "Close garage after being open for 10 minutes"
   sequence:
     - delay:
-        minutes: 1
+        minutes: 10
     - service: cover.close_cover
       data:
         entity_id: cover.garage_door
