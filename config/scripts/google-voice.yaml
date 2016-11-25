@@ -1,0 +1,5 @@
+home_enable_nicholas:
+  alias: Enable home call forwarding for Nicholas
+  sequence:
+    - alias: Enable home call forwarding for Nicholas
+      service: shell_command.gv_home_enable_nicholas
