@@ -1,1 +1,6 @@
-gv_home_enable_nicholas: 'gv-enable-phone.py {{ !secret gv_home_nicholas }}'
+gv_home_enable_nicholas: 'gv-set-phone.py enabled nicholas_home'
+gv_mobile_enable_nicholas: 'gv-set-phone.py enabled nicholas_mobile'
+gv_work_enable_nicholas: 'gv-set-phone.py enabled nicholas_work'
+gv_home_disable_nicholas: 'gv-set-phone.py disabled nicholas_home'
+gv_mobile_disable_nicholas: 'gv-set-phone.py disabled nicholas_mobile'
+gv_work_disable_nicholas: 'gv-set-phone.py disabled nicholas_work'

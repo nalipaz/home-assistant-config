@@ -3,3 +3,28 @@ home_enable_nicholas:
   sequence:
     - alias: Enable home call forwarding for Nicholas
       service: shell_command.gv_home_enable_nicholas
+mobile_enable_nicholas:
+  alias: Enable mobile call forwarding for Nicholas
+  sequence:
+    - alias: Enable mobile call forwarding for Nicholas
+      service: shell_command.gv_mobile_enable_nicholas
+work_enable_nicholas:
+  alias: Enable work call forwarding for Nicholas
+  sequence:
+    - alias: Enable work call forwarding for Nicholas
+      service: shell_command.gv_work_enable_nicholas
+home_disable_nicholas:
+  alias: Disable home call forwarding for Nicholas
+  sequence:
+    - alias: Disable home call forwarding for Nicholas
+      service: shell_command.gv_home_disable_nicholas
+mobile_disable_nicholas:
+  alias: Disable mobile call forwarding for Nicholas
+  sequence:
+    - alias: Disable mobile call forwarding for Nicholas
+      service: shell_command.gv_mobile_disable_nicholas
+work_disable_nicholas:
+  alias: Disable work call forwarding for Nicholas
+  sequence:
+    - alias: Disable work call forwarding for Nicholas
+      service: shell_command.gv_work_disable_nicholas
