@@ -8,13 +8,12 @@ voice.login()
 
 execfile("/home/plex/.homeassistant/gv-phone-dict.py")
 
-filename = '/home/plex/.homeassistant/states/' + str(sys.argv[2])
+filename = '/home/plex/.homeassistant/states/' + str(sys.argv[1])
 
 def returnValue():
     for phone in voice.phones:
-        print phone.enabled()
-        if phone.phoneNumber == arg_to_phone(str(sys.argv[1])):
-            return 'enabled' if phone.enabled else 'disabled'
+        with open(filename, "r") as f:
+            return f.read()
 
 print returnValue()
 

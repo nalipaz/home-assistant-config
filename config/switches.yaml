@@ -50,9 +50,9 @@
         {{ value == 'active' }}
       friendly_name: Jackett
     gv_nicholas_home:
-      command_on: gv-set-phone.py enabled nicholas_home
-      command_off: gv-set-phone.py disabled nicholas_home
-      command_state: gv-get-phone.py nicholas_home
+      command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_home
+      command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_home
+      command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_home
       value_template: >
         {{ value == 'enabled' }}
       friendly_name: Home Phone (Nicholas)
