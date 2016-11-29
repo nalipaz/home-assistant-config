@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 from googlevoice import Voice,Phone,util,Folder
 from gv-phone-dict import arg_to_phone
 import sys

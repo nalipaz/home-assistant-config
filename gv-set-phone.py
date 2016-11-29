@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from googlevoice import Voice,Phone,util
 from __future__ import print_function
+from googlevoice import Voice,Phone,util
 import sys
 
 voice = Voice()
