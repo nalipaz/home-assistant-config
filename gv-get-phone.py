@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 from __future__ import print_function
 from googlevoice import Voice,Phone,util,Folder
-from gv-phone-dict import arg_to_phone
+from gv-utils import arg_to_phone
 import sys
 
 voice = Voice()
 voice.login()
-
-execfile("/home/plex/.homeassistant/gv-phone-dict.py")
 
 filename = '/home/plex/.homeassistant/states/' + str(sys.argv[1])
 
