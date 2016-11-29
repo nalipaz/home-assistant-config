@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from __future__ import print_function
 from googlevoice import Voice,Phone,util,Folder
-from gv-utils import arg_to_phone
+from gv_utils import arg_to_phone
 import sys
 
 voice = Voice()
