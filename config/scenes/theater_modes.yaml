@@ -1,15 +1,3 @@
-#- name: Theater Mode Disabled
-#  entities:
-#    group.theater_automations:
-#      state: off
-#- name: Theater Mode Always On
-#  entities:
-#    group.theater_automations:
-#      state: on
-#- name: Theater Mode After Sunset TVShow
-#  entities:
-#    group.theater_automations:
-#      state: on
 - name: Theater Mode After Sunset Hybrid TVShow
   entities:
     scene.livingroom_dim:
@@ -18,11 +6,11 @@
   entities:
     scene.livingroom_dark:
       state: on
-- name: Theater Mode Always On Dim Everything TVShow
+- name: Theater Mode After Sunset Dim Everything TVShow
   entities:
     scene.livingroom_dim:
       state: on
-- name: Theater Mode Always On Dim Everything Movie
+- name: Theater Mode After Sunset Dim Everything Movie
   entities:
     scene.livingroom_dim:
       state: on
@@ -34,6 +22,27 @@
   entities:
     scene.livingroom_dark:
       state: on
-#- name: Theater Style Hybrid
-#- name: Theater Style Dim Everything
-#- name: Theater Style Lights Out
+- name: Theater Mode Always On Hybrid TVShow
+  entities:
+    scene.livingroom_dim:
+      state: on
+- name: Theater Mode Always On Hybrid Movie
+  entities:
+    scene.livingroom_dark:
+      state: on
+- name: Theater Mode Always On Dim Everything TVShow
+  entities:
+    scene.livingroom_dim:
+      state: on
+- name: Theater Mode Always On Dim Everything Movie
+  entities:
+    scene.livingroom_dim:
+      state: on
+- name: Theater Mode Always On Lights Out TVShow
+  entities:
+    scene.livingroom_dark:
+      state: on
+- name: Theater Mode Always On Lights Out Movie
+  entities:
+    scene.livingroom_dark:
+      state: on

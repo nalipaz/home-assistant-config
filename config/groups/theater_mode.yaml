@@ -1,0 +1,5 @@
+theater_mode:
+  name: Theater Mode
+  entities:
+    - input_select.theater_mode
+    - input_select.theater_style
