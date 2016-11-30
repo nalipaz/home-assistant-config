@@ -5,3 +5,4 @@ Servers:
     - binary_sensor.plex_blue_room
     - binary_sensor.printer
     - sensor.plex
+    - updater.updater
