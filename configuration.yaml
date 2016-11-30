@@ -20,7 +20,6 @@ media_player: !include config/media_players.yaml
 notify: !include config/notifications.yaml
 script: !include_dir_merge_named config/scripts/
 scene: !include_dir_merge_list config/scenes/
-light: !include config/lights.yaml
 input_select: !include config/input_selects.yaml
 mqtt: !include config/mqtt.yaml
 device_tracker: !include config/device_tracker.yaml
