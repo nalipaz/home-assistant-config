@@ -1,0 +1,6 @@
+switches:
+  name: Switches
+  entities:
+    - light.livingroomlights_level_2
+    - switch.front_porch_light
+    - cover.garage_door
