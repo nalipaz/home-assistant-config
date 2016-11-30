@@ -1,0 +1,7 @@
+Servers:
+  name: Servers
+  entities:
+    - binary_sensor.obitalk
+    - binary_sensor.plex_blue_room
+    - binary_sensor.printer
+    - sensor.plex
