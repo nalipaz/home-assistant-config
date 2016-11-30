@@ -4,4 +4,4 @@ Remotes:
   view: yes
   entities:
     - group.tv_script
-    - group.vacuum_script
+    - group.vaccuum_script
