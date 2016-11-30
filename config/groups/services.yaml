@@ -8,3 +8,4 @@ services:
     - switch.jackett
     - switch.plex_media_server
     - switch.sonarr
+    - script.reboot
