@@ -1,0 +1,10 @@
+services:
+  name: Services
+  entities:
+    - switch.couch_potato
+    - switch.deluge_daemon
+    - switch.deluge_web
+    - switch.headphones
+    - switch.jackett
+    - switch.plex_media_server
+    - switch.sonarr
