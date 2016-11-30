@@ -38,3 +38,5 @@ media_player.tv_un55h6300:
   friendly_name: "Living Room TV"
 group.default_view:
   icon: mdi:home
+device_tracker.plex_na:
+  friendly_name: "Nicholas"
