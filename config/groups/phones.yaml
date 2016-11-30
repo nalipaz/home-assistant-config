@@ -1,0 +1,8 @@
+phone_switches:
+  name: Phones (call forwarding)
+  entities:
+    - switch.home_phone_nicholas
+    - switch.home_phone_tomoko
+    - switch.mobile_phone_nicholas
+    - switch.mobile_phone_tomoko
+    - switch.work_phone_nicholas
