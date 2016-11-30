@@ -9,6 +9,6 @@
 /secrets.yaml
 /.HA_VERSION
 __pycache__
-/gv-phone-dict.py
+/gv_utils.py
 /states/*
 !/states/.gitkeep
