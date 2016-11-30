@@ -10,3 +10,5 @@
 /.HA_VERSION
 __pycache__
 /gv-phone-dict.py
+/states/*
+!/states/.gitkeep
