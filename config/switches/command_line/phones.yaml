@@ -1,0 +1,35 @@
+gv_nicholas_home:
+  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_home
+  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_home
+  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_home
+  value_template: >
+    {{ value == 'enabled' }}
+  friendly_name: Home Phone (Nicholas)
+gv_nicholas_work:
+  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_work
+  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_work
+  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_work
+  value_template: >
+    {{ value == 'enabled' }}
+  friendly_name: Work Phone (Nicholas)
+gv_nicholas_mobile:
+  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_mobile
+  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_mobile
+  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_mobile
+  value_template: >
+    {{ value == 'enabled' }}
+  friendly_name: Mobile Phone (Nicholas)
+gv_tomoko_home:
+  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled tomoko_home
+  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled tomoko_home
+  command_state: /home/plex/.homeassistant/gv-get-phone.py tomoko_home
+  value_template: >
+    {{ value == 'enabled' }}
+  friendly_name: Home Phone (Tomoko)
+gv_tomoko_mobile:
+  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled tomoko_mobile
+  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled tomoko_mobile
+  command_state: /home/plex/.homeassistant/gv-get-phone.py tomoko_mobile
+  value_template: >
+    {{ value == 'enabled' }}
+  friendly_name: Mobile Phone (Tomoko)
