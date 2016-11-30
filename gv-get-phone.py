@@ -12,7 +12,7 @@ filename = '/home/plex/.homeassistant/states/' + str(sys.argv[1])
 def returnValue():
     for phone in voice.phones:
         with open(filename, "r") as f:
-            return f.read()
+            if phone.phoneNumber == arg_to_phone(str(sys.argv[1])):
+                return f.read()
 
-str(returnValue())
-
+returnValue()
