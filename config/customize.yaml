@@ -36,3 +36,5 @@ media_player.rasplex:
   friendly_name: "Plex (Blue Room)"
 media_player.tv_un55h6300:
   friendly_name: "Living Room TV"
+group.default_view:
+  icon: mdi:home
