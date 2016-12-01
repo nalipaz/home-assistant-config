@@ -2,7 +2,7 @@
   trigger:
     platform: numeric_state
     entity_id: device_tracker.plex_na
-    value_template: '{{ state.attributes.battery }}'
+    value_template: '{{ states.device_tracker.plex_na.attributes.battery }}'
     below: 15
   action:
     - service: notify.pushbullet
