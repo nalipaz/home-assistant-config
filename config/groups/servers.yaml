@@ -4,6 +4,5 @@ Servers:
     - binary_sensor.obitalk
     - binary_sensor.plex_blue_room
     - binary_sensor.printer
-    - binary_sensor.living_room_tv
     - sensor.plex
     - updater.updater
