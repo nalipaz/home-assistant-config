@@ -1,6 +1,6 @@
 tools:
   name: Tools
-  icon: mdi:tools
+  icon: mdi:wrench
   view: yes
   entities:
     - group.zwave
