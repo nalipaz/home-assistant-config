@@ -1,4 +1,3 @@
-icon: mdi:home
 latitude: !secret latitude_home
 longitude: !secret longitude_home
 elevation: !secret elevation
