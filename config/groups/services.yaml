@@ -9,3 +9,4 @@ services:
     - switch.plex_media_server
     - switch.sonarr
     - script.reboot
+    - script.hass_reboot

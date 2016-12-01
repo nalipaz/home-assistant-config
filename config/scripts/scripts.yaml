@@ -1,5 +1,10 @@
 reboot:
-  alias: Reboot Server
+  alias: Server (reboot)
   sequence:
-    - alias: Reboot Server
+    - alias: Server (reboot)
       service: shell_command.reboot_server
+hass_reboot:
+  alias: Home Assistant (reboot)
+  sequence:
+    - alias: Home Assistant (reboot)
+      service: homeassistant.restart
