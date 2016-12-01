@@ -1,6 +1,7 @@
 default_view:
   name: Home
   icon: mdi:home
+  view: yes
   entities:
     - group.forecast
     - group.phones
