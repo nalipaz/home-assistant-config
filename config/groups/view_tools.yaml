@@ -1,0 +1,8 @@
+tools:
+  name: Tools
+  icon: mdi:tools
+  view: yes
+  entities:
+    - group.zwave
+    - group.services
+    - group.phone_switches
