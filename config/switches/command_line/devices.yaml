@@ -1,4 +1,4 @@
-livingroomtv:
+living_room_tv:
   command_on: shell_command.irsend_tv_key_power
   command_off: shell_command.irsend_tv_key_power
   command_state: 'ping -c 1 192.168.1.137 | grep "1 received" | wc -l'
