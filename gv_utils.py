@@ -5,7 +5,7 @@ def touch(fname, times=None):
         os.utime(fname, times)
 
 def arg_to_phone(argument):
-    config = open(".googlevoice", "r")
+    config = open('/home/plex/.homeassistant/.googlevoice', 'r')
     phones = yaml.load(config)
 
     return str(phones[argument])
