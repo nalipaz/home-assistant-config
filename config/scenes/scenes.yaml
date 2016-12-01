@@ -12,3 +12,11 @@
   entities:
     light.livingroomlights_level_2:
       state: off
+- name: Away
+  entities:
+    light.livingroomlights_level_2:
+      state: off
+    switch.livingroomtv:
+      state: off
+    cover.garage_door:
+      state: closed
