@@ -1,6 +1,6 @@
 name: Home
-latitude: !secret latitude
-longitude: !secret longitude
+latitude: !secret latitude_home
+longitude: !secret longitude_home
 elevation: !secret elevation
 unit_system: imperial
 time_zone: !secret time_zone
