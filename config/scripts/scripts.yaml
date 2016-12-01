@@ -3,10 +3,10 @@ reboot:
   sequence:
     - alias: Server (reboot)
       service: shell_command.reboot_server
-hass_reboot:
-  alias: Home Assistant (reboot)
+hass_restart:
+  alias: Home Assistant (restart)
   sequence:
-    - alias: Home Assistant (git pull)
+    - alias: Git pull
       service: shell_command.hass_git_pull
-    - alias: Home Assistant (reboot)
+    - alias: Restart Home Assistant
       service: homeassistant.restart
