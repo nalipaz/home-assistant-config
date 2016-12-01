@@ -10,7 +10,7 @@
       - condition: numeric_state
         entity_id: sun.sun
         value_template: '{{ state.attributes.elevation }}'
-        below: -3.3
+        below: -3.30
       - condition: state
         entity_id: switch.front_porch_light
         state: 'off'
@@ -29,42 +29,42 @@
       - condition: numeric_state
         entity_id: sun.sun
         value_template: '{{ state.attributes.elevation }}'
-        above: -3.4
+        above: -3.31
       - condition: state
         entity_id: switch.front_porch_light
         state: 'on'
   action:
     service: switch.turn_off
     entity_id: switch.front_porch_light
-#- alias: "Ensure Front Porch Lights Stay On"
-#  initial_state: False
-#  trigger:
-#    - platform: state
-#      entity_id: switch.front_porch_light
-#      state: 'off'
-#      for:
-#        seconds: 30
-#  condition:
-#    - condition: numeric_state
-#      entity_id: sun.sun
-#      value_template: '{{ state.attributes.elevation }}'
-#      below: -2.50 # exclusive; below = -2.51, -2.52, -2.53, etc
-#  action:
-#    - service: switch.turn_on
-#      entity_id: switch.front_porch_light
-#- alias: "Ensure Front Porch Lights Stay Off"
-#  initial_state: False
-#  trigger:
-#    - platform: state
-#      entity_id: switch.front_porch_light
-#      state: 'on'
-#      for:
-#        seconds: 30
-#  condition:
-#    - condition: numeric_state
-#      entity_id: sun.sun
-#      value_template: '{{ state.attributes.elevation }}'
-#      above: -2.51 # exclusive; above = -2.50, -2.49, -2.48, etc
-#  action:
-#    - service: switch.turn_off
-#      entity_id: switch.front_porch_light
+- alias: "Ensure Front Porch Lights Stay On"
+  initial_state: False
+  trigger:
+    - platform: state
+      entity_id: switch.front_porch_light
+      state: 'off'
+      for:
+        seconds: 30
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: -3.30 # exclusive; below = -2.51, -2.52, -2.53, etc
+  action:
+    - service: switch.turn_on
+      entity_id: switch.front_porch_light
+- alias: "Ensure Front Porch Lights Stay Off"
+  initial_state: False
+  trigger:
+    - platform: state
+      entity_id: switch.front_porch_light
+      state: 'on'
+      for:
+        seconds: 30
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: -3.31 # exclusive; above = -2.50, -2.49, -2.48, etc
+  action:
+    - service: switch.turn_off
+      entity_id: switch.front_porch_light
