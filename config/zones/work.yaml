@@ -1,0 +1,5 @@
+name: Work
+latitude: !secret latitude_work
+longitude: !secret longitude_work
+radius: 80
+icon: mdi:domain
