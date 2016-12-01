@@ -26,4 +26,4 @@ device_tracker: !include config/device_tracker.yaml
 cover: !include config/covers.yaml
 
 #input_slider: !include config/input_sliders.yaml
-#zone: !include config/zones.yaml
+zone: !include config/zones.yaml
