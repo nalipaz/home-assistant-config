@@ -6,5 +6,7 @@ reboot:
 hass_reboot:
   alias: Home Assistant (reboot)
   sequence:
+    - alias: Home Assistant (git pull)
+      service: shell_command.hass_git_pull
     - alias: Home Assistant (reboot)
       service: homeassistant.restart
