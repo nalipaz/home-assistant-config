@@ -37,7 +37,6 @@
     service: switch.turn_off
     entity_id: switch.front_porch_light
 - alias: "Ensure Front Porch Lights Stay On"
-  initial_state: False
   trigger:
     - platform: state
       entity_id: switch.front_porch_light
@@ -53,7 +52,6 @@
     - service: switch.turn_on
       entity_id: switch.front_porch_light
 - alias: "Ensure Front Porch Lights Stay Off"
-  initial_state: False
   trigger:
     - platform: state
       entity_id: switch.front_porch_light
