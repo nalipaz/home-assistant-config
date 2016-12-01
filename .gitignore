@@ -9,6 +9,6 @@
 /secrets.yaml
 /.HA_VERSION
 __pycache__
-/gv_utils.py*
+/gv_utils.pyc
 /states/*
 !/states/.gitkeep
