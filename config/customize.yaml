@@ -35,9 +35,7 @@ switch.frontporchlight_switch_3:
 media_player.rasplex:
   friendly_name: "Plex (Blue Room)"
 media_player.tv_un55h6300:
-  friendly_name: "Living Room TV"
-group.default_view:
-  order: 99
+  friendly_name: "Living Room TV"\
 device_tracker.plex_m1:
   hidden: true
 device_tracker.plex_na:
