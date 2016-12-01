@@ -1,0 +1,16 @@
+default_view:
+  name: Home
+  icon: mdi:home
+  entities:
+    - group.forecast
+    - group.phones
+    - group.servers
+    - group.services
+    - group.switches
+    - group.theater_mode
+    - group.zwave
+    - media_player.rasplex
+    - media_player.tv_un55h6300
+    - sensor.los_angeles
+    - sensor.tokyo
+    - device_tracker.plex_na
