@@ -4,7 +4,7 @@ home:
   view: yes
   entities:
     - group.forecast
-    - group.phones
+    - group.phone_switches
     - group.servers
     - group.services
     - group.switches
