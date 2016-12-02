@@ -17,6 +17,7 @@
     platform: state
     entity_id: device_tracker.plex_na
     from: 'home'
+    to: 'not_home'
   action:
     - service: switch.turn_off
       entity_id: switch.gv_nicholas_home
@@ -41,6 +42,7 @@
     platform: state
     entity_id: device_tracker.plex_na
     from: 'work'
+    to: 'not_home'
   action:
     - service: switch.turn_off
       entity_id: switch.gv_nicholas_home
