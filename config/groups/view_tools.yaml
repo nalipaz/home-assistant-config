@@ -5,4 +5,3 @@ tools:
   entities:
     - group.zwave
     - group.services
-    - group.phone_switches

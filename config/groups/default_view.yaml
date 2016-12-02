@@ -10,3 +10,4 @@ default_view:
     - sensor.los_angeles
     - sensor.tokyo
     - device_tracker.plex_na
+    - group.phone_switches
