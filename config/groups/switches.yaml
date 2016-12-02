@@ -5,3 +5,4 @@ switches:
     - switch.front_porch_light
     - cover.garage_door
     - switch.living_room_tv
+    - scene.away
