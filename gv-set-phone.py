@@ -2,13 +2,13 @@
 from __future__ import print_function
 from googlevoice import Voice,Phone,util
 from gv_utils import arg_to_phone,touch
-import sys
+import sys,getpass
 
 voice = Voice()
 voice.login()
 
 for phone in voice.phones:
-    filename = '/home/plex/.homeassistant/states/' + str(sys.argv[2])
+    filename = '/home/' + getpass.getuser() + '/.googlevoicephonestates/' + str(sys.argv[2])
     touch(filename)
     if phone.phoneNumber == arg_to_phone(str(sys.argv[2])):
         if str(sys.argv[1]) == "enabled":
