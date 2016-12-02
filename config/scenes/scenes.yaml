@@ -16,7 +16,7 @@
   entities:
     light.livingroomlights_level_2:
       state: off
-    switch.livingroomtv:
+    switch.living_room_tv:
       state: off
     cover.garage_door:
       state: closed
