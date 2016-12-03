@@ -1,7 +1,6 @@
 default_view:
   view: yes
   entities:
-#    - group.forecast
     - group.servers
     - group.switches
     - group.theater_mode
@@ -11,3 +10,4 @@ default_view:
     - sensor.tokyo
     - device_tracker.plex_na
     - group.phone_switches
+#    - group.forecast
