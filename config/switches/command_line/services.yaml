@@ -1,4 +1,4 @@
-plexmediaserver:
+plex_media_server:
   command_on: sudo systemctl start plexmediaserver
   command_off: sudo systemctl stop plexmediaserver
   command_state: systemctl is-active plexmediaserver
@@ -19,21 +19,21 @@ sonarr:
   value_template: >
     {{ value == 'active' }}
   friendly_name: Sonarr
-couchpotato:
+couch_potato:
   command_on: sudo systemctl start couchpotato
   command_off: sudo systemctl stop couchpotato
   command_state: systemctl is-active couchpotato
   value_template: >
     {{ value == 'active' }}
   friendly_name: Couch Potato
-deluged:
+deluge_daemon:
   command_on: sudo systemctl start deluged
   command_off: sudo systemctl stop deluged
   command_state: systemctl is-active deluged
   value_template: >
     {{ value == 'active' }}
   friendly_name: Deluge Daemon
-delugeweb:
+deluge_web:
   command_on: sudo systemctl start deluge-web
   command_off: sudo systemctl stop deluge-web
   command_state: systemctl is-active deluge-web
