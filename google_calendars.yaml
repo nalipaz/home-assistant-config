@@ -1,5 +1,0 @@
-- cal_id: !secret holiday_lighting_calendar_id
-  entities:
-  - device_id: holiday_lighting
-    name: Holiday Lighting
-    track: true
