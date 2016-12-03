@@ -1,0 +1,92 @@
+- name: Holiday Lighting Christmas
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting New Years
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Martin Luther King Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Valentines Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Lincolns Birthday
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Presidents Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting St Patricks Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Spring Equinox
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Easter
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Earth Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Cinco de Mayo
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Mothers Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Armed Forces Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Memorial Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Flag Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Fathers Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Independence Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Patriot Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Citizenship Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Autumn Equinox
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Halloween
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Veterans Day
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on
+- name: Holiday Lighting Thanksgiving
+  entities:
+#    switch.holidaylights_switch_4_0:
+#      state: on

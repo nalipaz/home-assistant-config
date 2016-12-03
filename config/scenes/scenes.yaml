@@ -20,3 +20,11 @@
       state: off
     cover.garage_door:
       state: closed
+- name: Nicholas Mobile Phone Only
+  entities:
+    switch.home_phone_nicholas:
+      state: off
+    switch.mobile_phone_nicholas:
+      state: on
+    switch.work_phone_nicholas:
+      state: off

@@ -6,3 +6,4 @@ switches:
     - cover.garage_door
     - switch.living_room_tv
     - scene.away
+    - scene.nicholas_mobile_phone_only

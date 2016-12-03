@@ -10,3 +10,8 @@ hass_restart:
       service: shell_command.hass_git_pull
     - alias: Restart Home Assistant
       service: homeassistant.restart
+nicholas_leaving:
+  alias: Nicholas Leaving
+  sequence:
+    - alias: Nicholas mobile phone only
+      service: scene.nicholas_mobile_phone_only
