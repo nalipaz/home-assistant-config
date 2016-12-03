@@ -1,15 +1,15 @@
-sensor.forecastio_daily_high_temperature:
-  friendly_name: High
-sensor.forecastio_daily_low_temperature:
-  friendly_name: Low
-sensor.forecastio_humidity:
-  friendly_name: Humidity
-sensor.forecastio_ozone:
-  friendly_name: Ozone
-sensor.forecastio_temperature:
-  friendly_name: Temperature
-sensor.forecastio_wind_speed:
-  friendly_name: Wind Speed
+#sensor.forecastio_daily_high_temperature:
+#  friendly_name: High
+#sensor.forecastio_daily_low_temperature:
+#  friendly_name: Low
+#sensor.forecastio_humidity:
+#  friendly_name: Humidity
+#sensor.forecastio_ozone:
+#  friendly_name: Ozone
+#sensor.forecastio_temperature:
+#  friendly_name: Temperature
+#sensor.forecastio_wind_speed:
+#  friendly_name: Wind Speed
 sensor.los_angeles:
   friendly_name: Torrance
 sensor.tokyo:

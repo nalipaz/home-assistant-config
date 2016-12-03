@@ -1,14 +1,14 @@
-forecast:
-  name: Forecast
-  entities:
-    - sensor.forecastio_apparent_temperature
-    - sensor.forecastio_daily_high_temperature
-    - sensor.forecastio_daily_low_temperature
-    - sensor.forecastio_humidity
-    - sensor.forecastio_icon
-    - sensor.forecastio_ozone
-    - sensor.forecastio_temperature
-    - sensor.forecastio_wind_bearing
-    - sensor.forecastio_wind_speed
-    - sensor.yr_symbol
-    - sun.sun
+#forecast:
+#  name: Forecast
+#  entities:
+#    - sensor.forecastio_apparent_temperature
+#    - sensor.forecastio_daily_high_temperature
+#    - sensor.forecastio_daily_low_temperature
+#    - sensor.forecastio_humidity
+#    - sensor.forecastio_icon
+#    - sensor.forecastio_ozone
+#    - sensor.forecastio_temperature
+#    - sensor.forecastio_wind_bearing
+#    - sensor.forecastio_wind_speed
+#    - sensor.yr_symbol
+#    - sun.sun
