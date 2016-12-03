@@ -3,5 +3,5 @@
   value_template: '{{ state.attributes.elevation }}'
   above: -2.6
 - condition: state
-  entity_id: switch.frontporchlight_switch_3
+  entity_id: switch.frontporchlight_switch_3_0
   state: 'on'

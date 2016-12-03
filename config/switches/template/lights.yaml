@@ -1,9 +1,0 @@
-front_porch_light:
-  friendly_name: 'Front Porch Light'
-  value_template: '{{states.switch.frontporchlight_switch_3.state}}'
-  turn_on:
-    service: switch.turn_on
-    entity_id: switch.frontporchlight_switch_3
-  turn_off:
-    service: switch.turn_off
-    entity_id: switch.frontporchlight_switch_3
