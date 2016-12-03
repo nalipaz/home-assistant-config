@@ -12,3 +12,8 @@ __pycache__
 /gv_utils.pyc
 /states/*
 !/states/.gitkeep
+.google.token
+.googlevoice
+.uuid
+google_calendars.yaml
+known_devices.yaml
