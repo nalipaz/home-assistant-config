@@ -24,10 +24,10 @@ input_select: !include config/input_selects.yaml
 mqtt: !include config/mqtt.yaml
 device_tracker: !include config/device_tracker.yaml
 cover: !include config/covers.yaml
-#google:
-#  client_id: !secret google_client_id
-#  client_secret: !secret google_client_secret
-#  track_new_calendar: False
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+  track_new_calendar: False
 
 #input_slider: !include config/input_sliders.yaml
 zone 1: !include config/zones/home.yaml
