@@ -28,7 +28,7 @@ automation.automation_5:
   hidden: true
 automation.automation_6:
   hidden: true
-light.livingroomlights_level_2:
+light.livingroomlights_level_2_0:
   friendly_name: "Living Room Lights"
 switch.frontporchlight_switch_3:
   hidden: true
