@@ -1,4 +1,3 @@
-#forecast:
 #  name: Forecast
 #  entities:
 #    - sensor.forecastio_apparent_temperature
