@@ -6,18 +6,18 @@
   username: nicholasalipaz
   password: !secret plex_api_key
   server: alipaz-xu4
-- platform: forecast
-  api_key: !secret forecastio_api_key
-  monitored_conditions:
-    - icon
-    - temperature
-    - wind_speed
-    - wind_bearing
-    - humidity
-    - ozone
-    - temperature_max
-    - temperature_min
-    - apparent_temperature
+#- platform: forecast
+#  api_key: !secret forecastio_api_key
+#  monitored_conditions:
+#    - icon
+#    - temperature
+#    - wind_speed
+#    - wind_bearing
+#    - humidity
+#    - ozone
+#    - temperature_max
+#    - temperature_min
+#    - apparent_temperature
 - platform: worldclock
   time_zone: America/Los_Angeles
   name: los_angeles
