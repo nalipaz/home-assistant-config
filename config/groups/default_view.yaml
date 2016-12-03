@@ -1,7 +1,7 @@
 default_view:
   view: yes
   entities:
-    - group.forecast
+#    - group.forecast
     - group.servers
     - group.switches
     - group.theater_mode

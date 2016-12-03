@@ -7,23 +7,24 @@
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
     - service: switch.turn_on
-      entity_id: switch.gv_nicholas_home
+      entity_id: switch.home_phone_nicholas
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_work
+      entity_id: switch.work_phone_nicholas
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_mobile
+      entity_id: switch.mobile_phone_nicholas
 - alias: "Nicholas leaves home"
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
     from: 'home'
+    to: 'not_home'
   action:
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_home
+      entity_id: switch.home_phone_nicholas
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_work
+      entity_id: switch.work_phone_nicholas
     - service: switch.turn_on
-      entity_id: switch.gv_nicholas_mobile
+      entity_id: switch.mobile_phone_nicholas
 - alias: "Nicholas arrives at work"
   trigger:
     platform: state
@@ -31,20 +32,21 @@
     to: 'work'
   action:
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_home
+      entity_id: switch.home_phone_nicholas
     - service: switch.turn_on
-      entity_id: switch.gv_nicholas_work
+      entity_id: switch.work_phone_nicholas
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_mobile
+      entity_id: switch.mobile_phone_nicholas
 - alias: "Nicholas leaves work"
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
     from: 'work'
+    to: 'not_home'
   action:
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_home
+      entity_id: switch.home_phone_nicholas
     - service: switch.turn_on
-      entity_id: switch.gv_nicholas_work
+      entity_id: switch.work_phone_nicholas
     - service: switch.turn_off
-      entity_id: switch.gv_nicholas_mobile
+      entity_id: switch.mobile_phone_nicholas
