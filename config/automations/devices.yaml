@@ -1,12 +1,12 @@
-- alias: "Nicholas' phone needs to be charged"
-  trigger:
-    platform: numeric_state
-    entity_id: device_tracker.plex_na
-    value_template: '{{ states.device_tracker.plex_na.attributes.battery }}'
-    below: 15
-  action:
-    - service: notify.pushbullet
-      data:
-        message: "Your phone battery is at {{ state.attributes.battery }}% and needs to be charged."
-        title: "Phone Batter Low"
-        target: "channel/alipaz-media"
+#- alias: "Nicholas' phone needs to be charged"
+#  trigger:
+#    platform: numeric_state
+#    entity_id: device_tracker.plex_na
+#    value_template: '{{ states.device_tracker.plex_na.attributes.battery }}'
+#    below: 15
+#  action:
+#    - service: notify.pushbullet
+#      data:
+#        message: "Your phone battery is at {{ state.attributes.battery }}% and needs to be charged."
+#        title: "Phone Batter Low"
+#        target: "channel/alipaz-media"
