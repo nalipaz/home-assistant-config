@@ -1,20 +1,20 @@
-##- alias: Garage
-##  trigger:
-##    - platform: state
-##      entity_id: cover.garage_door
-##      to: 'open'
-##  action:
-##    - service: homeassistant.turn_on
-##      entity_id: script.garage_timer_init
-##
-#- alias: Garage notification
+#- alias: Garage
 #  trigger:
 #    - platform: state
 #      entity_id: cover.garage_door
-#      # Don't set a state, but instead detect all state changes, only 'open' and 'closed' are currently available.
+#      to: 'open'
 #  action:
-#    - service: notify.pushbullet
-#      data:
-#        message: "The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
-#        title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
-#        target: "channel/alipaz-media"
+#    - service: homeassistant.turn_on
+#      entity_id: script.garage_timer_init
+#
+- alias: Garage notification
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      # Don't set a state, but instead detect all state changes, only 'open' and 'closed' are currently available.
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
+        title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
+        target: "channel/alipaz-media"
