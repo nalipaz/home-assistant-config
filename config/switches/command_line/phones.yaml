@@ -1,35 +1,35 @@
 home_phone_nicholas:
-  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_home
-  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_home
-  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_home
+  command_on: /home/plex/.homeassistant/gv-phone.py enable nicholas_home
+  command_off: /home/plex/.homeassistant/gv-phone.py disable nicholas_home
+  command_state: /home/plex/.homeassistant/gv-phone.py status nicholas_home
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Home Phone (Nicholas)
 work_phone_nicholas:
-  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_work
-  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_work
-  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_work
+  command_on: /home/plex/.homeassistant/gv-phone.py enable nicholas_work
+  command_off: /home/plex/.homeassistant/gv-phone.py disable nicholas_work
+  command_state: /home/plex/.homeassistant/gv-phone.py nicholas_work
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Work Phone (Nicholas)
 mobile_phone_nicholas:
-  command_on: /home/plex/.homeassistant/gv-set-phone.py enabled nicholas_mobile
-  command_off: /home/plex/.homeassistant/gv-set-phone.py disabled nicholas_mobile
+  command_on: /home/plex/.homeassistant/gv-phone.py enable nicholas_mobile
+  command_off: /home/plex/.homeassistant/gv-phone.py disable nicholas_mobile
   command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_mobile
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Mobile Phone (Nicholas)
 home_phone_tomoko:
-  command_on: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-set-phone.py enabled tomoko_home"'
-  command_off: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-set-phone.py disabled tomoko_home"'
-  command_state: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-get-phone.py tomoko_home"'
+  command_on: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py enable tomoko_home"'
+  command_off: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py disable tomoko_home"'
+  command_state: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py status tomoko_home"'
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Home Phone (Tomoko)
 mobile_phone_tomoko:
-  command_on: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-set-phone.py enabled tomoko_mobile"'
-  command_off: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-set-phone.py disabled tomoko_mobile"'
-  command_state: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-get-phone.py tomoko_mobile"'
+  command_on: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py enable tomoko_mobile"'
+  command_off: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py disable tomoko_mobile"'
+  command_state: 'sudo su - tomoko -c "/home/plex/.homeassistant/gv-phone.py status tomoko_mobile"'
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Mobile Phone (Tomoko)
