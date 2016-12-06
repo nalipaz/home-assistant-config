@@ -1,14 +1,14 @@
-#- alias: "TV Playback"
-#  trigger:
-#    platform: state
-##    entity_id: media_player.tv_un55h6300
-#    entity_id: media_player.rasplex
-#  action:
-#    - service: shell_command.plex_title
-#    - service: notify.pushbullet
-#      data:
-##        message: "The video is now {{ states.media_player.tv_un55h6300.state }}."
-#        message: "The video {{ states.media_player.rasplex.media_series_title }} is now {{ states.media_player.rasplex.state }}."
-##        title: "Plex: {{ states.media_player.tv_un55h6300.attributes.media_title }}"
-#        title: "Plex: {{ states.media_player.rasplex.attributes.media_title }}"
-#        target: "channel/alipaz-media"
+- alias: "TV Playback"
+  trigger:
+    platform: state
+#    entity_id: media_player.tv_un55h6300
+    entity_id: media_player.rasplex
+  action:
+    - service: shell_command.plex_title
+    - service: notify.pushbullet
+      data:
+#        message: "The video is now {{ states.media_player.tv_un55h6300.state }}."
+        message: "The video {{ states.media_player.rasplex.media_series_title }} is now {{ states.media_player.rasplex.state }}."
+#        title: "Plex: {{ states.media_player.tv_un55h6300.attributes.media_title }}"
+        title: "Plex: {{ states.media_player.rasplex.attributes.media_title }}"
+        target: "channel/alipaz-media"
