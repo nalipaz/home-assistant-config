@@ -15,7 +15,7 @@ work_phone_nicholas:
 mobile_phone_nicholas:
   command_on: /home/plex/.homeassistant/gv-phone.py enable nicholas_mobile
   command_off: /home/plex/.homeassistant/gv-phone.py disable nicholas_mobile
-  command_state: /home/plex/.homeassistant/gv-get-phone.py nicholas_mobile
+  command_state: /home/plex/.homeassistant/gv-phone.py status nicholas_mobile
   value_template: >
     {{ value == 'enabled' }}
   friendly_name: Mobile Phone (Nicholas)
