@@ -10,13 +10,15 @@
         - condition: numeric_state
           entity_id: sun.sun
           value_template: '{{ state.attributes.elevation }}'
-          above: -3.35
           below: -3.30
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
         - condition: template
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
+        - condition: state
+          entity_id: binary_sensor.holiday_lighting
+          state: 'off'
   action:
     - service: notify.pushbullet
       data:
@@ -39,12 +41,14 @@
           entity_id: sun.sun
           value_template: '{{ state.attributes.elevation }}'
           above: -3.31
-          below: -3.26
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
         - condition: template
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
+        - condition: state
+          entity_id: binary_sensor.holiday_lighting
+          state: 'on'
   action:
     - service: notify.pushbullet
       data:
