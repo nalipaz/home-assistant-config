@@ -1,0 +1,5 @@
+input_boolean:
+  holiday_lighting:
+    name: Holiday Lighting
+    initial: off
+    icon: mdi:light
