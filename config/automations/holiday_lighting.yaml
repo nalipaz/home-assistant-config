@@ -1,24 +1,24 @@
-#- alias: "Holiday lighting"
-#  trigger:
-#    - condition: numeric_state
-#      entity_id: sun.sun
-#      value_template: '{{ state.attributes.elevation }}'
-#      below: -3.30
-#  condition:
-#    condition: and
-#    conditions:
-#      - platform: state
-#        entity_id: calendar.holiday_lighting
-#        state: 'on'
-#      - condition: template
-#        entity_id: calendar.holiday_lighting
-#        value_template: '{{ states.calendar.holiday_lighting.message }}' # check that we have a value.
-#  action:
-#    - service: notify.pushbullet
-#      data:
-#        message: "Turn on the {{ states.calendar.holiday_lighting.message }} lights. {{ states.calendar.holiday_lighting.description }}"
-#        title: "{{ states.calendar.holiday_lighting.message }} Lights"
-#        target: "channel/alipaz-media"
-#    - service_template: scene.turn_on
-#      data_template:
-#        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}"
+- alias: "Holiday lighting"
+  trigger:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: -3.30
+  condition:
+    condition: and
+    conditions:
+      - platform: state
+        entity_id: calendar.holiday_lighting
+        state: 'on'
+      - condition: template
+        entity_id: calendar.holiday_lighting
+        value_template: '{{ states.calendar.holiday_lighting.message }}'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Turn on the {{ states.calendar.holiday_lighting.message }} lights. {{ states.calendar.holiday_lighting.description }}"
+        title: "{{ states.calendar.holiday_lighting.message }} Lights"
+        target: "channel/alipaz-media"
+    - service_template: scene.turn_on
+      data_template:
+        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}"
