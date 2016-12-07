@@ -3,6 +3,8 @@ switches:
   entities:
     - light.livingroomlights_level_2_0
     - switch.frontporchlight_switch_3_0
+    - switch.diningoutlet_switch_4_0
+    - switch.outsideoutlet_switch_5_0
     - cover.garage_door
     - switch.living_room_tv
     - scene.away
