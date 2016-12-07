@@ -9,7 +9,7 @@
     conditions:
       - platform: state
         entity_id: calendar.holiday_lighting
-        state: 'on'
+        value: 'on'
       - condition: template
         entity_id: calendar.holiday_lighting
         value_template: '{% if states.calendar.holiday_lighting.message %}true{% endif %}'
