@@ -1,6 +1,6 @@
 - alias: "Holiday lighting"
   trigger:
-    - condition: numeric_state
+    - platform: numeric_state
       entity_id: sun.sun
       value_template: '{{ state.attributes.elevation }}'
       below: -3.30
