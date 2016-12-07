@@ -7,7 +7,7 @@
   condition:
     condition: and
     conditions:
-      - platform: state
+      - condition: state
         entity_id: calendar.holiday_lighting
         value: 'on'
       - condition: template
