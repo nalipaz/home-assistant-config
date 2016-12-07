@@ -1,12 +1,16 @@
-- alias: "Holiday lighting"
+- alias: "Holiday lighting On"
   trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      value_template: "{{ state.attributes.elevation }}"
-      below: -3.30
+    - platform: event
+      event_type: state_changed
+      event_data:
+        entity_id: sun.sun
   condition:
     - condition: and
       conditions:
+        - condition: numeric_state
+          entity_id: sun.sun
+          value_template: '{{ state.attributes.elevation }}'
+          below: -3.30
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
@@ -20,4 +24,45 @@
         target: "channel/alipaz-media"
     - service_template: scene.turn_on
       data_template:
-        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}"
+        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_on"
+- alias: "Holiday lighting Off"
+  trigger:
+    - platform: event
+      event_type: state_changed
+      event_data:
+        entity_id: sun.sun
+  condition:
+    - condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sun.sun
+          value_template: '{{ state.attributes.elevation }}'
+          above: -3.31
+        - condition: state
+          entity_id: calendar.holiday_lighting
+          state: 'on'
+        - condition: template
+          value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Turn off the {{ states.calendar.holiday_lighting.message }} lights. {{ states.calendar.holiday_lighting.description }}"
+        title: "{{ states.calendar.holiday_lighting.message }} Lights"
+        target: "channel/alipaz-media"
+    - service_template: scene.turn_on
+      data_template:
+        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
+- alias: "Non-Holiday lighting"
+  trigger:
+    - platform: state
+      entity_id: calendar.holiday_lighting
+      to: 'off'
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "All lights and switches are now set to their normal states."
+        title: "Holiday over"
+        target: "channel/alipaz-media"
+    - service_template: scene.turn_on
+      data_template:
+        entity_id: "scene.non_holiday_lighting"
