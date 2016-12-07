@@ -12,3 +12,9 @@ theater_style:
    - Hybrid
    - Dim Everything
    - Lights Out
+holiday_lighting:
+  name: Holiday Lighting
+  initial: Off
+  options:
+   - Off
+   - On

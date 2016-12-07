@@ -13,11 +13,3 @@
   name: 'ObiTalk'
   payload_on: 1
   payload_off: 0
-- platform: template
-  sensors:
-    holiday_lights:
-      sensor_class: light
-      value_template: "{{ true }}"
-      entity_id:
-        - automation.holiday_lighting_on
-        - automation.holiday_lighting_off
