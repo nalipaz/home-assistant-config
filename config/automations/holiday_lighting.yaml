@@ -16,9 +16,9 @@
           state: 'on'
         - condition: template
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
-#        - condition: state
-#          entity_id: input_select.holiday_lighting
-#          state: false
+        - condition: state
+          entity_id: input_select.holiday_lighting
+          state: 'False'
   action:
     - service: notify.pushbullet
       data:
@@ -28,10 +28,10 @@
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_on"
-#    - service: input_select.select_option
-#      data:
-#        entity_id: input_select.holiday_lighting
-#        option: true
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.holiday_lighting
+        option: 'True'
 - alias: "Holiday lighting Off"
   trigger:
     - platform: event
@@ -50,9 +50,9 @@
           state: 'on'
         - condition: template
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
-#        - condition: state
-#          entity_id: input_select.holiday_lighting
-#          state: true
+        - condition: state
+          entity_id: input_select.holiday_lighting
+          state: 'True'
   action:
     - service: notify.pushbullet
       data:
@@ -62,10 +62,10 @@
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
-#    - service: input_select.select_option
-#      data:
-#        entity_id: input_select.holiday_lighting
-#        option: false
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.holiday_lighting
+        option: 'False'
 - alias: "Non-Holiday lighting"
   trigger:
     - platform: state
