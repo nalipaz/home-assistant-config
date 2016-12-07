@@ -18,7 +18,7 @@
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
         - condition: state
           entity_id: input_select.holiday_lighting
-          state: 'Off'
+          state: false
   action:
     - service: notify.pushbullet
       data:
@@ -31,7 +31,7 @@
     - service: input_select.select_option
       data:
         entity_id: input_select.holiday_lighting
-        option: 'On'
+        option: true
 - alias: "Holiday lighting Off"
   trigger:
     - platform: event
@@ -52,7 +52,7 @@
           value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
         - condition: state
           entity_id: input_select.holiday_lighting
-          state: 'On'
+          state: true
   action:
     - service: notify.pushbullet
       data:
@@ -65,7 +65,7 @@
     - service: input_select.select_option
       data:
         entity_id: input_select.holiday_lighting
-        option: 'Off'
+        option: false
 - alias: "Non-Holiday lighting"
   trigger:
     - platform: state
