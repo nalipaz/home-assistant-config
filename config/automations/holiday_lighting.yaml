@@ -10,9 +10,9 @@
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
-        - condition: template
-          entity_id: calendar.holiday_lighting
-          value_template: "{{ true if states.calendar.holiday_lighting.message|length > 0 else false }}"
+#        - condition: template
+#          entity_id: calendar.holiday_lighting
+#          value_template: "{{ true if states.calendar.holiday_lighting.message|length > 0 else false }}"
   action:
     - service: notify.pushbullet
       data:
