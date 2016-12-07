@@ -12,7 +12,7 @@
         state: 'on'
       - condition: template
         entity_id: calendar.holiday_lighting
-        value_template: '{{ states.calendar.holiday_lighting.message }}'
+        value_template: '{% if states.calendar.holiday_lighting.message %}true{% endif %}'
   action:
     - service: notify.pushbullet
       data:
