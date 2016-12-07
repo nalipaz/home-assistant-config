@@ -5,11 +5,13 @@
       value_template: "{{ state.attributes.elevation }}"
       below: -3.30
   condition:
-    - condition: state
-      entity_id: calendar.holiday_lighting
-      state: 'on'
-    - condition: template
-      value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: calendar.holiday_lighting
+          state: 'on'
+        - condition: template
+          value_template: "{{ states.calendar.holiday_lighting.attributes.message|length > 0 }}"
   action:
     - service: notify.pushbullet
       data:
