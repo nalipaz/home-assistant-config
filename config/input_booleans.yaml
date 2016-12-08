@@ -2,3 +2,7 @@ holiday_lighting:
   name: Holiday Lighting
   initial: off
   icon: mdi:light
+christmas_tree:
+  name: Christmas Tree
+  initial: off
+  icon: mdi:pine-tree

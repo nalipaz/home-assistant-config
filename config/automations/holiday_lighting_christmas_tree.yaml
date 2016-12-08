@@ -20,6 +20,9 @@
               state: 'on'
             - condition: template
               value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
+            - condition: state
+              entity_id: input_boolean.christmas_tree
+              state: 'off'
         - condition: or
           conditions:
             - condition: and
@@ -38,6 +41,9 @@
     - service_template: switch.turn_on
       data:
         entity_id: switch.diningoutlet_switch_4_0
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.christmas_tree
 - alias: "Christmas Tree Off"
   trigger:
     - platform: event
@@ -65,7 +71,13 @@
         - condition: state
           entity_id: light.livingroomlights_level_2_0
           state: 'off'
+        - condition: state
+          entity_id: input_boolean.christmas_tree
+          state: 'on'
   action:
     - service_template: switch.turn_off
       data:
         entity_id: switch.diningoutlet_switch_4_0
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.christmas_tree
