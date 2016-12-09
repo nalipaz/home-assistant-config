@@ -17,32 +17,17 @@
         - condition: state
           entity_id: input_select.theater_mode
           state: 'Always On'
-  action:
-    - service_template: scene.turn_on
-      data_template:
-        entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}_{{ states('input_select.theater_style')|lower|replace(' ', '_') }}_{{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
-
-- alias: Living room tv playing
-  trigger:
-    - platform: state
-      entity_id: media_player.tv_un55h6300
-      to: 'playing'
-  condition:
-    - condition: or
-      conditions:
-        - condition: and
-          conditions:
-            - condition: state
-              entity_id: sun.sun
-              state: 'below_horizon'
-            - condition: state
-              entity_id: input_select.theater_mode
-              state: 'After Sunset'
         - condition: state
           entity_id: input_select.theater_mode
-          state: 'Always On'
+          state: 'Disabled'
   action:
-    - service: scene.turn_on
+    - service: notify.html5
+      data:
+        message: "{{ states.media_player.tv_un55h6300.attributes.media_title }} now playing on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
+        title: "Plex playing {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+        data:
+          tag: "plex"
+    - service_template: scene.turn_on
       data_template:
         entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}_{{ states('input_select.theater_style')|lower|replace(' ', '_') }}_{{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
 - alias: Living room tv paused/stopped
@@ -64,6 +49,15 @@
         - condition: state
           entity_id: input_select.theater_mode
           state: 'Always On'
+        - condition: state
+          entity_id: input_select.theater_mode
+          state: 'Disabled'
   action:
+    - service: notify.html5
+      data:
+        message: "{{ states.media_player.tv_un55h6300.attributes.media_title }} now {{ states('media_player.tv_un55h6300') }} on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
+        title: "Plex {{ states('media_player.tv_un55h6300') }} {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+        data:
+          tag: "plex"
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
