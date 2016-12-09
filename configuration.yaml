@@ -2,6 +2,8 @@ homeassistant: !include config/homeassistant.yaml
 frontend:
 http:
   api_password: !secret http_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
 updater:
 discovery:
 conversation:
