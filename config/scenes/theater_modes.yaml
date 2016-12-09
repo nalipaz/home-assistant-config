@@ -46,3 +46,9 @@
   entities:
     scene.livingroom_dark:
       state: on
+- name: Theater Mode Disabled Hybrid TVShow
+- name: Theater Mode Disabled Hybrid Movie
+- name: Theater Mode Disabled Dim Everything TVShow
+- name: Theater Mode Disabled Dim Everything Movie
+- name: Theater Mode Disabled Lights Out TVShow
+- name: Theater Mode Disabled Lights Out Movie
