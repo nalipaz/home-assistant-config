@@ -1,7 +1,5 @@
 - name: Holiday Lighting Christmas On
   entities:
-    switch.diningoutlet_switch_4_0:
-      state: on
     switch.outsideoutlet_switch_5_0:
       state: on
 - name: Holiday Lighting New Years On
