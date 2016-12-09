@@ -4,6 +4,7 @@ http:
   api_password: !secret http_password
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
+  server_port: 443
 updater:
 discovery:
 conversation:
