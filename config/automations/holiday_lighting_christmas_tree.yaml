@@ -55,25 +55,32 @@
       event_data:
         entity_id: light.livingroomlights_level_2_0
   condition:
-    # TURN OFF      DURING CHRISTMAS              and        DURING DAY WHILST LIGHTS ARE OFF
-    # if ( holiday && holiday_name == 'Christmas' && sun.elevation >= -3.31 && living_lights == 'off')
     - condition: and
       conditions:
-        - condition: state
-          entity_id: calendar.holiday_lighting
-          state: 'on'
-        - condition: template
-          value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
-        - condition: numeric_state
-          entity_id: sun.sun
-          value_template: '{{ state.attributes.elevation }}'
-          above: -3.31
-        - condition: state
-          entity_id: light.livingroomlights_level_2_0
-          state: 'off'
-        - condition: state
-          entity_id: input_boolean.christmas_tree
-          state: 'on'
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: calendar.holiday_lighting
+              state: 'on'
+            - condition: template
+              value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
+            - condition: state
+              entity_id: input_boolean.christmas_tree
+              state: 'on'
+        - condition: or
+          conditions:
+            - condition: and
+              conditions:
+                - condition: numeric_state
+                  entity_id: sun.sun
+                  value_template: '{{ state.attributes.elevation }}'
+                  above: -3.31
+                - condition: state
+                  entity_id: light.livingroomlights_level_2_0
+                  state: 'on'
+            - condition: state
+              entity_id: light.livingroomlights_level_2_0
+              state: 'off'
   action:
     - service_template: switch.turn_off
       data:
