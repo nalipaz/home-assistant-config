@@ -22,7 +22,7 @@
   action:
     - service: notify.pushbullet
       data:
-        message: "Turn on the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
+        message: "Turned on the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         target: "channel/alipaz-media"
     - service_template: scene.turn_on
