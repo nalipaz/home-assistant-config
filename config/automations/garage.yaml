@@ -13,8 +13,9 @@
       entity_id: cover.garage_door
       # Don't set a state, but instead detect all state changes, only 'open' and 'closed' are currently available.
   action:
-    - service: notify.pushbullet
+    - service: notify.html5
       data:
         message: "The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
-        target: "channel/alipaz-media"
+        data:
+          tag: "garage"

@@ -54,11 +54,12 @@
           entity_id: input_boolean.holiday_lighting
           state: 'on'
   action:
-    - service: notify.pushbullet
+    - service: notify.html5
       data:
         message: "Turned off the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
-        target: "channel/alipaz-media"
+        data:
+          tag: "holiday_lighting"
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
@@ -71,11 +72,12 @@
       entity_id: calendar.holiday_lighting
       to: 'off'
   action:
-    - service: notify.pushbullet
+    - service: notify.html5
       data:
         message: "All lights and switches are now set to their normal states."
         title: "Holiday over"
-        target: "channel/alipaz-media"
+        data:
+          tag: "holiday_lighting"
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.non_holiday_lighting"

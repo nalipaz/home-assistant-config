@@ -5,8 +5,9 @@
     value_template: '{{ states.device_tracker.plex_na.attributes.battery }}'
     below: 15
   action:
-    - service: notify.pushbullet
+    - service: notify.html5
       data:
         message: "Your phone battery is at {{ state.attributes.battery }}% and needs to be charged."
         title: "Phone Batter Low"
-        target: "channel/alipaz-media"
+        data:
+          tag: "battery"
