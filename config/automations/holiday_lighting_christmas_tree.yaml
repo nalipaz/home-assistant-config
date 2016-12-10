@@ -9,8 +9,6 @@
       event_data:
         entity_id: light.livingroomlights_level_2_0
   condition:
-    # TURN ON         DURING CHRISTMAS              and either       AT NIGHT WHILST LIGHTS ARE OFF        or   ANYTIME LIVING LIGHTS ARE ON
-    # if ( (holiday && holiday_name == 'Christmas') && ((sun.elevation <= -3.30 && living_lights == 'off') || living_lights == 'on') )
     - condition: and
       conditions:
         - condition: and
@@ -23,9 +21,6 @@
             - condition: state
               entity_id: input_boolean.christmas_tree
               state: 'off'
-#            - condition: state
-#              entity_id: light.livingroomlights_level_2_0
-#              state: 'on'
         - condition: or
           conditions:
             - condition: numeric_state
