@@ -1,4 +1,4 @@
-plex_media_server:
+plexmediaserver:
   command_on: sudo systemctl start plexmediaserver
   command_off: sudo systemctl stop plexmediaserver
   command_state: systemctl is-active plexmediaserver
