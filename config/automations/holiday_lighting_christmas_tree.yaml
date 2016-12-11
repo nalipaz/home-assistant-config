@@ -26,7 +26,7 @@
             - condition: numeric_state
               entity_id: sun.sun
               value_template: '{{ state.attributes.elevation }}'
-              below: -3.30
+              below: -2.50
             - condition: and
               conditions:
                 - condition: numeric_state
@@ -71,7 +71,7 @@
             - condition: numeric_state
               entity_id: sun.sun
               value_template: '{{ state.attributes.elevation }}'
-              above: -3.31
+              above: -2.51
             - condition: state
               entity_id: light.livingroomlights_level_2_0
               state: 'off'
