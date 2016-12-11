@@ -35,7 +35,7 @@
                   above: -3.31
                 - condition: state
                   entity_id: light.livingroomlights_level_2_0
-                  state: 'on'
+                  state: 'off'
   action:
     - service_template: switch.turn_on
       data:
