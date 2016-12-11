@@ -33,9 +33,8 @@
                   entity_id: sun.sun
                   value_template: '{{ state.attributes.elevation }}'
                   above: -3.31
-                - condition: state
-                  entity_id: light.livingroomlights_level_2_0
-                  state: 'off'
+                - condition: template
+                  value_template: "{{ trigger.event.state == 'off' }}"
   action:
     - service_template: switch.turn_on
       data:
@@ -72,9 +71,8 @@
               entity_id: sun.sun
               value_template: '{{ state.attributes.elevation }}'
               above: -2.51
-            - condition: state
-              entity_id: light.livingroomlights_level_2_0
-              state: 'off'
+            - condition: template
+              value_template: "{{ trigger.event.state == 'on' }}"
   action:
     - service_template: switch.turn_off
       data:
