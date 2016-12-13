@@ -20,14 +20,4 @@ for phone in voice.phones:
     filename = '/home/' + getpass.getuser() + '/.googlevoicephonestates/' + str(sys.argv[2])
     touch(filename)
     if phone.phoneNumber == arg_to_phone(str(sys.argv[2])):
-        if str(sys.argv[1]) == "enable":
-            phone.enable()
-            with open(filename, "w") as f:
-                f.write("enabled")
-        elif str(sys.argv[1]) == "disable":
-            phone.disable()
-            with open(filename, "w") as f:
-                f.write("disabled")
-        elif str(sys.argv[1]) == "status":
-            with open(filename, "r") as f:
-                print(f.read())
+        getattr(phone, sys.argv[1])()
