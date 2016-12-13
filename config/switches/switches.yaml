@@ -1,2 +1,4 @@
 - platform: command_line
   switches: !include_dir_merge_named command_line
+- platform: template
+  switches: !include_dir_merge_named template
