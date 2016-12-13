@@ -1,7 +1,7 @@
 home_phone_nicholas:
   turn_on:
     - service: shell_command.phone_nicholas_home_enable
-    - service: input_boolean.turn_off
+    - service: input_boolean.turn_on
       entity_id: input_boolean.home_phone_nicholas
   turn_off:
     - service: shell_command.phone_nicholas_home_disable
@@ -13,7 +13,7 @@ home_phone_nicholas:
 work_phone_nicholas:
   turn_on:
     - service: shell_command.phone_nicholas_work_enable
-    - service: input_boolean.turn_off
+    - service: input_boolean.turn_on
       entity_id: input_boolean.work_phone_nicholas
   turn_off:
     - service: shell_command.phone_nicholas_work_disable
@@ -25,7 +25,7 @@ work_phone_nicholas:
 mobile_phone_nicholas:
   turn_on:
     - service: shell_command.phone_nicholas_mobile_enable
-    - service: input_boolean.turn_off
+    - service: input_boolean.turn_on
       entity_id: input_boolean.mobile_phone_nicholas
   turn_off:
     - service: shell_command.phone_nicholas_mobile_disable
@@ -37,7 +37,7 @@ mobile_phone_nicholas:
 home_phone_tomoko:
   turn_on:
     - service: shell_command.phone_tomoko_home_enable
-    - service: input_boolean.turn_off
+    - service: input_boolean.turn_on
       entity_id: input_boolean.home_phone_tomoko
   turn_off:
     - service: shell_command.phone_tomoko_home_disable
@@ -49,12 +49,12 @@ home_phone_tomoko:
 mobile_phone_tomoko:
   turn_on:
     - service: shell_command.phone_tomoko_mobile_enable
-    - service: input_boolean.turn_off
+    - service: input_boolean.turn_on
       entity_id: input_boolean.mobile_phone_tomoko
   turn_off:
     - service: shell_command.phone_tomoko_mobile_disable
     - service: input_boolean.turn_off
       entity_id: input_boolean.mobile_phone_tomoko
   value_template: >
-    {{ is_state('input_boolean.work_phone_tomoko', 'on') }}
+    {{ is_state('input_boolean.mobile_phone_tomoko', 'on') }}
   friendly_name: Mobile Phone (Tomoko)
