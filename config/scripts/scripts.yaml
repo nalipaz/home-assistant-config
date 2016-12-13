@@ -15,3 +15,17 @@ nicholas_leaving:
   sequence:
     - alias: Nicholas mobile phone only
       service: scene.nicholas_mobile_phone_only
+away:
+  alias: Away
+  sequence:
+    - alias: Away scene
+      service: scene.turn_on
+      entity_id: scene.away
+    - service: scene.turn_on
+      entity_id: scene.nicholas_mobile_phone_only
+    - condition: state
+      entity_id: switch.living_room_tv
+      state: 'on'
+    - alias: Turn off TV
+      service: switch.turn_off
+      entity_id: switch.living_room_tv

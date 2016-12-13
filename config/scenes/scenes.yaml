@@ -16,8 +16,6 @@
   entities:
     light.livingroomlights_level_2_0:
       state: off
-    switch.living_room_tv:
-      state: off
     cover.garage_door:
       state: closed
 - name: Nicholas Mobile Phone Only
