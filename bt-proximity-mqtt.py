@@ -13,7 +13,7 @@ client.username_pw_set(str(config['credentials']['username']), config['credentia
 client.tls_set(config['credentials']['certificate'])
 client.connect(config['credentials']['host'], int(config['credentials']['port']), 60)
 
-if len(sys.argv) > 1 and str(sys.argv[1]) == 'lock':
+if len(sys.argv) > 1 and str(sys.argv[1]) == '-l':
     data = '{{"_type":"transition","wtst":{t},"tst":{t},"lat":{m[latitude]},"lon":{m[longitude]},"acc":2,"tid":"{c[tid]}","event":"leave","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['away_message'], t=timestamp)
     client.publish(topic, data)
     data = '{{"_type":"location","tid":"{c[tid]}","acc":27,"conn":"w","doze":false,"lat":{m[latitude]},"lon":{m[longitude]},"tst":{t},"event":"leave","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['away_message'], t=timestamp)
