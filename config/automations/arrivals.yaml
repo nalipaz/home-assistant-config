@@ -2,7 +2,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    to: 'home'
+    to: 'Home'
   action:
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
@@ -16,7 +16,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    from: 'home'
+    from: 'Home'
     to: 'not_home'
   action:
     - service: switch.turn_off
@@ -29,7 +29,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    to: 'work'
+    to: 'Work'
   action:
     - service: switch.turn_off
       entity_id: switch.home_phone_nicholas
@@ -41,7 +41,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    from: 'work'
+    from: 'Work'
     to: 'not_home'
   action:
     - service: switch.turn_off
