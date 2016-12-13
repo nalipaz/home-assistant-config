@@ -10,7 +10,7 @@
         - condition: numeric_state
           entity_id: sun.sun
           value_template: '{{ state.attributes.elevation }}'
-          below: -3.30
+          below: -2.50
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
@@ -44,7 +44,7 @@
         - condition: numeric_state
           entity_id: sun.sun
           value_template: '{{ state.attributes.elevation }}'
-          above: -3.31
+          above: -2.51
         - condition: state
           entity_id: calendar.holiday_lighting
           state: 'on'
