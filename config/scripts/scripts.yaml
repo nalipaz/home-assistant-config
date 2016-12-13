@@ -19,7 +19,8 @@ away:
   alias: Away
   sequence:
     - alias: Away scene
-      service: scene.away
+      service: scene.turn_on
+      entity_id: scene.away
     - condition: state
       entity_id: switch.living_room_tv
       state: 'on'
