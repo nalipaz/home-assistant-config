@@ -1,0 +1,21 @@
+credentials:
+  username: redacted
+  password: redacted
+  certificate: /path/to/cert.crt
+  host: localhost
+  port: 8883
+  tid: m1
+
+message:
+  latitude: redacted
+  longitude: redacted
+  zone: Home
+
+away_message:
+  latitude: redacted
+  longitude: redacted
+  zone: Home
+
+commands:
+  lock: 'xautolock -locknow'
+  unlock: 'pkill i3lock && xautolock -unlocknow'

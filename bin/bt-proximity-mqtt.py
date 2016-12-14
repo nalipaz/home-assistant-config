@@ -15,7 +15,7 @@ client.connect(config['credentials']['host'], int(config['credentials']['port'])
 
 if len(sys.argv) > 1 and str(sys.argv[1]) == '-l':
     # Lock the screen
-    os.system("xautolock -locknow")
+    os.system(config['commands']['lock'])
     # Send updated mqtt message about location to hass
     data = '{{"_type":"transition","wtst":{t},"tst":{t},"lat":{m[latitude]},"lon":{m[longitude]},"acc":2,"tid":"{c[tid]}","event":"leave","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['away_message'], t=timestamp)
     client.publish(topic, data)
@@ -24,7 +24,7 @@ if len(sys.argv) > 1 and str(sys.argv[1]) == '-l':
 else:
     if str(sys.argv[1]) == '-u':
         # Unlock the screen
-        os.system("pkill i3lock && xautolock -unlocknow")
+        os.system(config['commands']['unlock'])
     data = '{{"_type":"transition","wtst":{t},"tst":{t},"lat":{m[latitude]},"lon":{m[longitude]},"acc":2,"tid":"{c[tid]}","event":"enter","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['message'], t=timestamp)
     client.publish(topic, data)
     data = '{{"_type":"location","tid":"{c[tid]}","acc":27,"conn":"w","doze":false,"lat":{m[latitude]},"lon":{m[longitude]},"tst":{t},"event":"enter","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['message'], t=timestamp)
