@@ -49,9 +49,6 @@
         - condition: state
           entity_id: input_select.theater_mode
           state: 'Always On'
-        - condition: state
-          entity_id: input_select.theater_mode
-          state: 'Disabled'
   action:
     - service: notify.html5
       data:
