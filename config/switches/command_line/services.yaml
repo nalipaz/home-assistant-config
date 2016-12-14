@@ -42,7 +42,8 @@ deluge_web:
   friendly_name: Deluge Web
 jackett:
   command_on: sudo systemctl start jackett
-  command_off: sudo systemctl stop jackett
+  # Jackett sometimes gets locked up, so we are a little forceful with stopping it.
+  command_off: 'sudo systemctl stop jackett && sleep 5 && pkill -f JackettConsole.exe'
   command_state: systemctl is-active jackett >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
