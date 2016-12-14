@@ -42,8 +42,6 @@ device_tracker.plex_na:
   friendly_name: "Nicholas"
 group.tools:
   order: 13
-switch.living_room_tv:
-  persistent: true
 input_boolean.home_phone_nicholas:
   persistent: true
 input_boolean.home_phone_tomoko:
