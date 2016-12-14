@@ -1,49 +1,49 @@
 plexmediaserver:
   command_on: sudo systemctl start plexmediaserver
   command_off: sudo systemctl stop plexmediaserver
-  command_state: systemctl is-active plexmediaserver
+  command_state: systemctl is-active plexmediaserver >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Plex Media Server
 headphones:
   command_on: sudo systemctl start headphones
   command_off: sudo systemctl stop headphones
-  command_state: systemctl is-active headphones
+  command_state: systemctl is-active headphones >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Headphones
 sonarr:
   command_on: sudo systemctl start sonarr
   command_off: sudo systemctl stop sonarr
-  command_state: systemctl is-active sonarr
+  command_state: systemctl is-active sonarr >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Sonarr
 couch_potato:
   command_on: sudo systemctl start couchpotato
   command_off: sudo systemctl stop couchpotato
-  command_state: systemctl is-active couchpotato
+  command_state: systemctl is-active couchpotato >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Couch Potato
 deluge_daemon:
   command_on: sudo systemctl start deluged
   command_off: sudo systemctl stop deluged
-  command_state: systemctl is-active deluged
+  command_state: systemctl is-active deluged >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Deluge Daemon
 deluge_web:
   command_on: sudo systemctl start deluge-web
   command_off: sudo systemctl stop deluge-web
-  command_state: systemctl is-active deluge-web
+  command_state: systemctl is-active deluge-web >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Deluge Web
 jackett:
   command_on: sudo systemctl start jackett
   command_off: sudo systemctl stop jackett
-  command_state: systemctl is-active jackett
+  command_state: systemctl is-active jackett >/dev/null 2>&1 && echo active || echo inactive
   value_template: >
     {{ value == 'active' }}
   friendly_name: Jackett
