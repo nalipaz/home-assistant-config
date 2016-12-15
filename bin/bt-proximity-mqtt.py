@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+## @file bt-proximity-mqtt.py
+#  Utility script to send zone info to an owntracks mqtt server on bluetooth detection with blueproximity in Linux.
+#
+#  The script does a couple things.
+#    1. When called it can send predefined zone information to an owntracks topic in an mqtt server.
+#    2. As an added bonus it integrates with a screen locker by sending a lock and unlock command.0
+#
+#  Configuration is stored in a separate `~/.proximity` file. An example of the file is provided in this repo under
+#    `example-configs/.proximity`
+#  @see example-configs/.proximity
+
 from __future__ import print_function
 import paho.mqtt.client as mqtt
 import sys,os,yaml,getpass,time,subprocess
