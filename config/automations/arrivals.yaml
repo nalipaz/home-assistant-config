@@ -16,7 +16,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    to: 'Work'
+    to: 'work'
   action:
     - service: switch.turn_off
       entity_id: switch.home_phone_nicholas
