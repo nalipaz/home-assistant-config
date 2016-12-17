@@ -36,6 +36,8 @@ else:
     if str(sys.argv[1]) == '-u':
         # Unlock the screen
         os.system(config['commands']['unlock'])
+        # Wake up monitors
+        os.system(config['commands']['wake_monitors'])
     data = '{{"_type":"transition","wtst":{t},"tst":{t},"lat":{m[latitude]},"lon":{m[longitude]},"acc":2,"tid":"{c[tid]}","event":"enter","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['message'], t=timestamp)
     client.publish(topic, data)
     data = '{{"_type":"location","tid":"{c[tid]}","acc":27,"conn":"w","doze":false,"lat":{m[latitude]},"lon":{m[longitude]},"tst":{t},"event":"enter","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['message'], t=timestamp)
