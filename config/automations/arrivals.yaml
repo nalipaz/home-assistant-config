@@ -2,7 +2,7 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-    to: 'Home'
+    to: 'home'
   action:
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
