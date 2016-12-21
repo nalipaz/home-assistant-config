@@ -1,0 +1,10 @@
+- alias: "Girl's Bedtime"
+  trigger:
+    - platform: time
+      hours: 20
+    - platform: time
+      hours: 20
+      minutes: 30
+  action:
+    - service: script.turn_on
+      entity_id: script.toggle_lights
