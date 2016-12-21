@@ -1,9 +1,9 @@
-toggle_lights:
-  alias: Toggle Lights
-  sequence:
-    - service: light.toggle
-      entity_id: light.livingroomlights_level_2_0
-    - delay:
-        seconds: 3
-    - service: light.toggle
-      entity_id: light.livingroomlights_level_2_0
+#toggle_lights:
+#  alias: Toggle Lights
+#  sequence:
+#    - service: light.toggle
+#      entity_id: light.livingroomlights_level_2_0
+#    - delay:
+#        seconds: 3
+#    - service: light.toggle
+#      entity_id: light.livingroomlights_level_2_0
