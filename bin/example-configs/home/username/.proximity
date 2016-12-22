@@ -17,7 +17,7 @@ away_message:
   zone: Home
 
 commands:
-  lock_daemon: 'xautolock -time 1 -locker "i3lock -c 2a2a2a -i /home/nalipaz/Pictures/wallpapers/bl-flame-text-1920x1080-centre-blue.png" &'
+  lock_daemon: 'xautolock -time 1 -locker "i3lock -c 2a2a2a -i /home/username/path/to/an/image.png" &'
   lock: 'sleep 1 && xautolock -locknow'
   unlock: 'pkill i3lock && xautolock -unlocknow'
   wake_monitors: 'xset -display ${DISPLAY} dpms force on'
