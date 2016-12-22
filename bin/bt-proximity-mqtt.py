@@ -33,7 +33,7 @@ if len(sys.argv) > 1 and str(sys.argv[1]) == '-l':
     data = '{{"_type":"location","tid":"{c[tid]}","acc":27,"conn":"w","doze":false,"lat":{m[latitude]},"lon":{m[longitude]},"tst":{t},"event":"leave","desc":"{m[zone]}","t":"c"}}'.format(c=config['credentials'], m=config['away_message'], t=timestamp)
     client.publish(topic, data)
 else:
-    if str(sys.argv[1]) == '-u':
+    if len(sys.argv) > 1 and str(sys.argv[1]) == '-u':
         # Unlock the screen
         os.system(config['commands']['unlock'])
         # Wake up monitors
