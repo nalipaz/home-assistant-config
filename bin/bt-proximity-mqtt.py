@@ -25,6 +25,8 @@ client.tls_set(config['credentials']['certificate'])
 client.connect(config['credentials']['host'], int(config['credentials']['port']), 60)
 
 if len(sys.argv) > 1 and str(sys.argv[1]) == '-l':
+    # Put lock daemon starting into a separate command since it can error if daemon is already up for some lockers.
+    os.system(config['commands']['lock_daemon'])
     # Lock the screen
     os.system(config['commands']['lock'])
     # Send updated mqtt message about location to hass
