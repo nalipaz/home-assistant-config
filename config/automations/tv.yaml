@@ -23,7 +23,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: {{ states.media_player.tv_un55h6300.attributes.media_title }} now playing on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
+        message: "{{ states('sensor.now') }}: {{ states.media_player.tv_un55h6300.attributes.media_title }} now playing on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
         title: "Plex playing {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
         data:
           tag: "plex"
@@ -52,7 +52,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: {{ states.media_player.tv_un55h6300.attributes.media_title }} now {{ states('media_player.tv_un55h6300') }} on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
+        message: "{{ states('sensor.now') }}: {{ states.media_player.tv_un55h6300.attributes.media_title }} now {{ states('media_player.tv_un55h6300') }} on the {{ states.media_player.tv_un55h6300.attributes.friendly_name }}"
         title: "Plex {{ states('media_player.tv_un55h6300') }} {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
         data:
           tag: "plex"

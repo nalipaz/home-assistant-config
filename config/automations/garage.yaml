@@ -15,7 +15,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
+        message: "{{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
           tag: "garage"
