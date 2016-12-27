@@ -43,7 +43,7 @@
 #  action:
 #    - service: notify.html5
 #      data:
-#        message: "{{ sensor.los_angeles.state }}: Nicholas is now {{ trigger.state }}"
+#        message: "{{ timestamp_custom('%I:%M %p') }}: Nicholas is now {{ trigger.state }}"
 #        title: "{{ trigger.to }}"
 #        data:
 #          tag: "arrivals"

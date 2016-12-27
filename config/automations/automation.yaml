@@ -8,7 +8,7 @@
     - service: notify.html5
       data:
 #        message: "The video is now {{ states.media_player.tv_un55h6300.state }}."
-        message: "{{ sensor.los_angeles.state }}: The video {{ states.media_player.rasplex.media_series_title }} is now {{ states.media_player.rasplex.state }}."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The video {{ states.media_player.rasplex.media_series_title }} is now {{ states.media_player.rasplex.state }}."
 #        title: "Plex: {{ states.media_player.tv_un55h6300.attributes.media_title }}"
         title: "RasPlex: {{ states.media_player.rasplex.attributes.media_title }}"
         data:

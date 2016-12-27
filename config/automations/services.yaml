@@ -6,7 +6,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Plex Media Server has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Plex Media Server has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Plex Media Server"
 - alias: "Headphones Stopped"
   trigger:
@@ -16,7 +16,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Headphones daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Headphones daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Headphones"
 - alias: "Sonarr Stopped"
   trigger:
@@ -26,7 +26,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Sonarr daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Sonarr daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Sonarr"
 - alias: "Couch Potato Stopped"
   trigger:
@@ -36,7 +36,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Couch Potato daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Couch Potato daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Couch Potato"
 #    - service: switch.turn_on
 #      entity_id: switch.couch_potato
@@ -48,7 +48,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Deluge daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Deluge daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Deluge"
 - alias: "Deluge Web Stopped"
   trigger:
@@ -58,7 +58,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Deluge Web daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Deluge Web daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Deluge Web"
 - alias: "Jackett Stopped"
   trigger:
@@ -68,5 +68,5 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ sensor.los_angeles.state }}: The Jackett daemon has stopped! Please check it's status and/or restart it."
+        message: "{{ timestamp_custom('%I:%M %p') }}: The Jackett daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Jackett"
