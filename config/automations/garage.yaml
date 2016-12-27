@@ -15,7 +15,7 @@
   action:
     - service: notify.html5
       data:
-        message: "The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
+        message: "{{ sensor.los_angeles.state }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
           tag: "garage"

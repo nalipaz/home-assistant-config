@@ -36,3 +36,14 @@
       entity_id: switch.work_phone_nicholas
     - service: switch.turn_on
       entity_id: switch.mobile_phone_nicholas
+- alias: "Nicholas location change"
+  trigger:
+    platform: state
+    entity_id: device_tracker.plex_na
+  action:
+    - service: notify.html5
+      data:
+        message: "{{ sensor.los_angeles.state }}: Nicholas is now {{ trigger.state }}"
+        title: "{{ trigger.to }}"
+        data:
+          tag: "arrivals"
