@@ -24,6 +24,13 @@
 - platform: worldclock
   time_zone: Asia/Tokyo
   name: tokyo
+- platform: template
+  sensors:
+    now:
+      value_template: '{{ as_timestamp(now()) | timestamp_custom("%-I:%M %p") }}'
+      friendly_name: 'Local Time'
+      entity_id:
+        - sensor.los_angeles
 #- platform: command_line
 #  name: Plex Title
 #  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token= | xmlstarlet sel -t -v '//Video/@grandparentTitle'"
