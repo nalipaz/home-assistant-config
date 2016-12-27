@@ -22,7 +22,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ timestamp_custom('%I:%M %p') }}: Turned on the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
+        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: Turned on the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
@@ -56,7 +56,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ timestamp_custom('%I:%M %p') }}: Turned off the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
+        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: Turned off the {{ states.calendar.holiday_lighting.attributes.message }} lights. {{ states.calendar.holiday_lighting.attributes.description }}"
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
@@ -74,7 +74,7 @@
   action:
     - service: notify.html5
       data:
-        message: "{{ timestamp_custom('%I:%M %p') }}: All lights and switches are now set to their normal states."
+        message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}: All lights and switches are now set to their normal states."
         title: "Holiday over"
         data:
           tag: "holiday_lighting"
