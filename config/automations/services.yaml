@@ -53,7 +53,7 @@
 - alias: "Deluge Web Stopped"
   trigger:
     platform: state
-    entity_id: switch.delugeweb
+    entity_id: switch.deluge_web
     to: 'off'
   action:
     - service: notify.html5
