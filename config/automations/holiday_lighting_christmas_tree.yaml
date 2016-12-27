@@ -1,86 +1,86 @@
-- alias: "Christmas Tree On"
-  trigger:
-    - platform: event
-      event_type: state_changed
-      event_data:
-        entity_id: sun.sun
-    - platform: event
-      event_type: state_changed
-      event_data:
-        entity_id: light.livingroomlights_level_2_0
-  condition:
-    - condition: and
-      conditions:
-        - condition: and
-          conditions:
-            - condition: state
-              entity_id: calendar.holiday_lighting
-              state: 'on'
-            - condition: template
-              value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
-            - condition: or
-              conditions:
-                - condition: state
-                  entity_id: input_select.christmas_tree
-                  state: 'Off'
-                - condition: state
-                  entity_id: input_select.christmas_tree
-                  state: 'Manually Off'
-        - condition: or
-          conditions:
-            - condition: numeric_state
-              entity_id: sun.sun
-              value_template: '{{ state.attributes.elevation }}'
-              below: -2.50
-            - condition: and
-              conditions:
-                - condition: numeric_state
-                  entity_id: sun.sun
-                  value_template: '{{ state.attributes.elevation }}'
-                  above: -3.31
-                - condition: template
-                  value_template: "{{ trigger.event.state == 'off' }}"
-  action:
-    - service_template: switch.turn_on
-      data:
-        entity_id: switch.diningoutlet_switch_4_0
-    - entity_id: input_boolean.christmas_tree
-      state: 'On'
-- alias: "Christmas Tree Off"
-  trigger:
-    - platform: event
-      event_type: state_changed
-      event_data:
-        entity_id: sun.sun
-    - platform: event
-      event_type: state_changed
-      event_data:
-        entity_id: light.livingroomlights_level_2_0
-  condition:
-    - condition: and
-      conditions:
-        - condition: and
-          conditions:
-            - condition: state
-              entity_id: calendar.holiday_lighting
-              state: 'on'
-            - condition: template
-              value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
-            - condition: state
-              entity_id: input_boolean.christmas_tree
-              state: 'on'
-        - condition: and
-          conditions:
-            - condition: numeric_state
-              entity_id: sun.sun
-              value_template: '{{ state.attributes.elevation }}'
-              above: -2.51
-            - condition: template
-              value_template: "{{ trigger.event.state == 'on' }}"
-  action:
-    - service_template: switch.turn_off
-      data:
-        entity_id: switch.diningoutlet_switch_4_0
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.christmas_tree
+#- alias: "Christmas Tree On"
+#  trigger:
+#    - platform: event
+#      event_type: state_changed
+#      event_data:
+#        entity_id: sun.sun
+#    - platform: event
+#      event_type: state_changed
+#      event_data:
+#        entity_id: light.livingroomlights_level_2_0
+#  condition:
+#    - condition: and
+#      conditions:
+#        - condition: and
+#          conditions:
+#            - condition: state
+#              entity_id: calendar.holiday_lighting
+#              state: 'on'
+#            - condition: template
+#              value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
+#            - condition: or
+#              conditions:
+#                - condition: state
+#                  entity_id: input_select.christmas_tree
+#                  state: 'Off'
+#                - condition: state
+#                  entity_id: input_select.christmas_tree
+#                  state: 'Manually Off'
+#        - condition: or
+#          conditions:
+#            - condition: numeric_state
+#              entity_id: sun.sun
+#              value_template: '{{ state.attributes.elevation }}'
+#              below: -2.50
+#            - condition: and
+#              conditions:
+#                - condition: numeric_state
+#                  entity_id: sun.sun
+#                  value_template: '{{ state.attributes.elevation }}'
+#                  above: -3.31
+#                - condition: template
+#                  value_template: "{{ trigger.event.state == 'off' }}"
+#  action:
+#    - service_template: switch.turn_on
+#      data:
+#        entity_id: switch.diningoutlet_switch_4_0
+#    - entity_id: input_boolean.christmas_tree
+#      state: 'On'
+#- alias: "Christmas Tree Off"
+#  trigger:
+#    - platform: event
+#      event_type: state_changed
+#      event_data:
+#        entity_id: sun.sun
+#    - platform: event
+#      event_type: state_changed
+#      event_data:
+#        entity_id: light.livingroomlights_level_2_0
+#  condition:
+#    - condition: and
+#      conditions:
+#        - condition: and
+#          conditions:
+#            - condition: state
+#              entity_id: calendar.holiday_lighting
+#              state: 'on'
+#            - condition: template
+#              value_template: "{{ states.calendar.holiday_lighting.attributes.message == 'Christmas' }}"
+#            - condition: state
+#              entity_id: input_boolean.christmas_tree
+#              state: 'on'
+#        - condition: and
+#          conditions:
+#            - condition: numeric_state
+#              entity_id: sun.sun
+#              value_template: '{{ state.attributes.elevation }}'
+#              above: -2.51
+#            - condition: template
+#              value_template: "{{ trigger.event.state == 'on' }}"
+#  action:
+#    - service_template: switch.turn_off
+#      data:
+#        entity_id: switch.diningoutlet_switch_4_0
+#    - service: input_boolean.turn_off
+#      data:
+#        entity_id: input_boolean.christmas_tree
