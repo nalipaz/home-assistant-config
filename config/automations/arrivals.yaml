@@ -17,13 +17,12 @@
       entity_id: switch.mobile_phone_nicholas
 - alias: "Nicholas arrives at work"
   trigger:
-    platform: state
-    entity_id: device_tracker.plex_na
-    to: 'Work'
-  trigger:
-    platform: state
-    entity_id: device_tracker.plex_na
-    to: 'work'
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'Work'
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'work'
   action:
     - service: switch.turn_off
       entity_id: switch.home_phone_nicholas
