@@ -1,8 +1,11 @@
 - alias: "Nicholas arrives at home"
   trigger:
-    platform: state
-    entity_id: device_tracker.plex_na
-    to: 'Home'
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'Home'
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'home'
   action:
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
@@ -17,6 +20,10 @@
     platform: state
     entity_id: device_tracker.plex_na
     to: 'Work'
+  trigger:
+    platform: state
+    entity_id: device_tracker.plex_na
+    to: 'work'
   action:
     - service: switch.turn_off
       entity_id: switch.home_phone_nicholas
