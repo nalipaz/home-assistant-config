@@ -30,6 +30,8 @@
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}_{{ states('input_select.theater_style')|lower|replace(' ', '_') }}_{{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+    - service: script.turn_on
+      entity_id: script.plex_show
 - alias: Living room tv paused/stopped
   trigger:
     - platform: state
@@ -58,11 +60,3 @@
           tag: "plex"
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
-- alias: Plex title
-  trigger:
-    - platform: state
-      entity_id: media_player.tv_un55h6300
-      to: 'playing'
-  action:
-    - service: script.turn_on
-      entity_id: script.plex_show
