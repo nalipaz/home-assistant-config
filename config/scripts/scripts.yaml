@@ -32,4 +32,5 @@ away:
 plex_show:
   alias: Plex Show
   sequence:
-    - service: shell_command.plex_show
+    - alias: Plex Show
+      service: shell_command.plex_show
