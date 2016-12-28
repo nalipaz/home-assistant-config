@@ -31,7 +31,7 @@ def setup(hass, config):
     # Service to publish a message on MQTT.
     def set_state_service(call):
         """Service to send a message."""
-        mqtt.publish(hass, topic, os.popen("curl -s http://127.0.0.1:32400/library/metadata/" +  hass.states.get('media_player.tv_un55h6300.attributes.media_content_id') + "?X-Plex-Token=" + hass.states.get('sensor.plex_token') + " | xmlstarlet sel -t -v '//Video/@grandparentTitle' | mosquitto_pub -t plex/title -s").read())
+        mqtt.publish(hass, topic, os.popen("curl -s http://127.0.0.1:32400/library/metadata/" +  str(hass.states.get('media_player.tv_un55h6300.attributes.media_content_id')) + "?X-Plex-Token=" + str(hass.states.get('sensor.plex_token')) + " | xmlstarlet sel -t -v '//Video/@grandparentTitle' | mosquitto_pub -t plex/title -s").read())
 
     # Register our service with Home Assistant.
     hass.services.register(DOMAIN, 'set_state', set_state_service)
