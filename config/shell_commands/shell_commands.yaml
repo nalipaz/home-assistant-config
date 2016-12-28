@@ -1,5 +1,5 @@
-plex_show: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.now') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle')"
-#plex_title: "echo $(curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.now') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle') > /tmp/media_player.rasplex.title.txt"
+plex_show: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.tv_un55h6300.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle')"
+#plex_title: "echo $(curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle') > /tmp/media_player.rasplex.title.txt"
 reboot_server: 'sudo shutdown -r now'
 hass_git_pull: 'cd /home/plex/.homeassistant/ && git pull'
 phone_nicholas_home_enable: 'gv-phone.py enable nicholas_home'
