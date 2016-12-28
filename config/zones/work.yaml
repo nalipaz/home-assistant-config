@@ -1,5 +1,6 @@
 name: Work
 latitude: !secret latitude_work
 longitude: !secret longitude_work
-radius: 5
+radius: 3
 icon: mdi:domain
+passive: true
