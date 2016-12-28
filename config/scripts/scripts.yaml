@@ -29,3 +29,7 @@ away:
     - alias: Turn off TV
       service: switch.turn_off
       entity_id: switch.living_room_tv
+plex_show:
+  alias: Plex Show
+  sequence:
+    - service: shell_command.plex_show

@@ -1,4 +1,4 @@
-plex_show: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.tv_un55h6300.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle')"
+plex_show: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.tv_un55h6300.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle') | mosquitto_pub -t plex/title -s"
 #plex_title: "echo $(curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle') > /tmp/media_player.rasplex.title.txt"
 reboot_server: 'sudo shutdown -r now'
 hass_git_pull: 'cd /home/plex/.homeassistant/ && git pull'

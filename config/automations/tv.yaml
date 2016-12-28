@@ -58,3 +58,11 @@
           tag: "plex"
     - service: scene.turn_on
       entity_id: scene.livingroom_normal
+- alias: Plex title
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_un55h6300
+      to: 'playing'
+  action:
+    - service: script.turn_on
+      entity_id: script.plex_show
