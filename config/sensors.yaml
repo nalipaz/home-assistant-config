@@ -31,9 +31,9 @@
       friendly_name: 'Local Time'
       entity_id:
         - sensor.los_angeles
-    plex_token:
-      value: !secret plex_token
-      friendly_name: 'Plex Token'
+#    plex_token:
+#      value: !secret plex_token
+#      friendly_name: 'Plex Token'
 #- platform: command_line
 #  name: Plex Title
 #  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token= | xmlstarlet sel -t -v '//Video/@grandparentTitle'"
