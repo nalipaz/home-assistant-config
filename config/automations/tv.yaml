@@ -31,7 +31,6 @@
       data_template:
         entity_id: "scene.theater_mode_{{ states('input_select.theater_mode')|lower|replace(' ', '_') }}_{{ states('input_select.theater_style')|lower|replace(' ', '_') }}_{{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
     - service: plex_title_mqtt.set_state
-      data:
 - alias: Living room tv paused/stopped
   trigger:
     - platform: state
