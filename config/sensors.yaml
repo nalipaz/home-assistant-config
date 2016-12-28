@@ -34,8 +34,8 @@
     plex_token:
       value_template: !secret plex_token
       friendly_name: 'Plex Token'
-    plex_title:
-      value_template: shell_command.plex_show
-#- platform: command_line
-#  name: Plex Title
-#  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.rasplex.attributes.media_content_id }}?X-Plex-Token= | xmlstarlet sel -t -v '//Video/@grandparentTitle'"
+#    plex_title:
+#      value_template: shell_command.plex_show
+- platform: command_line
+  name: Plex Title
+  command: "curl -s http://localhost:32400/library/metadata/{{ states.media_player.tv_un55h6300.attributes.media_content_id }}?X-Plex-Token={{ states('sensor.plex_token') }} | xmlstarlet sel -t -v '//Video/@grandparentTitle')"
