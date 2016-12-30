@@ -16,8 +16,8 @@
       hours: 20
       minutes: 20
       seconds: 15
-    - platform: time
-      seconds: 00
+#    - platform: time
+#      seconds: 00
   action:
     - service_template: "input_boolean.turn_{{ states('light.livingroomlights_level_2_0') }}"
       entity_id: input_boolean.girls_bedtime_living_lights
