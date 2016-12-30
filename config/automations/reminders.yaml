@@ -2,28 +2,24 @@
   trigger:
     - platform: time
       hours: 20
-      minutes: 00
-      seconds: 00
+      minutes: 0
+      seconds: 0
     - platform: time
       hours: 20
-      minutes: 00
+      minutes: 0
       seconds: 15
     - platform: time
       hours: 20
       minutes: 20
-      seconds: 00
+      seconds: 0
     - platform: time
       hours: 20
       minutes: 20
       seconds: 15
     - platform: time
-      hours: 00
-      minutes: 58
-      seconds: 00
+      seconds: 0
     - platform: time
-      hours: 00
-      minutes: 58
-      seconds: 15
+      seconds: 20
   action:
     - service: light.toggle
       entity_id: light.livingroomlights_level_2_0
