@@ -9,8 +9,5 @@
       minutes: 30
       seconds: 00
   action:
-    - service:
-        service: homeassistant.turn_on
-        variables:
-          light_state: "{{ states(light.livingroomlights_level_2_0) }}"
+    - service: homeassistant.turn_on
       entity_id: script.toggle_lights
