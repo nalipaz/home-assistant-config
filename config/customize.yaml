@@ -52,6 +52,8 @@ input_boolean.mobile_phone_tomoko:
   persistent: true
 input_boolean.work_phone_nicholas:
   persistent: true
+input_boolean.girls_bedtime_living_lights:
+  persistent: true
 input_select.theater_style:
   persistent: true
 input_select.theater_mode:
