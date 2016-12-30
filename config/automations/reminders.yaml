@@ -11,3 +11,6 @@
   action:
     - service: script.turn_on
       entity_id: script.toggle_lights
+      data:
+        variables:
+          light_state: {{ states(light.livingroomlights_level_2_0) }}

@@ -5,5 +5,5 @@ toggle_lights:
       entity_id: light.livingroomlights_level_2_0
     - delay:
         seconds: 7
-    - service: light.toggle
+    - service_template: "light.turn_{{ light_state }}"
       entity_id: light.livingroomlights_level_2_0
