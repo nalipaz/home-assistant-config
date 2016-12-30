@@ -4,6 +4,6 @@ toggle_lights:
     - service: light.toggle
       entity_id: light.livingroomlights_level_2_0
     - delay:
-        seconds: 5
+        seconds: 7
     - service: light.toggle
       entity_id: light.livingroomlights_level_2_0
