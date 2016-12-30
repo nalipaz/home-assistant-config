@@ -9,7 +9,7 @@
       minutes: 30
       seconds: 00
   action:
-    - service: script.turn_on
+    - service: homeassistant.turn_on
       entity_id: script.toggle_lights
       data:
         variables:
