@@ -2,4 +2,4 @@
   name: Garage Door
   username: !secret myq_username
   password: !secret myq_password
-  brand: chamberlain
+  type: chamberlain

@@ -1,6 +1,3 @@
-[submodule "submodules/myq"]
-	path = submodules/myq
-	url = https://github.com/arraylabs/myq.git
 [submodule "submodules/dale3h-homeassistant-config"]
 	path = submodules/dale3h-homeassistant-config
 	url = https://github.com/dale3h/homeassistant-config.git
