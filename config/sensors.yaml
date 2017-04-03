@@ -39,3 +39,26 @@
 - platform: mqtt
   name: Plex Title
   state_topic: "plex/title"
+- platform: ups
+  username: !secret ups_username
+  password: !secret ups_password
+  name: UPS Delivery
+- platform: fedex
+  username: !secret fedex_username
+  password: !secret fedex_password
+  name: Fedex Delivery
+- platform: usps
+  username: !secret usps_username
+  password: !secret usps_password
+  name: USPS Delivery
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /media/drives
+    - type: memory_free
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: pi_hole
