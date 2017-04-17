@@ -1,6 +1,6 @@
-- name: Non-Holiday Lighting
-  entities:
-    switch.diningoutlet_switch_4_0:
-      state: on
-    switch.outsideoutlet_switch_5_0:
-      state: off
+name: Non-Holiday Lighting
+entities:
+  switch.diningoutlet_switch_4_0:
+    state: on
+  switch.outsideoutlet_switch_5_0:
+    state: off
