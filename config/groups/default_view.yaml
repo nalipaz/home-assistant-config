@@ -1,6 +1,6 @@
 default_view:
   view: yes
-  icon: mdi:house
+  icon: mdi:home
   entities:
     - group.servers
     - group.switches
