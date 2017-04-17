@@ -1,28 +1,28 @@
-name: Livingroom normal
-entities:
-  light.livingroomlights_level_2_0:
-    state: on
-    brightness: 255
-name: Livingroom dim
-entities:
-  light.livingroomlights_level_2_0:
-    state: on
-    brightness: 75
-name: Livingroom dark
-entities:
-  light.livingroomlights_level_2_0:
-    state: off
-name: Away
-entities:
-  light.livingroomlights_level_2_0:
-    state: off
-  cover.garage_door:
-    state: closed
-name: Nicholas Mobile Phone Only
-entities:
-  switch.home_phone_nicholas:
-    state: off
-  switch.mobile_phone_nicholas:
-    state: on
-  switch.work_phone_nicholas:
-    state: off
+- name: Livingroom normal
+  entities:
+    light.livingroomlights_level_2_0:
+      state: on
+      brightness: 255
+- name: Livingroom dim
+  entities:
+    light.livingroomlights_level_2_0:
+      state: on
+      brightness: 75
+- name: Livingroom dark
+  entities:
+    light.livingroomlights_level_2_0:
+      state: off
+- name: Away
+  entities:
+    light.livingroomlights_level_2_0:
+      state: off
+    cover.garage_door:
+      state: closed
+- name: Nicholas Mobile Phone Only
+  entities:
+    switch.home_phone_nicholas:
+      state: off
+    switch.mobile_phone_nicholas:
+      state: on
+    switch.work_phone_nicholas:
+      state: off

@@ -1,92 +1,92 @@
-name: Holiday Lighting Christmas On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting New Years On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Martin Luther King Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Valentines Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Lincolns Birthday On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Presidents Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting St Patricks Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Spring Equinox On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Easter On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Earth Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Cinco de Mayo On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Mothers Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Armed Forces Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Memorial Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Flag Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Fathers Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Independence Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Patriot Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Citizenship Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Autumn Equinox On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Halloween On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Veterans Day On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
-name: Holiday Lighting Thanksgiving On
-entities:
-  switch.outsideoutlet_switch_5_0:
-    state: on
+- name: Holiday Lighting Christmas On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting New Years On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Martin Luther King Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Valentines Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Lincolns Birthday On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Presidents Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting St Patricks Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Spring Equinox On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Easter On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Earth Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Cinco de Mayo On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Mothers Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Armed Forces Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Memorial Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Flag Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Fathers Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Independence Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Patriot Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Citizenship Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Autumn Equinox On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Halloween On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Veterans Day On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
+- name: Holiday Lighting Thanksgiving On
+  entities:
+    switch.outsideoutlet_switch_5_0:
+      state: on
