@@ -17,6 +17,9 @@
 /*.crt
 /*.key
 /html5_push_registrations.conf
+/*.pickle
+/*.pyc
+__pycache__
 
 /states/*
 !/states/.gitkeep
