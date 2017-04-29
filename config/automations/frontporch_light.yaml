@@ -15,8 +15,10 @@
         entity_id: switch.frontporchlight_switch_3_0
         state: 'off'
   action:
-    service: switch.turn_on
-    entity_id: switch.frontporchlight_switch_3_0
+    - service: switch.turn_on
+      entity_id: switch.frontporchlight_switch_3_0
+    - service: switch.turn_off
+      entity_id: switch.outsideoutlet_switch_5_0
 - alias: "Turn Front Porch Lights Off"
   trigger:
     platform: event
@@ -34,8 +36,10 @@
         entity_id: switch.frontporchlight_switch_3_0
         state: 'on'
   action:
-    service: switch.turn_off
-    entity_id: switch.frontporchlight_switch_3_0
+    - service: switch.turn_off
+      entity_id: switch.frontporchlight_switch_3_0
+    - service: switch.turn_on
+      entity_id: switch.outsideoutlet_switch_5_0
 - alias: "Ensure Front Porch Lights Stay On"
   trigger:
     - platform: state
