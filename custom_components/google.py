@@ -18,7 +18,7 @@ from voluptuous.error import Error as VoluptuousError
 
 import homeassistant.helpers.config_validation as cv
 import homeassistant.loader as loader
-from homeassistant.setup import setup_component
+from homeassistant import bootstrap
 from homeassistant.helpers import discovery
 from homeassistant.helpers.entity import generate_entity_id
 from homeassistant.helpers.event import track_time_change
@@ -160,7 +160,7 @@ def do_authentication(hass, config):
 
 
 def setup(hass, config):
-    """Set up the Google platform."""
+    """Setup the platform."""
     if DATA_INDEX not in hass.data:
         hass.data[DATA_INDEX] = {}
 
@@ -176,7 +176,7 @@ def setup(hass, config):
 
 
 def setup_services(hass, track_new_found_calendars, calendar_service):
-    """Set up the service listeners."""
+    """Setup service listeners."""
     def _found_calendar(call):
         """Check if we know about a calendar and generate PLATFORM_DISCOVER."""
         calendar = get_calendar_info(hass, call.data)
@@ -216,7 +216,7 @@ def setup_services(hass, track_new_found_calendars, calendar_service):
 
 def do_setup(hass, config):
     """Run the setup after we have everything configured."""
-    # Load calendars the user has configured
+    # load calendars the user has configured
     hass.data[DATA_INDEX] = load_config(hass.config.path(YAML_DEVICES))
 
     calendar_service = GoogleCalendarService(hass.config.path(TOKEN_FILE))
@@ -225,21 +225,21 @@ def do_setup(hass, config):
     setup_services(hass, track_new_found_calendars, calendar_service)
 
     # Ensure component is loaded
-    setup_component(hass, 'calendar', config)
+    bootstrap.setup_component(hass, 'calendar', config)
 
     for calendar in hass.data[DATA_INDEX].values():
         discovery.load_platform(hass, 'calendar', DOMAIN, calendar)
 
-    # Look for any new calendars
+    # look for any new calendars
     hass.services.call(DOMAIN, SERVICE_SCAN_CALENDARS, None)
     return True
 
 
 class GoogleCalendarService(object):
-    """Calendar service interface to Google."""
+    """Calendar service interface to google."""
 
     def __init__(self, token_file):
-        """Init the Google Calendar service."""
+        """We just need the token_file."""
         self.token_file = token_file
 
     def get(self):
@@ -249,8 +249,8 @@ class GoogleCalendarService(object):
         from googleapiclient import discovery as google_discovery
         credentials = Storage(self.token_file).get()
         http = credentials.authorize(httplib2.Http())
-        service = google_discovery.build(
-            'calendar', 'v3', http=http, cache_discovery=False)
+        service = google_discovery.build('calendar', 'v3', http=http,
+                                         cache_discovery=False)
         return service
 
 
@@ -261,8 +261,8 @@ def get_calendar_info(hass, calendar):
         CONF_ENTITIES: [{
             CONF_TRACK: calendar['track'],
             CONF_NAME: calendar['summary'],
-            CONF_DEVICE_ID: generate_entity_id(
-                '{}', calendar['summary'], hass=hass),
+            CONF_DEVICE_ID: generate_entity_id('{}', calendar['summary'],
+                                               hass=hass),
         }]
     })
     return calendar_info
@@ -277,10 +277,10 @@ def load_config(path):
             for calendar in data:
                 try:
                     calendars.update({calendar[CONF_CAL_ID]:
-                                      DEVICE_SCHEMA(calendar)})
+                                          DEVICE_SCHEMA(calendar)})
                 except VoluptuousError as exception:
                     # keep going
-                    _LOGGER.warning("Calendar Invalid Data: %s", exception)
+                    _LOGGER.warning('Calendar Invalid Data: %s', exception)
     except FileNotFoundError:
         # When YAML file could not be loaded/did not contain a dict
         return {}

@@ -1,295 +1,189 @@
 """
-Support for Google - Calendar Event Devices.
+Support for Google Calendar event device sensors.
 
 For more details about this platform, please refer to the documentation at
-https://home-assistant.io/components/google/
-
-NOTE TO OTHER DEVELOPERS: IF YOU ADD MORE SCOPES TO THE OAUTH THAN JUST
-CALENDAR THEN USERS WILL NEED TO DELETE THEIR TOKEN_FILE. THEY WILL LOSE THEIR
-REFRESH_TOKEN PIECE WHEN RE-AUTHENTICATING TO ADD MORE API ACCESS
-IT'S BEST TO JUST HAVE SEPARATE OAUTH FOR DIFFERENT PIECES OF GOOGLE
+https://home-assistant.io/components/calendar/
 """
+import asyncio
 import logging
-import os
-import yaml
+from datetime import timedelta
 
-import voluptuous as vol
-from voluptuous.error import Error as VoluptuousError
+import re
 
-import homeassistant.helpers.config_validation as cv
-import homeassistant.loader as loader
-from homeassistant.setup import setup_component
-from homeassistant.helpers import discovery
-from homeassistant.helpers.entity import generate_entity_id
-from homeassistant.helpers.event import track_time_change
-from homeassistant.util import convert, dt
-
-REQUIREMENTS = [
-    'google-api-python-client==1.6.2',
-    'oauth2client==4.0.0',
-]
+from homeassistant.components.google import (CONF_OFFSET,
+                                             CONF_DEFAULT_OFFSET_TIME,
+                                             CONF_DEVICE_ID,
+                                             CONF_NAME)
+from homeassistant.const import STATE_OFF, STATE_ON
+from homeassistant.helpers.config_validation import time_period_str
+from homeassistant.helpers.entity import Entity, generate_entity_id
+from homeassistant.helpers.entity_component import EntityComponent
+from homeassistant.helpers.template import DATE_STR_FORMAT
+from homeassistant.util import dt
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = 'google'
+SCAN_INTERVAL = timedelta(seconds=60)
+DOMAIN = 'calendar'
 ENTITY_ID_FORMAT = DOMAIN + '.{}'
 
-CONF_CLIENT_ID = 'client_id'
-CONF_CLIENT_SECRET = 'client_secret'
-CONF_TRACK_NEW = 'track_new_calendar'
 
-CONF_CAL_ID = 'cal_id'
-CONF_DEVICE_ID = 'device_id'
-CONF_NAME = 'name'
-CONF_ENTITIES = 'entities'
-CONF_TRACK = 'track'
-CONF_SEARCH = 'search'
-CONF_OFFSET = 'offset'
-CONF_DEFAULT_OFFSET_TIME = 'default_offset_time'
+@asyncio.coroutine
+def async_setup(hass, config):
+    """Track states and offer events for calendars."""
+    component = EntityComponent(
+        logging.getLogger(__name__), DOMAIN, hass, SCAN_INTERVAL, DOMAIN)
+
+    yield from component.async_setup(config)
+    return True
+
 
 DEFAULT_CONF_TRACK_NEW = True
 DEFAULT_CONF_OFFSET = '!!'
 
-NOTIFICATION_ID = 'google_calendar_notification'
-NOTIFICATION_TITLE = 'Google Calendar Setup'
-GROUP_NAME_ALL_CALENDARS = "Google Calendar Sensors"
 
-SERVICE_SCAN_CALENDARS = 'scan_for_calendars'
-SERVICE_FOUND_CALENDARS = 'found_calendar'
+# pylint: disable=too-many-instance-attributes
+class CalendarEventDevice(Entity):
+    """A calendar event device."""
 
-DATA_INDEX = 'google_calendars'
+    # Classes overloading this must set data to an object
+    # with an update() method
+    data = None
 
-YAML_DEVICES = '{}_calendars.yaml'.format(DOMAIN)
-SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
+    # pylint: disable=too-many-arguments
+    def __init__(self, hass, data):
+        """Create the Calendar Event Device."""
+        self._name = data.get(CONF_NAME)
+        self.dev_id = data.get(CONF_DEVICE_ID)
+        self._offset = data.get(CONF_OFFSET, DEFAULT_CONF_OFFSET)
+        self._default_offset = time_period_str(
+            data.get(CONF_DEFAULT_OFFSET_TIME, "00:00"))
+        self.entity_id = generate_entity_id(ENTITY_ID_FORMAT,
+                                            self.dev_id,
+                                            hass=hass)
 
-TOKEN_FILE = '.{}.token'.format(DOMAIN)
+        self._cal_data = {
+            'all_day': False,
+            'offset_time': dt.dt.timedelta(),
+            'message': '',
+            'start': None,
+            'end': None,
+            'location': '',
+            'description': '',
+        }
 
-CONFIG_SCHEMA = vol.Schema({
-    DOMAIN: vol.Schema({
-        vol.Required(CONF_CLIENT_ID): cv.string,
-        vol.Required(CONF_CLIENT_SECRET): cv.string,
-        vol.Optional(CONF_TRACK_NEW): cv.boolean,
-    })
-}, extra=vol.ALLOW_EXTRA)
+        self.update()
 
-_SINGLE_CALSEARCH_CONFIG = vol.Schema({
-    vol.Required(CONF_NAME): cv.string,
-    vol.Required(CONF_DEVICE_ID): cv.string,
-    vol.Optional(CONF_TRACK): cv.boolean,
-    vol.Optional(CONF_SEARCH): vol.Any(cv.string, None),
-    vol.Optional(CONF_OFFSET): cv.string,
-    vol.Optional(CONF_DEFAULT_OFFSET_TIME): cv.string,
-})
+    def offset_reached(self):
+        """Have we reached the offset time specified in the event title."""
+        if self._cal_data['start'] is None or \
+                        self._cal_data['offset_time'] == dt.dt.timedelta():
+            return False
 
-DEVICE_SCHEMA = vol.Schema({
-    vol.Required(CONF_CAL_ID): cv.string,
-    vol.Required(CONF_ENTITIES, None):
-        vol.All(cv.ensure_list, [_SINGLE_CALSEARCH_CONFIG]),
-}, extra=vol.ALLOW_EXTRA)
+        return self._cal_data['start'] + self._cal_data['offset_time'] <= \
+               dt.now(self._cal_data['start'].tzinfo)
 
+    @property
+    def name(self):
+        """Return the name of the entity."""
+        return self._name
 
-def do_authentication(hass, config):
-    """Notify user of actions and authenticate.
+    @property
+    def device_state_attributes(self):
+        """State Attributes for HA."""
+        start = self._cal_data.get('start', None)
+        end = self._cal_data.get('end', None)
+        start = start.strftime(DATE_STR_FORMAT) if start is not None else None
+        end = end.strftime(DATE_STR_FORMAT) if end is not None else None
 
-    Notify user of user_code and verification_url then poll
-    until we have an access token.
-    """
-    from oauth2client.client import (
-        OAuth2WebServerFlow,
-        OAuth2DeviceCodeError,
-        FlowExchangeError
-    )
-    from oauth2client.file import Storage
+        return {
+            'message': self._cal_data.get('message', ''),
+            'all_day': self._cal_data.get('all_day', False),
+            'offset_reached': self.offset_reached(),
+            'start_time': start,
+            'end_time': end,
+            'location': self._cal_data.get('location', None),
+            'description': self._cal_data.get('description', None),
+        }
 
-    oauth = OAuth2WebServerFlow(
-        config[CONF_CLIENT_ID],
-        config[CONF_CLIENT_SECRET],
-        'https://www.googleapis.com/auth/calendar.readonly',
-        'Home-Assistant.io',
-    )
+    @property
+    def state(self):
+        """Return the state of the calendar event."""
+        start = self._cal_data.get('start', None)
+        end = self._cal_data.get('end', None)
+        if start is None or end is None:
+            return STATE_OFF
 
-    persistent_notification = loader.get_component('persistent_notification')
-    try:
-        dev_flow = oauth.step1_get_device_and_user_codes()
-    except OAuth2DeviceCodeError as err:
-        persistent_notification.create(
-            hass, 'Error: {}<br />You will need to restart hass after fixing.'
-                  ''.format(err),
-            title=NOTIFICATION_TITLE,
-            notification_id=NOTIFICATION_ID)
-        return False
+        now = dt.now()
 
-    persistent_notification.create(
-        hass, 'In order to authorize Home-Assistant to view your calendars '
-              'you must visit: <a href="{}" target="_blank">{}</a> and enter '
-              'code: {}'.format(dev_flow.verification_url,
-                                dev_flow.verification_url,
-                                dev_flow.user_code),
-        title=NOTIFICATION_TITLE, notification_id=NOTIFICATION_ID
-    )
+        if start <= now and end > now:
+            return STATE_ON
 
-    def step2_exchange(now):
-        """Keep trying to validate the user_code until it expires."""
-        if now >= dt.as_local(dev_flow.user_code_expiry):
-            persistent_notification.create(
-                hass, 'Authenication code expired, please restart '
-                      'Home-Assistant and try again',
-                title=NOTIFICATION_TITLE,
-                notification_id=NOTIFICATION_ID)
-            listener()
+        if now >= end:
+            self.cleanup()
 
-        try:
-            credentials = oauth.step2_exchange(device_flow_info=dev_flow)
-        except FlowExchangeError:
-            # not ready yet, call again
+        return STATE_OFF
+
+    def cleanup(self):
+        """Cleanup any start/end listeners that were setup."""
+        self._cal_data = {
+            'all_day': False,
+            'offset_time': 0,
+            'message': '',
+            'start': None,
+            'end': None,
+            'location': None,
+            'description': None
+        }
+
+    def update(self):
+        """Search for the next event."""
+        if not self.data or not self.data.update():
+            # update cached, don't do anything
             return
 
-        storage = Storage(hass.config.path(TOKEN_FILE))
-        storage.put(credentials)
-        do_setup(hass, config)
-        listener()
-        persistent_notification.create(
-            hass, 'We are all setup now. Check {} for calendars that have '
-                  'been found'.format(YAML_DEVICES),
-            title=NOTIFICATION_TITLE, notification_id=NOTIFICATION_ID)
-
-    listener = track_time_change(hass, step2_exchange,
-                                 second=range(0, 60, dev_flow.interval))
-
-    return True
-
-
-def setup(hass, config):
-    """Set up the Google platform."""
-    if DATA_INDEX not in hass.data:
-        hass.data[DATA_INDEX] = {}
-
-    conf = config.get(DOMAIN, {})
-
-    token_file = hass.config.path(TOKEN_FILE)
-    if not os.path.isfile(token_file):
-        do_authentication(hass, conf)
-    else:
-        do_setup(hass, conf)
-
-    return True
-
-
-def setup_services(hass, track_new_found_calendars, calendar_service):
-    """Set up the service listeners."""
-    def _found_calendar(call):
-        """Check if we know about a calendar and generate PLATFORM_DISCOVER."""
-        calendar = get_calendar_info(hass, call.data)
-        if hass.data[DATA_INDEX].get(calendar[CONF_CAL_ID], None) is not None:
+        if not self.data.event:
+            # we have no event to work on, make sure we're clean
+            self.cleanup()
             return
 
-        hass.data[DATA_INDEX].update({calendar[CONF_CAL_ID]: calendar})
+        def _get_date(date):
+            """Get the dateTime from date or dateTime as a local."""
+            if 'date' in date:
+                return dt.start_of_local_day(dt.dt.datetime.combine(
+                    dt.parse_date(date['date']), dt.dt.time.min))
+            else:
+                return dt.as_local(dt.parse_datetime(date['dateTime']))
 
-        update_config(
-            hass.config.path(YAML_DEVICES),
-            hass.data[DATA_INDEX][calendar[CONF_CAL_ID]]
-        )
+        start = _get_date(self.data.event['start'])
+        end = _get_date(self.data.event['end'])
 
-        discovery.load_platform(hass, 'calendar', DOMAIN,
-                                hass.data[DATA_INDEX][calendar[CONF_CAL_ID]])
+        summary = self.data.event.get('summary', '')
 
-    hass.services.register(
-        DOMAIN, SERVICE_FOUND_CALENDARS, _found_calendar,
-        None, schema=None)
+        # check if we have an offset tag in the message
+        # time is HH:MM or MM
+        reg = '{}([+-]?[0-9]{{0,2}}(:[0-9]{{0,2}})?)'.format(self._offset)
+        search = re.search(reg, summary)
+        if search and search.group(1):
+            time = search.group(1)
+            if ':' not in time:
+                if time[0] == '+' or time[0] == '-':
+                    time = '{}0:{}'.format(time[0], time[1:])
+                else:
+                    time = '0:{}'.format(time)
 
-    def _scan_for_calendars(service):
-        """Scan for new calendars."""
-        service = calendar_service.get()
-        cal_list = service.calendarList()  # pylint: disable=no-member
-        calendars = cal_list.list().execute()['items']
-        for calendar in calendars:
-            calendar['track'] = track_new_found_calendars
-            hass.services.call(DOMAIN, SERVICE_FOUND_CALENDARS,
-                               calendar)
+            offset_time = time_period_str(time)
+            summary = (summary[:search.start()] + summary[search.end():]) \
+                .strip()
+        else:
+            offset_time = self._default_offset
 
-    hass.services.register(
-        DOMAIN, SERVICE_SCAN_CALENDARS,
-        _scan_for_calendars,
-        None, schema=None)
-    return True
+        # cleanup the string so we don't have a bunch of double+ spaces
+        self._cal_data['message'] = re.sub('  +', '', summary).strip()
 
-
-def do_setup(hass, config):
-    """Run the setup after we have everything configured."""
-    # Load calendars the user has configured
-    hass.data[DATA_INDEX] = load_config(hass.config.path(YAML_DEVICES))
-
-    calendar_service = GoogleCalendarService(hass.config.path(TOKEN_FILE))
-    track_new_found_calendars = convert(config.get(CONF_TRACK_NEW),
-                                        bool, DEFAULT_CONF_TRACK_NEW)
-    setup_services(hass, track_new_found_calendars, calendar_service)
-
-    # Ensure component is loaded
-    setup_component(hass, 'calendar', config)
-
-    for calendar in hass.data[DATA_INDEX].values():
-        discovery.load_platform(hass, 'calendar', DOMAIN, calendar)
-
-    # Look for any new calendars
-    hass.services.call(DOMAIN, SERVICE_SCAN_CALENDARS, None)
-    return True
-
-
-class GoogleCalendarService(object):
-    """Calendar service interface to Google."""
-
-    def __init__(self, token_file):
-        """Init the Google Calendar service."""
-        self.token_file = token_file
-
-    def get(self):
-        """Get the calendar service from the storage file token."""
-        import httplib2
-        from oauth2client.file import Storage
-        from googleapiclient import discovery as google_discovery
-        credentials = Storage(self.token_file).get()
-        http = credentials.authorize(httplib2.Http())
-        service = google_discovery.build(
-            'calendar', 'v3', http=http, cache_discovery=False)
-        return service
-
-
-def get_calendar_info(hass, calendar):
-    """Convert data from Google into DEVICE_SCHEMA."""
-    calendar_info = DEVICE_SCHEMA({
-        CONF_CAL_ID: calendar['id'],
-        CONF_ENTITIES: [{
-            CONF_TRACK: calendar['track'],
-            CONF_NAME: calendar['summary'],
-            CONF_DEVICE_ID: generate_entity_id(
-                '{}', calendar['summary'], hass=hass),
-        }]
-    })
-    return calendar_info
-
-
-def load_config(path):
-    """Load the google_calendar_devices.yaml."""
-    calendars = {}
-    try:
-        with open(path) as file:
-            data = yaml.load(file)
-            for calendar in data:
-                try:
-                    calendars.update({calendar[CONF_CAL_ID]:
-                                      DEVICE_SCHEMA(calendar)})
-                except VoluptuousError as exception:
-                    # keep going
-                    _LOGGER.warning("Calendar Invalid Data: %s", exception)
-    except FileNotFoundError:
-        # When YAML file could not be loaded/did not contain a dict
-        return {}
-
-    return calendars
-
-
-def update_config(path, calendar):
-    """Write the google_calendar_devices.yaml."""
-    with open(path, 'a') as out:
-        out.write('\n')
-        yaml.dump([calendar], out, default_flow_style=False)
+        self._cal_data['offset_time'] = offset_time
+        self._cal_data['location'] = self.data.event.get('location', '')
+        self._cal_data['description'] = self.data.event.get('description', '')
+        self._cal_data['start'] = start
+        self._cal_data['end'] = end
+        self._cal_data['all_day'] = 'date' in self.data.event['start']
