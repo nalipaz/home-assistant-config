@@ -26,9 +26,9 @@
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
-    - service_template: scene.turn_on
-      data_template:
-        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_on"
+#    - service_template: scene.turn_on
+#      data_template:
+#        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_on"
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.holiday_lighting
@@ -60,9 +60,9 @@
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
-    - service_template: scene.turn_on
-      data_template:
-        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
+#    - service_template: scene.turn_on
+#      data_template:
+#        entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.holiday_lighting
