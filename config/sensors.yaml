@@ -2,7 +2,7 @@
 - platform: plex
   name: Plex
   username: !secret plex_username
-  password: !secret plex_password
+  password: !secret plex_api_key
   server: !secret plex_servername
 - platform: darksky
   api_key: !secret darksky_api_key
