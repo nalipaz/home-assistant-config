@@ -1,11 +1,5 @@
 - platform: yr
 - platform: plex
-  name: Plex
-  host: 192.168.1.140
-  port: 32400
-  username: nicholasalipaz
-  password: !secret plex_api_key
-  server: alipaz-xu4
 - platform: darksky
   api_key: !secret darksky_api_key
   monitored_conditions:
