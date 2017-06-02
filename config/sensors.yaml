@@ -1,6 +1,7 @@
 - platform: yr
 - platform: plex
   name: Plex
+  host: !secret plex_host
   username: !secret plex_username
   password: !secret plex_api_key
   server: !secret plex_servername
