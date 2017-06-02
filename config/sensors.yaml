@@ -1,9 +1,9 @@
 - platform: yr
 - platform: plex
   name: Plex
-  username: nicholasalipaz
+  username: !secret plex_username
   password: !secret plex_api_key
-  server: alipaz-xu4
+  server: !secret plex_servername
 - platform: darksky
   api_key: !secret darksky_api_key
   monitored_conditions:
