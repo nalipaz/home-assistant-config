@@ -2,12 +2,12 @@
   trigger:
     - platform: time
       hours: 20
-      minutes: 00
-      seconds: 00
+      minutes: 0
+      seconds: 0
     - platform: time
       hours: 20
       minutes: 20
-      seconds: 00
+      seconds: 0
   condition:
     - condition: and
       conditions:
@@ -22,15 +22,18 @@
   trigger:
     - platform: time
       hours: 20
-      minutes: 00
-      seconds: 30
+      minutes: 1
+      seconds: 0
     - platform: time
       hours: 20
-      minutes: 20
-      seconds: 30
+      minutes: 21
+      seconds: 0
   condition:
     - condition: and
       conditions:
+        - condition: state
+          entity_id: light.livingroomlights_level_2_0
+          state: 'off'
         - condition: template
           value_template: "{{ states.light.livingroomlights_level_2_0.attributes.brightness == 75 }}"
   action:
