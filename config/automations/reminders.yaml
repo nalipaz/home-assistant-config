@@ -5,8 +5,8 @@
       minutes: 0
       seconds: 0
     - platform: time
-      hours: 20
-      minutes: 20
+      hours: 23
+      minutes: 30
       seconds: 0
   condition:
     - condition: and
@@ -14,28 +14,28 @@
         - condition: state
           entity_id: light.livingroomlights_level_2_0
           state: 'on'
+        - condition: template
+          value_template: "{{ states.light.livingroomlights_level_2_0.attributes.brightness == '255' }}"
   action:
     - service: scene.turn_on
       data_template:
         entity_id: "scene.livingroom_dim"
 - alias: "Reset Girl's Bedtime"
   trigger:
-    - platform: time
-      hours: 20
-      minutes: 1
-      seconds: 0
-    - platform: time
-      hours: 20
-      minutes: 21
-      seconds: 0
+    - platform: state
+      entity_id: light.livingroomlights_level_2_0
   condition:
     - condition: and
       conditions:
-        - condition: state
-          entity_id: light.livingroomlights_level_2_0
-          state: 'off'
         - condition: template
-          value_template: "{{ states.light.livingroomlights_level_2_0.attributes.brightness == 75 }}"
+          value_template: "{{ trigger.from_state.state == 'on' }}"
+        - condition: template
+          value_template: "{{ trigger.from_state.attributes.brightness == '255' }}"
+        - condition: template
+          value_template: "{{ trigger.to_state.attributes.brightness == '75' }}"
+        - condition: time
+          after: '23:30:00'
+          before: '23:35:00'
   action:
     - service: scene.turn_on
       data_template:
