@@ -6,7 +6,7 @@
       seconds: 0
     - platform: time
       hours: 23
-      minutes: 25
+      minutes: 30
       seconds: 0
   condition:
     - condition: and
@@ -34,8 +34,8 @@
         - condition: template
           value_template: "{{ trigger.to_state.attributes.brightness == '75' }}"
         - condition: time
-          after: '23:25:00'
-          before: '23:30:00'
+          after: '23:30:00'
+          before: '23:35:00'
   action:
     - service: scene.turn_on
       data_template:
