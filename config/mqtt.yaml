@@ -1,6 +1,6 @@
 broker: home.alipaz.net
-port: 8883
-client_id: home-assistant-1
+port: 1883
+client_id: home-assistant-2
 keepalive: 60
 username: plex
 password: !secret mqtt_password
