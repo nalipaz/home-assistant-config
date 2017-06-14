@@ -1,7 +1,7 @@
 - alias: "mqtt"
   trigger:
     - platform: mqtt
-      topic: plex-watch/+
+      topic: plex-watch/start
   action:
     - service: notify.html5
       data:
