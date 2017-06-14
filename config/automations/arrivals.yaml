@@ -1,3 +1,14 @@
+- alias: "mqtt"
+  trigger:
+    - platform: mqtt
+      topic: plex-watch/+
+  action:
+    - service: notify.html5
+      data:
+        message: "{{ trigger.payload }}"
+        title: "{{ trigger.topic }}"
+        data:
+          tag: "plex-watch"
 #- alias: "Nicholas arrives at home"
 #  trigger:
 #    - platform: state
