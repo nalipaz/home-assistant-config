@@ -10,6 +10,6 @@
     - service: notify.html5
       data:
         message: "trigger.from_state.state={{ trigger.from_state.state }}; trigger.from_state.attributes.brightness={{ trigger.from_state.attributes.brightness }}; "
-        title: "Plex {{ states('media_player.tv_un55h6300') }} {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+        title: "Debugging"
         data:
           tag: "debug"
