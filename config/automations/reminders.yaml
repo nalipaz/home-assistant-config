@@ -1,42 +1,48 @@
 - alias: "Girl's Bedtime"
   trigger:
     - platform: time
-      hours: 20
-      minutes: 0
+      hours: 19
+      minutes: 50
       seconds: 0
-    - platform: time
-      hours: 23
-      minutes: 30
-      seconds: 0
-  condition:
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: light.livingroomlights_level_2_0
-          state: 'on'
-        - condition: template
-          value_template: "{{ states.light.livingroomlights_level_2_0.attributes.brightness == '255' }}"
+#    - platform: time
+#      hours: 23
+#      minutes: 30
+#      seconds: 0
+#  condition:
+#    - condition: and
+#      conditions:
+#        - condition: state
+#          entity_id: light.livingroomlights_level_2_0
+#          state: 'on'
+#        - condition: template
+#          value_template: "{{ states.light.livingroomlights_level_2_0.attributes.brightness == '255' }}"
   action:
-    - service: scene.turn_on
-      data_template:
-        entity_id: "scene.livingroom_dim"
-- alias: "Reset Girl's Bedtime"
-  trigger:
-    - platform: state
-      entity_id: light.livingroomlights_level_2_0
-  condition:
-    - condition: and
-      conditions:
-        - condition: template
-          value_template: "{{ trigger.from_state.state == 'on' }}"
-        - condition: template
-          value_template: "{{ trigger.from_state.attributes.brightness == '255' }}"
-        - condition: template
-          value_template: "{{ trigger.to_state.attributes.brightness == '75' }}"
-        - condition: time
-          after: '23:30:00'
-          before: '23:35:00'
-  action:
-    - service: scene.turn_on
-      data_template:
-        entity_id: "scene.livingroom_normal"
+    - service: notify.html5
+      data:
+        message: "trigger.from_state.state={{ trigger.from_state.state }}; trigger.from_state.attributes.brightness={{ trigger.from_state.attributes.brightness }}; "
+        title: "Plex {{ states('media_player.tv_un55h6300') }} {{ states.media_player.tv_un55h6300.attributes.media_content_type }}"
+        data:
+          tag: "debug"
+#    - service: scene.turn_on
+#      data_template:
+#        entity_id: "scene.livingroom_dim"
+#- alias: "Reset Girl's Bedtime"
+#  trigger:
+#    - platform: state
+#      entity_id: light.livingroomlights_level_2_0
+#  condition:
+#    - condition: and
+#      conditions:
+#        - condition: template
+#          value_template: "{{ trigger.from_state.state == 'on' }}"
+#        - condition: template
+#          value_template: "{{ trigger.from_state.attributes.brightness == '255' }}"
+#        - condition: template
+#          value_template: "{{ trigger.to_state.attributes.brightness == '75' }}"
+#        - condition: time
+#          after: '23:30:00'
+#          before: '23:35:00'
+#  action:
+#    - service: scene.turn_on
+#      data_template:
+#        entity_id: "scene.livingroom_normal"
