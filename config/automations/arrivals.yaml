@@ -4,8 +4,8 @@
       topic: plex-watch/start
   action:
     - service: notify.html5
-      data:
-        message: "{{ trigger.payload }}"
+      data_template:
+        message: "{{ value_json.trigger['payload']['body'] }}"
         title: "{{ trigger.topic }}"
         data:
           tag: "plex-watch"
