@@ -1,12 +1,12 @@
 - alias: "mqtt"
   trigger:
-    - platform: mqtt
-      topic: plex-watch/start
+    - platform: state
+      entity_id: sensor.plexpy_body
   action:
     - service: notify.html5
       data_template:
-        message: "{{ trigger.payload }}"
-        title: "{{ trigger.topic }}"
+        message: "{{ states('sensor.plexpy_body') }}"
+        title: "{{ states('sensor.plexpy_title') }}"
         data:
           tag: "plex-watch"
 #- alias: "Nicholas arrives at home"
