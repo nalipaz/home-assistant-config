@@ -1,7 +1,7 @@
-broker: home.alipaz.net
-port: 1883
+broker: !secret mqtt_broker
+port: !secret mqtt_port
 client_id: home-assistant-2
 keepalive: 60
-username: plex
+username: !secret mqtt_username
 password: !secret mqtt_password
 protocol: 3.1
