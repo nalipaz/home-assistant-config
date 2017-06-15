@@ -66,4 +66,4 @@
   value_template: '{{ value_json.body }}'
 - platform: mqtt
   state_topic: plex-watch/start
-  value_template: '{{ value_json.title }}
+  value_template: '{{ value_json.title }}'
