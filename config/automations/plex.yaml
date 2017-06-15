@@ -1,0 +1,11 @@
+- alias: "mqtt"
+  trigger:
+    - platform: state
+      entity_id: sensor.plexpy_body
+  action:
+    - service: notify.html5
+      data_template:
+        message: "{{ states('sensor.plexpy_body') }}"
+        title: "{{ states('sensor.plexpy_title') }}"
+        data:
+          tag: "plexpy"
