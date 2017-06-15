@@ -62,10 +62,10 @@
     - upload
 - platform: pi_hole
 - platform: mqtt
-  state_topic: plex-watch/start
+  state_topic: plexpy/start
   value_template: '{{ value_json.body }}'
   name: Plexpy Body
 - platform: mqtt
-  state_topic: plex-watch/start
+  state_topic: plexpy/start
   value_template: '{{ value_json.title }}'
   name: Plexpy Title
