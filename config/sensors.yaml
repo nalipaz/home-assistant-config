@@ -64,6 +64,8 @@
 - platform: mqtt
   state_topic: plex-watch/start
   value_template: '{{ value_json.body }}'
+  name: Plexpy Body
 - platform: mqtt
   state_topic: plex-watch/start
   value_template: '{{ value_json.title }}'
+  name: Plexpy Title
