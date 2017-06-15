@@ -5,7 +5,7 @@
   action:
     - service: notify.html5
       data_template:
-        message: "{{ value_json.trigger['payload']['body'] }}"
+        message: "{{ trigger.payload }}"
         title: "{{ trigger.topic }}"
         data:
           tag: "plex-watch"
