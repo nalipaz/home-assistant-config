@@ -9,3 +9,4 @@
         title: "{{ states('sensor.plexpy_title') }}"
         data:
           tag: "plexpy"
+          icon: "{{ states('sensor.plexpy_poster') }}"

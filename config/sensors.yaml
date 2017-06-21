@@ -71,4 +71,5 @@
   name: Plexpy Title
 - platform: mqtt
   state_topic: plexpy/status
-  name: Plexpy Data
+  value_template: '{{ value_json.metadata.poster_url }}'
+  name: Plexpy poster
