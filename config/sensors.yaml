@@ -69,3 +69,6 @@
   state_topic: plexpy/status
   value_template: '{{ value_json.title }}'
   name: Plexpy Title
+- platform: mqtt
+  state_topic: plexpy/status
+  name: Plexpy Data
