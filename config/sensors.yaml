@@ -73,3 +73,7 @@
   state_topic: plexpy/status
   value_template: '{{ value_json.metadata.poster_url }}'
   name: Plexpy poster
+- platform: mqtt
+  state_topic: plexpy/status
+  value_template: '{{ value_json }}'
+  name: Plexpy data
