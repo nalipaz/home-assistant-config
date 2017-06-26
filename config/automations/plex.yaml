@@ -11,4 +11,4 @@
           tag: "{{ states('sensor.plexpy_tag') }}"
           icon: "{{ states('sensor.plexpy_poster')|replace('http://', 'https://') }}"
           requireInteraction: True
-          timestamp: "{{ states('sensor.now_timestamp') }}"
+          timestamp: "{{ as_timestamp(now()) | int }}"

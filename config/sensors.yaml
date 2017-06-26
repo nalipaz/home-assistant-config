@@ -30,9 +30,6 @@
       friendly_name: 'Local Time'
       entity_id:
         - sensor.los_angeles
-    now_timestamp:
-      value_template: '{{ int(as_timestamp(now())) }}'
-      friendly_name: 'Local Time (timestamp)'
     plex_token:
       value_template: !secret plex_token
       friendly_name: 'Plex Token'
