@@ -76,7 +76,7 @@
 - platform: mqtt
   state_topic: plexpy/status
   value_template: '{{ value_json.tag }}'
-  name: Plexpy data
+  name: Plexpy tag
 - platform: mqtt
   state_topic: plexpy/status
   value_template: '{{ value_json }}'
