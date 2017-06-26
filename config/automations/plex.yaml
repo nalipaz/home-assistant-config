@@ -8,5 +8,5 @@
         message: "{{ states('sensor.plexpy_body') }}"
         title: "{{ states('sensor.plexpy_title') }}"
         data:
-          tag: "plexpy"
+          tag: "{{ states('sensor.plexpy_tag') }}"
           icon: "{{ states('sensor.plexpy_poster')|replace('http://', 'https://') }}"
