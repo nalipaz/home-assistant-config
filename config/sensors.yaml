@@ -31,10 +31,8 @@
       entity_id:
         - sensor.los_angeles
     now_timestamp:
-      value_template: '{{ as_timestamp(now()) }}'
+      value_template: '{{ int(as_timestamp(now())) }}'
       friendly_name: 'Local Time (timestamp)'
-      entity_id:
-        - sensor.los_angeles
     plex_token:
       value_template: !secret plex_token
       friendly_name: 'Plex Token'
