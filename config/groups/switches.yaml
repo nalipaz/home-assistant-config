@@ -1,10 +1,10 @@
 switches:
   name: Switches
   entities:
-    - light.livingroomlights_level_2_0
-    - switch.frontporchlight_switch_3_0
-    - switch.diningoutlet_switch_4_0
-    - switch.outsideoutlet_switch_5_0
+    - light.livingroomlights_level
+    - switch.frontporchlight_switch
+    - switch.diningoutlet_switch
+    - switch.outsideoutlet_switch
     - cover.garage_door
     - switch.living_room_tv
     - script.away

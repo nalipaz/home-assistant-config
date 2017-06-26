@@ -12,13 +12,13 @@
         value_template: '{{ state.attributes.elevation }}'
         below: -3.30
       - condition: state
-        entity_id: switch.frontporchlight_switch_3_0
+        entity_id: switch.frontporchlight_switch
         state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch
     - service: switch.turn_off
-      entity_id: switch.outsideoutlet_switch_5_0
+      entity_id: switch.outsideoutlet_switch
 - alias: "Turn Front Porch Lights Off"
   trigger:
     platform: event
@@ -33,17 +33,17 @@
         value_template: '{{ state.attributes.elevation }}'
         above: -3.31
       - condition: state
-        entity_id: switch.frontporchlight_switch_3_0
+        entity_id: switch.frontporchlight_switch
         state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch
     - service: switch.turn_on
-      entity_id: switch.outsideoutlet_switch_5_0
+      entity_id: switch.outsideoutlet_switch
 - alias: "Ensure Front Porch Lights Stay On"
   trigger:
     - platform: state
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch
       state: 'off'
       for:
         seconds: 30
@@ -54,11 +54,11 @@
       below: -3.30 # exclusive; below = -2.51, -2.52, -2.53, etc
   action:
     - service: switch.turn_on
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch
 - alias: "Ensure Front Porch Lights Stay Off"
   trigger:
     - platform: state
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch
       state: 'on'
       for:
         seconds: 30
@@ -69,4 +69,4 @@
       above: -3.31 # exclusive; above = -2.50, -2.49, -2.48, etc
   action:
     - service: switch.turn_off
-      entity_id: switch.frontporchlight_switch_3_0
+      entity_id: switch.frontporchlight_switch

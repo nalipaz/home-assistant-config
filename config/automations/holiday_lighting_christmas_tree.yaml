@@ -7,7 +7,7 @@
 #    - platform: event
 #      event_type: state_changed
 #      event_data:
-#        entity_id: light.livingroomlights_level_2_0
+#        entity_id: light.livingroomlights_level
 #  condition:
 #    - condition: and
 #      conditions:
@@ -43,7 +43,7 @@
 #  action:
 #    - service_template: switch.turn_on
 #      data:
-#        entity_id: switch.diningoutlet_switch_4_0
+#        entity_id: switch.diningoutlet_switch
 #    - entity_id: input_boolean.christmas_tree
 #      state: 'On'
 #- alias: "Christmas Tree Off"
@@ -55,7 +55,7 @@
 #    - platform: event
 #      event_type: state_changed
 #      event_data:
-#        entity_id: light.livingroomlights_level_2_0
+#        entity_id: light.livingroomlights_level
 #  condition:
 #    - condition: and
 #      conditions:
@@ -80,7 +80,7 @@
 #  action:
 #    - service_template: switch.turn_off
 #      data:
-#        entity_id: switch.diningoutlet_switch_4_0
+#        entity_id: switch.diningoutlet_switch
 #    - service: input_boolean.turn_off
 #      data:
 #        entity_id: input_boolean.christmas_tree

@@ -28,9 +28,9 @@ automation.automation_5:
   hidden: true
 automation.automation_6:
   hidden: true
-light.livingroomlights_level_2_0:
+light.livingroomlights_level:
   friendly_name: "Living Room Lights"
-switch.frontporchlight_switch_3_0:
+switch.frontporchlight_switch:
   friendly_name: "Front Porch Light"
 media_player.rasplex:
   friendly_name: "Plex (Blue Room)"
