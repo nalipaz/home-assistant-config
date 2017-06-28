@@ -61,6 +61,8 @@
     - download
     - upload
 - platform: pi_hole
+  host: !secret pi_hole_host
+  ssl: True
 - platform: mqtt
   state_topic: plexpy/status
   value_template: '{{ value_json.body }}'
