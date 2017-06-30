@@ -68,9 +68,9 @@
   value_template: >
     {% if value_json.metadata.media_type == 'movie' %}
       {{ value_json.session.id }}.{{ value_json.metadata.imdb_id }}
-    {% elseif value_json.metadata.media_type == 'episode %}
+    {% elif value_json.metadata.media_type == 'episode %}
       {{ value_json.session.id }}.{{ value_json.metadata.thetvdb_id }}.{{ value_json.metadata.parent_media_index }}.{{ value_json.metadata.media_index }}
-    {% elseif value_json.metadata.media_type == 'track' %}
+    {% elif value_json.metadata.media_type == 'track' %}
       {{ value_json.session.id }}.{{ value_json.metadata.lastfm_id }}
     {% else %}
       {{ value_json.session.id }}.{{ value_json.title }}
