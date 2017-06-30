@@ -30,14 +30,6 @@
       friendly_name: 'Local Time'
       entity_id:
         - sensor.los_angeles
-    plex_token:
-      value_template: !secret plex_token
-      friendly_name: 'Plex Token'
-#    plex_title:
-#      value_template: shell_command.plex_show
-- platform: mqtt
-  name: Plex Title
-  state_topic: "plex/title"
 - platform: ups
   username: !secret ups_username
   password: !secret ups_password
@@ -73,11 +65,20 @@
   name: Plexpy Title
 - platform: mqtt
   state_topic: plexpy/status
-  value_template: '{{ value_json.metadata.poster_url }}'
+  value_template: >
+    {% if value_json.metadata.media_type == 'movie' %}
+      {{ value_json.session.id }}.{{ value_json.metadata.imdb_id }}
+    {% elseif value_json.metadata.media_type == 'episode %}
+      {{ value_json.session.id }}.{{ value_json.metadata.thetvdb_id }}.{{ value_json.metadata.parent_media_index }}.{{ value_json.metadata.media_index }}
+    {% elseif value_json.metadata.media_type == 'track' %}
+      {{ value_json.session.id }}.{{ value_json.metadata.lastfm_id }}
+    {% else %}
+      {{ value_json.session.id }}.{{ value_json.title }}
+    {% endif %}
   name: Plexpy poster
 - platform: mqtt
   state_topic: plexpy/status
-  value_template: '{{ value_json.tag }}'
+  value_template: '{{ value_json.metadata. }}'
   name: Plexpy tag
 - platform: mqtt
   state_topic: plexpy/status
