@@ -19,3 +19,5 @@
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
           tag: "garage"
+          requireInteraction: True
+          timestamp: "{{ as_timestamp(now()) | int }}"
