@@ -65,6 +65,10 @@
   name: Plexpy Title
 - platform: mqtt
   state_topic: plexpy/status
+  value_template: '{{ value_json.poster_url }}'
+  name: Plexpy poster
+- platform: mqtt
+  state_topic: plexpy/status
   value_template: >
     {%- if value_json.metadata.media_type == 'movie' -%}
       {{ value_json.session.id }}.{{ value_json.metadata.imdb_id }}
@@ -75,10 +79,6 @@
     {%- else -%}
       {{ value_json.session.id }}.{{ value_json.title }}
     {%- endif -%}
-  name: Plexpy poster
-- platform: mqtt
-  state_topic: plexpy/status
-  value_template: '{{ value_json.metadata. }}'
   name: Plexpy tag
 - platform: mqtt
   state_topic: plexpy/status
