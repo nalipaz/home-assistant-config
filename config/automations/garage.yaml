@@ -1,12 +1,3 @@
-#- alias: Garage
-#  trigger:
-#    - platform: state
-#      entity_id: cover.garage_door
-#      to: 'open'
-#  action:
-#    - service: homeassistant.turn_on
-#      entity_id: script.garage_timer_init
-#
 - alias: Garage opening
   trigger:
     - platform: state
