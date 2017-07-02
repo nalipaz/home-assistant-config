@@ -5,8 +5,9 @@
       state: open
   action:
     - service: mqtt.publish
-      topic: garage/opened
-      payload_template: "{{ as_timestamp(now()) | int }}"
+      data:
+        topic: garage/opened
+        payload_template: "{{ as_timestamp(now()) | int }}"
 - alias: Garage notification
   trigger:
     - platform: state
