@@ -18,13 +18,11 @@
     - apparent_temperature_max
     - apparent_temperature_min
 - platform: worldclock
-  sensors:
-    los_angeles:
-      time_zone: America/Los_Angeles
-      name: los_angeles
-    tokyo:
-      time_zone: Asia/Tokyo
-      name: tokyo
+  time_zone: America/Los_Angeles
+  name: los_angeles
+- platform: worldclock
+  time_zone: Asia/Tokyo
+  name: tokyo
 - platform: template
   sensors:
     now:
@@ -58,36 +56,34 @@
   host: !secret pi_hole_host
   ssl: True
 - platform: mqtt
-  sensors:
-    plexpy_tag:
-      state_topic: plexpy/status
-      value_template: >
-        {%- if value_json.metadata.media_type == 'movie' -%}
-          {{ value_json.session.id }}.{{ value_json.metadata.imdb_id }}
-        {%- elif value_json.metadata.media_type == 'episode' -%}
-          {{ value_json.session.id }}.{{ value_json.metadata.thetvdb_id }}.{{ value_json.metadata.parent_media_index }}.{{ value_json.metadata.media_index }}
-        {%- elif value_json.metadata.media_type == 'track' -%}
-          {{ value_json.session.id }}.{{ value_json.metadata.lastfm_id }}
-        {%- else -%}
-          {{ value_json.session.id }}.{{ value_json.title }}
-        {%- endif -%}
-      name: Plexpy tag
-    plexpy_poster:
-      state_topic: plexpy/status
-      value_template: '{{ value_json.poster_url }}'
-      name: Plexpy poster
-    plexpy_title:
-      state_topic: plexpy/status
-      value_template: '{{ value_json.title }}'
-      name: Plexpy Title
-    plexpy_body:
-      state_topic: plexpy/status
-      value_template: '{{ value_json.body }}'
-      name: Plexpy Body
-    plexpy_data:
-      state_topic: plexpy/status
-      value_template: '{{ value_json }}'
-      name: Plexpy data
-    garage_opened:
-      state_topic: garage/opened
-      name: Garage last opened
+  state_topic: plexpy/status
+  value_template: >
+    {%- if value_json.metadata.media_type == 'movie' -%}
+      {{ value_json.session.id }}.{{ value_json.metadata.imdb_id }}
+    {%- elif value_json.metadata.media_type == 'episode' -%}
+      {{ value_json.session.id }}.{{ value_json.metadata.thetvdb_id }}.{{ value_json.metadata.parent_media_index }}.{{ value_json.metadata.media_index }}
+    {%- elif value_json.metadata.media_type == 'track' -%}
+      {{ value_json.session.id }}.{{ value_json.metadata.lastfm_id }}
+    {%- else -%}
+      {{ value_json.session.id }}.{{ value_json.title }}
+    {%- endif -%}
+  name: Plexpy tag
+- platform: mqtt
+  state_topic: plexpy/status
+  value_template: '{{ value_json.poster_url }}'
+  name: Plexpy poster
+- platform: mqtt
+  state_topic: plexpy/status
+  value_template: '{{ value_json.title }}'
+  name: Plexpy Title
+- platform: mqtt
+  state_topic: plexpy/status
+  value_template: '{{ value_json.body }}'
+  name: Plexpy Body
+- platform: mqtt
+  state_topic: plexpy/status
+  value_template: '{{ value_json }}'
+  name: Plexpy data
+- platform: mqtt
+  state_topic: garage/opened
+  name: Garage last opened
