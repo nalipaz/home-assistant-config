@@ -19,12 +19,12 @@
     - apparent_temperature_min
 - platform: worldclock
   sensors:
-    los_angeles
+    los_angeles:
       time_zone: America/Los_Angeles
       name: los_angeles
-- platform: worldclock
-  time_zone: Asia/Tokyo
-  name: tokyo
+    tokyo:
+      time_zone: Asia/Tokyo
+      name: tokyo
 - platform: template
   sensors:
     now:
