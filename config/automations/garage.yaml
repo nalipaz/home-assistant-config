@@ -7,17 +7,27 @@
 #    - service: homeassistant.turn_on
 #      entity_id: script.garage_timer_init
 #
+- alias: Garage opening
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      state: open
+  action:
+    - service: mqtt.publish
+      topic: garage/opened
+      payload_template: "{{ as_timestamp(now()) | int }}"
 - alias: Garage notification
   trigger:
     - platform: state
       entity_id: cover.garage_door
       # Don't set a state, but instead detect all state changes, only 'open' and 'closed' are currently available.
   action:
+    - delay: '00:00:05'
     - service: notify.html5
       data:
         message: "{{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}."
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
-          tag: "garage"
+          tag: "garage-{{ states('sensor.garage_opened') }}"
           requireInteraction: True
           timestamp: "{{ as_timestamp(now()) | int }}"
