@@ -21,7 +21,7 @@
           {%- if trigger.state == 'open' -%}
             {{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}.
           {%- else -%}
-            {{ states('sensor.garage_last_opened') | strptime('%I:%M %p') }}: The {{ states.cover.garage_door.attributes.friendly_name }} was opened.\n
+            {{ strptime(states('sensor.garage_last_opened'), '%I:%M %p') }}: The {{ states.cover.garage_door.attributes.friendly_name }} was opened.
             {{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}.
           {%- endif -%}
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
