@@ -19,10 +19,10 @@
       data_template:
         message: >
           {%- if states.cover.garage_door.state == 'open' -%}
-           {{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}.
+           {{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}
           {%- else -%}
-           {{ states('sensor.garage_last_opened') | int | timestamp_custom('%-I:%M %p', True) }}: Opened.
-           {{ states('sensor.now') }}: Closed.
+           {{ states('sensor.garage_last_opened') | int | timestamp_custom('%-I:%M %p', True) }}: Opened
+           {{ states('sensor.now') }}: Closed
           {%- endif -%}
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
