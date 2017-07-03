@@ -16,13 +16,11 @@
   action:
     - delay: '00:00:05'
     - service: notify.html5
-      data:
+      data_template:
         message: "{{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}. ({{ states('sensor.garage_last_opened') }})"
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
           requireInteraction: True
-      data_template:
-        data:
           tag: "garage-{{ states('sensor.garage_last_opened') }}"
           timestamp: "{{ as_timestamp(now()) | int }}"
 
