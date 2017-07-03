@@ -22,6 +22,7 @@
         data:
           requireInteraction: True
       data_template:
-        tag: "garage-{{ states('sensor.garage_last_opened') }}"
-        timestamp: "{{ as_timestamp(now()) | int }}"
+        data:
+          tag: "garage-{{ states('sensor.garage_last_opened') }}"
+          timestamp: "{{ as_timestamp(now()) | int }}"
 
