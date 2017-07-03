@@ -18,7 +18,7 @@
     - service: notify.html5
       data_template:
         message: >
-          {%- if trigger.state == 'open' -%}
+          {%- if states.cover.garage_door.state == 'open' -%}
             {{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}.
           {%- else -%}
             {{ states('sensor.garage_last_opened') | timestamp_custom('%I:%M %p', True) }}: Opened.
