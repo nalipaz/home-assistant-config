@@ -20,6 +20,8 @@
         message: "{{ states('sensor.now') }}: The {{ states.cover.garage_door.attributes.friendly_name }} is now {{ states.cover.garage_door.state }}. ({{ states('sensor.garage_last_opened') }})"
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
         data:
-          tag: "garage-{{ states('sensor.garage_last_opened') }}"
           requireInteraction: True
+        data_template:
+          tag: "garage-{{ states('sensor.garage_last_opened') }}"
           timestamp: "{{ as_timestamp(now()) | int }}"
+
