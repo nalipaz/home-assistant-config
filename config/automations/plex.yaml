@@ -7,6 +7,7 @@
       data_template:
         message: "{{ states('sensor.plexpy_body') }}"
         title: "{{ states('sensor.plexpy_title') }}"
+        target: ["alipaz_y50"]
         data:
           tag: "{{ states('sensor.plexpy_tag') }}"
           icon: "{{ states('sensor.plexpy_poster')|replace('http://', 'https://') }}"

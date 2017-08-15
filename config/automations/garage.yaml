@@ -25,6 +25,7 @@
           {{ states('sensor.now') }}: Closed
           {%- endif -%}
         title: "{{ states.cover.garage_door.attributes.friendly_name }}: {{ states.cover.garage_door.state }}"
+        target: ["alipaz_y50", "tomokos_phone"]
         data:
           requireInteraction: True
           tag: "garage-{{ states('sensor.garage_last_opened') }}"

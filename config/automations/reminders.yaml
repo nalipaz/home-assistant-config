@@ -11,5 +11,6 @@
       data:
         message: "trigger.from_state.state={{ trigger.from_state.state }}; trigger.from_state.attributes.brightness={{ trigger.from_state.attributes.brightness }}; "
         title: "Debugging"
+        target: ["alipaz_y50"]
         data:
           tag: "debug"

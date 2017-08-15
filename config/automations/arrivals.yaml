@@ -51,5 +51,6 @@
 #      data:
 #        message: "{{ states('sensor.now') }}: Nicholas is now {{ trigger.state }}"
 #        title: "{{ trigger.to }}"
+#        target: ["alipaz_y50"]
 #        data:
 #          tag: "arrivals"

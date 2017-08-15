@@ -8,6 +8,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Plex Media Server has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Plex Media Server"
+        target: ["alipaz_y50"]
 - alias: "Headphones Stopped"
   trigger:
     platform: state
@@ -18,6 +19,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Headphones daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Headphones"
+        target: ["alipaz_y50"]
 - alias: "Sonarr Stopped"
   trigger:
     platform: state
@@ -28,6 +30,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Sonarr daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Sonarr"
+        target: ["alipaz_y50"]
 - alias: "Couch Potato Stopped"
   trigger:
     platform: state
@@ -38,6 +41,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Couch Potato daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Couch Potato"
+        target: ["alipaz_y50"]
 #    - service: switch.turn_on
 #      entity_id: switch.couch_potato
 - alias: "Deluge Daemon Stopped"
@@ -50,6 +54,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Deluge daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Deluge"
+        target: ["alipaz_y50"]
 - alias: "Deluge Web Stopped"
   trigger:
     platform: state
@@ -60,6 +65,7 @@
       data:
         message: "{{ states('sensor.now') }}: The Deluge Web daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Deluge Web"
+        target: ["alipaz_y50"]
 - alias: "Jackett Stopped"
   trigger:
     platform: state
@@ -70,3 +76,4 @@
       data:
         message: "{{ states('sensor.now') }}: The Jackett daemon has stopped! Please check it's status and/or restart it."
         title: "Home Assistant: Jackett"
+        target: ["alipaz_y50"]
