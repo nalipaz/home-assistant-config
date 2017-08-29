@@ -29,5 +29,6 @@
         data:
           requireInteraction: True
           tag: "garage-{{ states('sensor.garage_last_opened') }}"
+          icon: mdi:store_mall_directory
           timestamp: "{{ as_timestamp(now()) | int }}"
 
