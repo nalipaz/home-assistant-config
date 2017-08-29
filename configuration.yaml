@@ -32,6 +32,11 @@ google:
   track_new_calendar: False
 plex_title_mqtt:
   topic: plex/title
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
 
 #input_slider: !include config/input_sliders.yaml
 zone 1: !include config/zones/home.yaml
