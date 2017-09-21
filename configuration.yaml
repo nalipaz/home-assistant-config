@@ -41,3 +41,4 @@ panel_iframe:
 #input_slider: !include config/input_sliders.yaml
 #zone 1: !include config/zones/home.yaml
 #zone 2: !include config/zones/work.yaml
+zone: !include_dir_list config/zones/
