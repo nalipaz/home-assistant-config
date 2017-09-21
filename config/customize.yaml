@@ -62,6 +62,8 @@ zone.elementary_school:
   friendly_name: !secret elementary_school_name
 zone.home:
   friendly_name: Home
+zone.home2:
+  friendly_name: !secret home2_name
 zone.judo:
   friendly_name: !secret judo_name
 zone.preschool:
