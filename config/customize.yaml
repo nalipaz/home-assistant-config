@@ -58,3 +58,13 @@ input_select.theater_style:
   persistent: true
 input_select.theater_mode:
   persistent: true
+zone.plex_na__daycare:
+  friendly_name: !secret daycare_name
+zone.plex_na__home:
+  friendly_name: Home
+zone.plex_na__judo:
+  friendly_name: !secret judo_name
+zone.plex_na__preschool:
+  friendly_name: !secret preschool_name
+zone.plex_na__work:
+  friendly_name: Work
