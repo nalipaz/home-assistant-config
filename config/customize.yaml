@@ -58,6 +58,8 @@ input_select.theater_mode:
   persistent: true
 zone.daycare:
   friendly_name: !secret daycare_name
+zone.elementary_school:
+  friendly_name: !secret elementary_school_name
 zone.home:
   friendly_name: Home
 zone.judo:

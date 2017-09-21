@@ -1,0 +1,5 @@
+name: Elementary School
+latitude: !secret latitude_elementary_school
+longitude: !secret longitude_elementary_school
+radius: 100
+icon: mdi:school
