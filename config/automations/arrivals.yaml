@@ -48,3 +48,16 @@
         target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
         data:
           requireInteraction: True
+- alias: "Nicholas picks up kids"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: ''
+  action:
+    - service: notify.html5
+      data_template:
+        message: "{{ as_timestamp(now()) | int | timestamp_custom('%-I:%M %p', True) }}: Nicholas is now {{ trigger.to_state.state }}"
+        title: '{{ states["zone"][trigger.to_state.state]["attributes"]["friendly_name"] }}'
+        target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
+        data:
+          requireInteraction: True
