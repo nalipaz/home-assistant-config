@@ -48,4 +48,3 @@
         target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
         data:
           requireInteraction: True
-          icon: '{{ states["zone"][trigger.to_state.state]["attributes"]["icon"] }}'
