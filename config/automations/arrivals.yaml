@@ -1,56 +1,50 @@
-#- alias: "Nicholas arrives at home"
-#  trigger:
-#    - platform: state
-#      entity_id: device_tracker.plex_na
-#      to: 'Home'
-#    - platform: state
-#      entity_id: device_tracker.plex_na
-#      to: 'home'
-#  action:
-#    - service: scene.turn_on
-#      entity_id: scene.livingroom_normal
-#    - service: switch.turn_on
-#      entity_id: switch.home_phone_nicholas
-#    - service: switch.turn_off
-#      entity_id: switch.work_phone_nicholas
-#    - service: switch.turn_off
-#      entity_id: switch.mobile_phone_nicholas
-#- alias: "Nicholas arrives at work"
-#  trigger:
-#    - platform: state
-#      entity_id: device_tracker.plex_na
-#      to: 'Work'
-#    - platform: state
-#      entity_id: device_tracker.plex_na
-#      to: 'work'
-#  action:
-#    - service: switch.turn_off
-#      entity_id: switch.home_phone_nicholas
-#    - service: switch.turn_on
-#      entity_id: switch.work_phone_nicholas
-#    - service: switch.turn_off
-#      entity_id: switch.mobile_phone_nicholas
-#- alias: "Nicholas departs"
-#  trigger:
-#    platform: state
-#    entity_id: device_tracker.plex_na
-#    to: 'not_home'
-#  action:
-#    - service: switch.turn_off
-#      entity_id: switch.home_phone_nicholas
-#    - service: switch.turn_off
-#      entity_id: switch.work_phone_nicholas
-#    - service: switch.turn_on
-#      entity_id: switch.mobile_phone_nicholas
-#- alias: "Nicholas location change"
-#  trigger:
-#    platform: state
-#    entity_id: device_tracker.plex_na
-#  action:
-#    - service: notify.html5
-#      data:
-#        message: "{{ states('sensor.now') }}: Nicholas is now {{ trigger.state }}"
-#        title: "{{ trigger.to }}"
-#        target: ["alipaz_y50", "heremedia_laptop"]
-#        data:
-#          tag: "arrivals"
+- alias: "Nicholas arrives at home"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'home'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.livingroom_normal
+    - service: switch.turn_on
+      entity_id: switch.home_phone_nicholas
+    - service: switch.turn_off
+      entity_id: switch.work_phone_nicholas
+    - service: switch.turn_off
+      entity_id: switch.mobile_phone_nicholas
+- alias: "Nicholas arrives at work"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.plex_na
+      to: 'work'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.home_phone_nicholas
+    - service: switch.turn_on
+      entity_id: switch.work_phone_nicholas
+    - service: switch.turn_off
+      entity_id: switch.mobile_phone_nicholas
+- alias: "Nicholas departs"
+  trigger:
+    platform: state
+    entity_id: device_tracker.plex_na
+    to: 'not_home'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.home_phone_nicholas
+    - service: switch.turn_off
+      entity_id: switch.work_phone_nicholas
+    - service: switch.turn_on
+      entity_id: switch.mobile_phone_nicholas
+- alias: "Nicholas location change"
+  trigger:
+    platform: state
+    entity_id: device_tracker.plex_na
+  action:
+    - service: notify.html5
+      data:
+        message: "{{ as_timestamp(now()) | int | timestamp_custom('%-I:%M %p', True) }}: Nicholas is now {{ trigger.state }}"
+        title: "{{ trigger.to }}"
+        target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
+        data:
+          tag: "arrivals"
