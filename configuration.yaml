@@ -39,5 +39,5 @@ panel_iframe:
     url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
 
 #input_slider: !include config/input_sliders.yaml
-zone 1: !include config/zones/home.yaml
-zone 2: !include config/zones/work.yaml
+#zone 1: !include config/zones/home.yaml
+#zone 2: !include config/zones/work.yaml
