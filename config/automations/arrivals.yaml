@@ -44,7 +44,7 @@
     - service: notify.html5
       data_template:
         message: "{{ as_timestamp(now()) | int | timestamp_custom('%-I:%M %p', True) }}: Nicholas is now {{ trigger.to_state.state }}"
-        title: 'zone.{{ trigger.to_state.state }}.friendly_name'
+        title: "{{ zone._.friendly_name | replace('_', trigger.to_state.state) }}"
         target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
         data:
           requireInteraction: True
