@@ -1,4 +1,4 @@
-name: !secret daycare_name
+name: Daycare
 latitude: !secret latitude_daycare
 longitude: !secret longitude_daycare
 radius: 100

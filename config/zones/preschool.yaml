@@ -1,4 +1,4 @@
-name: !secret preschool_name
+name: Preschool
 latitude: !secret latitude_preschool
 longitude: !secret longitude_preschool
 radius: 100

@@ -1,4 +1,4 @@
-name: !secret judo_name
+name: Judo
 latitude: !secret latitude_judo
 longitude: !secret longitude_judo
 radius: 100
