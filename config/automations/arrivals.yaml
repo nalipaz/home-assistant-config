@@ -42,9 +42,9 @@
     entity_id: device_tracker.plex_na
   action:
     - service: notify.html5
-      data:
+      data_template:
         message: "{{ as_timestamp(now()) | int | timestamp_custom('%-I:%M %p', True) }}: Nicholas is now {{ trigger.state }}"
         title: "{{ trigger.to }}"
         target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
         data:
-          tag: "arrivals"
+          requireInteraction: True
