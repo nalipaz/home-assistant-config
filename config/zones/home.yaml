@@ -3,4 +3,3 @@ latitude: !secret latitude_home
 longitude: !secret longitude_home
 radius: 100
 icon: mdi:home
-passive: true

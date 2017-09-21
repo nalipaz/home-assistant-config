@@ -3,4 +3,3 @@ latitude: !secret latitude_preschool
 longitude: !secret longitude_preschool
 radius: 100
 icon: mdi:domain
-passive: true
