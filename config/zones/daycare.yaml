@@ -2,4 +2,4 @@ name: Daycare
 latitude: !secret latitude_daycare
 longitude: !secret longitude_daycare
 radius: 100
-icon: mdi:domain
+icon: mdi:home
