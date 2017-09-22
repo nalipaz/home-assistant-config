@@ -3,3 +3,4 @@ latitude: !secret latitude_judo
 longitude: !secret longitude_judo
 radius: 100
 icon: mdi:domain
+passive: true

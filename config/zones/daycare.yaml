@@ -3,3 +3,4 @@ latitude: !secret latitude_daycare
 longitude: !secret longitude_daycare
 radius: 100
 icon: mdi:home
+passive: true
