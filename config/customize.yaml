@@ -64,8 +64,8 @@ zone.home:
   friendly_name: Home
 zone.home2:
   friendly_name: !secret home2_name
-zone.judo:
-  friendly_name: !secret judo_name
+zone.sports_center:
+  friendly_name: !secret sports_center_name
 zone.preschool:
   friendly_name: !secret preschool_name
 zone.work:

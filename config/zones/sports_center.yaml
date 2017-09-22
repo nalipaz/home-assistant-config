@@ -1,4 +1,4 @@
-name: Judo
+name: Sports Center
 latitude: !secret latitude_judo
 longitude: !secret longitude_judo
 radius: 100
