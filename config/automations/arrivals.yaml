@@ -44,7 +44,7 @@
     - condition: and
       conditions:
         - condition: template
-          value_template: '{{ trigger.to_state.state != "not_home" }}'
+          value_template: "{{ states('device_tracker.plex_na') != 'not_home' }}"
   action:
     - service: notify.html5
       data_template:
