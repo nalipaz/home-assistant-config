@@ -40,11 +40,6 @@
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
-  condition:
-    - condition: and
-      conditions:
-        - condition: template
-          value_template: "{{ states('device_tracker.plex_na') != 'not_home' }}"
   action:
     - service: notify.html5
       data_template:
