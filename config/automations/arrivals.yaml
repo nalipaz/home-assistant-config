@@ -36,10 +36,23 @@
       entity_id: switch.work_phone_nicholas
     - service: switch.turn_on
       entity_id: switch.mobile_phone_nicholas
+  action:
+    - service: notify.html5
+      data_template:
+        message: 'Nicholas is away from all known places.'
+        title: 'Nicholas: Location'
+        target: ["alipaz_y50", "heremedia_laptop", "nicholas_phone"]
+        data:
+          requireInteraction: True
 - alias: "Nicholas location change"
   trigger:
     platform: state
     entity_id: device_tracker.plex_na
+  condition:
+    - condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.to_state.state != 'None' }}"
   action:
     - service: notify.html5
       data_template:
