@@ -36,7 +36,6 @@
       entity_id: switch.work_phone_nicholas
     - service: switch.turn_on
       entity_id: switch.mobile_phone_nicholas
-  action:
     - service: notify.html5
       data_template:
         message: 'Nicholas is away from all known places.'
