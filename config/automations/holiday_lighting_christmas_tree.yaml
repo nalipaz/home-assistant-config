@@ -44,8 +44,9 @@
     - service_template: switch.turn_on
       data:
         entity_id: switch.diningoutlet_switch
-    - entity_id: input_boolean.christmas_tree
-      state: 'On'
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.christmas_tree
 - alias: "Christmas Tree Off"
   trigger:
     - platform: event
