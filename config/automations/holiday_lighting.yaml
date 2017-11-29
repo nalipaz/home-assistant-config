@@ -26,7 +26,6 @@
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
-        target: ["alipaz_y50", "heremedia_laptop"]
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_on"
@@ -61,7 +60,6 @@
         title: "{{ states.calendar.holiday_lighting.attributes.message }} Lights"
         data:
           tag: "holiday_lighting"
-        target: ["alipaz_y50", "heremedia_laptop"]
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.holiday_lighting_{{ states.calendar.holiday_lighting.attributes.message|lower|replace(' ', '_')|replace('.', '')|replace(',', '')|replace(\"'\", '') }}_off"
@@ -80,7 +78,6 @@
         title: "Holiday over"
         data:
           tag: "holiday_lighting"
-        target: ["alipaz_y50", "heremedia_laptop"]
     - service_template: scene.turn_on
       data_template:
         entity_id: "scene.non_holiday_lighting"
