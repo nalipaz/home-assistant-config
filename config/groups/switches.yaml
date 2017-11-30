@@ -7,6 +7,7 @@ switches:
     - switch.outsideoutlet_switch
     - switch.kitchen_eaves_outlet_switch
     - switch.gabled_roof_outlet_switch
+    - switch.garage_eaves_outlet_switch
     - cover.garage_door
     - switch.living_room_tv
     - script.away
