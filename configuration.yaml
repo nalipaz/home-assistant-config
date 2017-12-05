@@ -23,15 +23,12 @@ script: !include_dir_merge_named config/scripts/
 scene: !include_dir_merge_list config/scenes/
 input_boolean: !include config/input_booleans.yaml
 input_select: !include config/input_selects.yaml
-mqtt: !include config/mqtt.yaml
 device_tracker: !include config/device_tracker.yaml
 cover: !include config/covers.yaml
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
   track_new_calendar: False
-plex_title_mqtt:
-  topic: plex/title
 panel_iframe:
   mdiindex:
     title: MDI Icon Index

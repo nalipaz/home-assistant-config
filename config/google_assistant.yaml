@@ -1,0 +1,9 @@
+project_id: !secret ga-project_id
+client_id: !secret ga-client_id
+access_token: !secret ga-access_token
+agent_user_id: !secret ga-agent_user_id
+api_key: ga-api_key
+exposed_domains:
+  - switch
+  - light
+  - group
