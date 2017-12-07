@@ -44,7 +44,7 @@
   trigger:
     - platform: state
       entity_id: switch.frontporchlight_switch
-      state: 'off'
+      to: 'off'
       for:
         seconds: 30
   condition:
@@ -59,7 +59,7 @@
   trigger:
     - platform: state
       entity_id: switch.frontporchlight_switch
-      state: 'on'
+      to: 'on'
       for:
         seconds: 30
   condition:

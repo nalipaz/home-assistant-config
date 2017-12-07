@@ -2,7 +2,7 @@
   trigger:
     - platform: state
       entity_id: cover.garage_door
-      state: open
+      to: 'open'
   action:
     - service: mqtt.publish
       data:
