@@ -12,62 +12,62 @@ config:
       label: Power
       row: 1
       column: 1
+    - entity: script.irsend_vaccuum_key_up
+      icon: mdi:arrow-up-bold
+      row: 1
+      column: 2
     - entity: script.irsend_vaccuum_key_play
       icon: mdi:play-pause
       row: 1
       column: 3
-    - entity: script.irsend_vaccuum_key_up
-      icon: mdi:arrow-up-bold
-      row: 2
-      column: 2
     - entity: script.irsend_vaccuum_key_left
       icon: mdi:arrow-left-bold
-      row: 3
+      row: 2
       column: 1
     - entity: script.irsend_vaccuum_key_enter
       icon: mdi:image-filter-center-focus
-      row: 3
+      row: 2
       column: 2
     - entity: script.irsend_vaccuum_key_right
       icon: mdi:arrow-right-bold
-      row: 3
+      row: 2
       column: 3
-    - entity: script.irsend_vaccuum_key_down
-      icon: mdi:arrow-down-bold
-      row: 4
-      column: 2
-    - entity: script.irsend_vaccuum_key_a
-      label: Mode
-      icon: mdi:format-rotate-90
-      row: 5
-      column: 2
     - entity: script.irsend_vaccuum_key_b
       label: Clock
       icon: mdi:clock
-      row: 6
+      row: 3
       column: 1
+    - entity: script.irsend_vaccuum_key_down
+      icon: mdi:arrow-down-bold
+      row: 3
+      column: 2
     - entity: script.irsend_vaccuum_key_c
       label: Timer
       icon: mdi:camera-timer
-      row: 6
+      row: 3
       column: 3
     - entity: script.irsend_vaccuum_key_d
       label: Base
       icon: mdi:home
-      row: 7
+      row: 4
       column: 1
+    - entity: script.irsend_vaccuum_key_a
+      label: Mode
+      icon: mdi:format-rotate-90
+      row: 4
+      column: 2
     - entity: script.irsend_vaccuum_key_e
       label: Climb
       icon: mdi:page-layout-footer
-      row: 7
+      row: 4
       column: 3
     - entity: script.irsend_vaccuum_key_f
       label: Spot
       icon: mdi:refresh
-      row: 8
+      row: 5
       column: 1
     - entity: script.irsend_vaccuum_key_g
       label: Max
       icon: mdi:flash-circle
-      row: 8
+      row: 5
       column: 3

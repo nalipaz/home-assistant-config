@@ -3,7 +3,5 @@ remotes:
   icon: mdi:remote
   view: yes
   entities:
-    - group.tv_script
-    - group.vaccuum_script
     - group.tv_buttons
     - group.vacuum_buttons
