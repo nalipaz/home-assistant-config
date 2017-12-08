@@ -62,7 +62,7 @@ config:
       label: '-'
       row: 6
     - entity: script.irsend_tv_key_0
-      label: 0
+      label: '0'
       row: 6
     - entity: script.irsend_tv_pre_ch
       label: Pre-Ch
@@ -90,3 +90,11 @@ config:
       label: Ch-
       background_color: '#c8e4ff'
       row: 8
+    - entity: script.irsend_tv_key_menu
+      label: Menu
+      icon: mdi:menu
+      row: 9
+    - entity: script.irsend_tv_smart_hub
+      label: Smart Hub
+      image: /local/images/smart-hub.png
+      row: 9
