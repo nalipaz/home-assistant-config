@@ -14,4 +14,3 @@ config:
     - entity: script.irsend_tv_source
       icon: mdi:login
       label: Source
-    -
