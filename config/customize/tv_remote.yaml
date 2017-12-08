@@ -95,5 +95,5 @@ config:
       icon: mdi:menu
       row: 9
     - entity: script.irsend_tv_smart_hub
-      image: /local/images/smart-hub.png
+      image: /local/images/smarthub.png
       row: 9
