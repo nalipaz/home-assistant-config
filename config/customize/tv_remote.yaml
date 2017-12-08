@@ -32,37 +32,37 @@ config:
       column: 3
       row: 2
     - entity: script.irsend_tv_key_1
-      label: 1
+      icon: mdi:numeric-1-box
       row: 3
     - entity: script.irsend_tv_key_2
-      label: 2
+      icon: mdi:numeric-2-box
       row: 3
     - entity: script.irsend_tv_key_3
-      label: 3
+      icon: mdi:numeric-3-box
       row: 3
     - entity: script.irsend_tv_key_4
-      label: 4
+      icon: mdi:numeric-4-box
       row: 4
     - entity: script.irsend_tv_key_5
-      label: 5
+      icon: mdi:numeric-5-box
       row: 4
     - entity: script.irsend_tv_key_6
-      label: 6
+      icon: mdi:numeric-6-box
       row: 4
     - entity: script.irsend_tv_key_7
-      label: 7
+      icon: mdi:numeric-7-box
       row: 5
     - entity: script.irsend_tv_key_8
-      label: 8
+      icon: mdi:numeric-8-box
       row: 5
     - entity: script.irsend_tv_key_9
-      label: 9
+      icon: mdi:numeric-9-box
       row: 5
     - entity: script.irsend_tv_key_minus
       label: '-'
       row: 6
     - entity: script.irsend_tv_key_0
-      label: '0'
+      icon: mdi:numeric-0-box
       row: 6
     - entity: script.irsend_tv_pre_ch
       label: Pre-Ch
