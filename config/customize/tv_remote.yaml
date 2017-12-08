@@ -11,6 +11,15 @@ config:
       icon: mdi:power
       background_color: red
       font_color: white
+      label: TV
     - entity: script.irsend_tv_source
       icon: mdi:login
       label: Source
+    - entity: script.irsend_tv_stb_guide
+      label: STB Guide
+      column: 2
+      row: 2
+    - entity: script.irsend_tv_stb_menu
+      label: STB Menu
+      column: 3
+      row: 2
