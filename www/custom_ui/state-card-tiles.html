@@ -12,7 +12,7 @@
         box-shadow: none !important;
         margin: 0 !important;
         background-color: var(--tiles-color);
-        color: #fff;
+        color: var(--tiles-font-color);
       }
       paper-button.on {
         background-color: var(--tiles-color-on);
@@ -65,6 +65,7 @@
         '--tiles-row-height': config.row_height ? config.row_height : '100px',
         '--tiles-gap': config.gap ? config.gap : '4px',
         '--tiles-color': config.color ? config.color : 'var(--primary-color)',
+        '--tiles-font-color': config.font_color ? config.font_color : '#fff',
         '--tiles-color-on': config.color_on ? config.color_on : 'var(--google-green-500)',
         '--tiles-color-off': config.color_off ? config.color_off : 'var(--google-red-500)',
       });
@@ -82,10 +83,10 @@
       var r = entity.row ? entity.row : 'auto';
       var rs = entity.row_span ? entity.row_span : 1;
       var img = entity.image ? ' background-image: url("' + entity.image + '");' : '';
-      var color = entity.color ? ' color: ' + entity.color + ';' : '';
-      var color_bkg = entity.color_background ? ' background-color: ' + entity.color_background + ';' : '';
+      var font_color = entity.font_color ? ' color: ' + entity.font_color + ';' : '';
+      var background_color = entity.background_color ? ' background-color: ' + entity.background_color + ';' : '';
 
-      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + color + color_bkg;
+      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + font_color + background_color;
     },
 
     callService: function (e) {

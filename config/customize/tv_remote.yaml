@@ -5,10 +5,12 @@ config:
   row_height: 75px
   gap: 4px
   color: '#DDDDDD'
+  font_color: '#000000'
   entities:
     - entity: script.irsend_tv_key_power
       icon: mdi:power
-      color_background: red
+      background_color: red
+      font_color: white
     - entity: script.irsend_tv_source
       icon: mdi:login
       label: Source
