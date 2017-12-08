@@ -23,3 +23,9 @@ config:
       label: STB Menu
       column: 3
       row: 2
+    - entity: script.irsend_tv_key_1
+      label: 1
+    - entity: script.irsend_tv_key_2
+      label: 2
+    - entity: script.irsend_tv_key_3
+      label: 3
