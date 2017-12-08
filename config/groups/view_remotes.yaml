@@ -6,3 +6,4 @@ remotes:
     - group.tv_script
     - group.vaccuum_script
     - group.tv_buttons
+    - group.vacuum_buttons
