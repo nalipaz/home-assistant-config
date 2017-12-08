@@ -15,3 +15,7 @@ vaccuum_script:
     - script.irsend_vaccuum_key_e
     - script.irsend_vaccuum_key_f
     - script.irsend_vaccuum_key_g
+vacuum_buttons:
+  name: Vacuum
+  entities:
+    - input_text.vacuum_tiles

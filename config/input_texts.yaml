@@ -4,3 +4,5 @@ tv_tiles2:
   name: tv2
 tv_tiles3:
   name: tv3
+vacuum_tiles:
+  name: vacuum
