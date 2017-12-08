@@ -12,9 +12,11 @@ config:
       background_color: red
       font_color: white
       label: TV
+      row: 1
     - entity: script.irsend_tv_source
       icon: mdi:login
       label: Source
+      row: 1
     - entity: script.irsend_tv_stb_guide
       label: STB Guide
       column: 2
@@ -25,7 +27,28 @@ config:
       row: 2
     - entity: script.irsend_tv_key_1
       label: 1
+      row: 3
     - entity: script.irsend_tv_key_2
       label: 2
+      row: 3
     - entity: script.irsend_tv_key_3
       label: 3
+      row: 3
+    - entity: script.irsend_tv_key_4
+      label: 4
+      row: 4
+    - entity: script.irsend_tv_key_5
+      label: 5
+      row: 4
+    - entity: script.irsend_tv_key_6
+      label: 6
+      row: 4
+    - entity: script.irsend_tv_key_7
+      label: 7
+      row: 5
+    - entity: script.irsend_tv_key_8
+      label: 8
+      row: 5
+    - entity: script.irsend_tv_key_9
+      label: 9
+      row: 5
