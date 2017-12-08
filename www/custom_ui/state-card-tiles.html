@@ -87,8 +87,9 @@
       var img = entity.image ? ' background-image: url("' + entity.image + '");' : '';
       var font_color = entity.font_color ? ' color: ' + entity.font_color + ';' : '';
       var background_color = entity.background_color ? ' background-color: ' + entity.background_color + ';' : '';
+      var label_css = entity.label && entity.icon ? ' --layout-inline_-_display: block;' : '';
 
-      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + font_color + background_color;
+      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + font_color + background_color + label_css;
     },
 
     callService: function (e) {
