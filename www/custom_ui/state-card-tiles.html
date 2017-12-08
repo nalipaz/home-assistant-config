@@ -28,7 +28,9 @@
           <template is="dom-if" if="[[entity.icon]]">
             <iron-icon icon="[[entity.icon]]"></iron-icon>
           </template>
-          [[entity.label]]
+          <template is="dom-if" if="[[entity.label]]">
+            <div class="tile-ui-label">[[entity.label]]</div>
+          </template>
         </paper-button>
       </template>
     </paper-button-group>
