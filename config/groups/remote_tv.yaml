@@ -52,3 +52,4 @@ tv_script:
     - script.irsend_tv_key_record
     - script.irsend_tv_key_play
     - script.irsend_tv_key_stop
+    - input_text.tv_tiles

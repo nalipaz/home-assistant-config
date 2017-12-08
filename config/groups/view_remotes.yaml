@@ -5,3 +5,4 @@ remotes:
   entities:
     - group.tv_script
     - group.vaccuum_script
+    - group.tv_buttons
