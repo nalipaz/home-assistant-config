@@ -8,12 +8,12 @@
         grid-gap: var(--tiles-gap);
         width: 100%;
       }
-      paper-button {          
+      paper-button {
         box-shadow: none !important;
         margin: 0 !important;
         background-color: var(--tiles-color);
         color: #fff;
-      }        
+      }
       paper-button.on {
         background-color: var(--tiles-color-on);
       }
@@ -53,7 +53,7 @@
       },
     },
 
-    computeConfig: function (stateObj) {     
+    computeConfig: function (stateObj) {
       return stateObj.attributes.config;
     },
 
@@ -82,8 +82,10 @@
       var r = entity.row ? entity.row : 'auto';
       var rs = entity.row_span ? entity.row_span : 1;
       var img = entity.image ? ' background-image: url("' + entity.image + '");' : '';
+      var color = entity.color ? ' color: ' + entity.color + ';' : '';
+      var color_bkg = entity.color_background ? ' background-color: ' + entity.color_background + ';' : '';
 
-      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img;
+      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + color + color_bkg;
     },
 
     callService: function (e) {
@@ -95,7 +97,7 @@
       } else {
         var service = 'toggle';
         var data = { 'entity_id': entity };
-      }       
+      }
       this.hass.callService(domain, service, data);
     },
 
