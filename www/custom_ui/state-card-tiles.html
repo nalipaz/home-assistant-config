@@ -20,6 +20,12 @@
       paper-button.off {
         background-color: var(--tiles-color-off);
       }
+      paper-button.label-and-icon {
+        --layout-inline_-_display: block;
+      }
+      paper-button.label-and-icon iron-icon {
+        margin: 0 auto;
+      }
     </style>
     <paper-button-group class="grid" on-tap="stopPropagation">
       <template is="dom-repeat" items="[[config.entities]]" as="entity">
@@ -74,9 +80,10 @@
     },
 
     computeTileClass: function (hass, entity) {
+      var extra_class = (entity.label && entity.icon) ? 'label-and-icon' : '';
       var domain = entity.entity.split('.')[0];
-      if (domain === 'script') return '';
-      return (hass.states[entity.entity].state === 'on') ? 'on' : 'off';
+      if (domain === 'script') return extra_class;
+      return (hass.states[entity.entity].state === 'on') ? 'on ' + extra_class : 'off ' + extra_class;
     },
 
     computeTileStyle: function (entity) {
@@ -87,9 +94,8 @@
       var img = entity.image ? ' background-image: url("' + entity.image + '");' : '';
       var font_color = entity.font_color ? ' color: ' + entity.font_color + ';' : '';
       var background_color = entity.background_color ? ' background-color: ' + entity.background_color + ';' : '';
-      var label_css = entity.label && entity.icon ? ' --layout-inline_-_display: block;' : '';
 
-      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + font_color + background_color + label_css;
+      return 'grid-column: ' + c + ' / span ' + cs + '; grid-row: ' + r + ' / span ' + rs + ';' +  img + font_color + background_color;
     },
 
     callService: function (e) {
