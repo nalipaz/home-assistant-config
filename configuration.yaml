@@ -2,6 +2,8 @@ homeassistant: !include config/homeassistant.yaml
 frontend:
   extra_html_url:
     - /local/custom_ui/state-card-tiles.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-tiles.html
 http:
   api_password: !secret http_password
   base_url: !secret base_url
