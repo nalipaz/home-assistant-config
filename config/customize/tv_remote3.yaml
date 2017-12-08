@@ -37,6 +37,7 @@ config:
     - entity: script.irsend_tv_record
       icon: mdi:record-rec
       row: 4
+      font_color: red
     - entity: script.irsend_tv_play
       icon: mdi:play
       row: 4

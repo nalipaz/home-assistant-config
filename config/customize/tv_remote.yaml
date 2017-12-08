@@ -101,6 +101,7 @@ config:
     - entity: script.irsend_tv_smart_hub
       image: /local/images/smarthub.png
       row: 9
+      background_color: 'transparent'
     - entity: script.irsend_tv_guide
       label: Guide
       row: 9
@@ -111,6 +112,7 @@ config:
     - entity: script.irsend_tv_up
       icon: mdi:arrow-up-bold
       row: 10
+      background_color: '#aedcd6'
     - entity: script.irsend_tv_info
       label: Info
       icon: mdi:information-variant
@@ -118,12 +120,15 @@ config:
     - entity: script.irsend_tv_left
       icon: mdi:arrow-left-bold
       row: 11
+      background_color: '#aedcd6'
     - entity: script.irsend_tv_enter
       icon: mdi:image-filter-center-focus
       row: 11
+      background_color: '#aedcd6'
     - entity: script.irsend_tv_right
       icon: mdi:arrow-right-bold
       row: 11
+      background_color: '#aedcd6'
     - entity: script.irsend_tv_return
       label: Return
       icon: mdi:keyboard-return
@@ -131,6 +136,7 @@ config:
     - entity: script.irsend_tv_down
       icon: mdi:arrow-down-bold
       row: 12
+      background_color: '#aedcd6'
     - entity: script.irsend_tv_exit
       label: Exit
       icon: mdi:exit-to-app
