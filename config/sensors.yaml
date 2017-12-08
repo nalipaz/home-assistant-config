@@ -38,10 +38,10 @@
   username: !secret fedex_username
   password: !secret fedex_password
   name: Fedex Delivery
-- platform: usps
-  username: !secret usps_username
-  password: !secret usps_password
-  name: USPS Delivery
+#- platform: usps
+#  username: !secret usps_username
+#  password: !secret usps_password
+#  name: USPS Delivery
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
@@ -52,9 +52,9 @@
     - ping
     - download
     - upload
-- platform: pi_hole
-  host: !secret pi_hole_host
-  ssl: True
+#- platform: pi_hole
+#  host: !secret pi_hole_host
+#  ssl: True
 - platform: mqtt
   state_topic: plexpy/status
   value_template: >
