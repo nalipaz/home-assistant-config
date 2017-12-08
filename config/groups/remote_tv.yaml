@@ -52,4 +52,7 @@ tv_script:
     - script.irsend_tv_key_record
     - script.irsend_tv_key_play
     - script.irsend_tv_key_stop
+tv_buttons:
+  name: TV
+  entities:
     - input_text.tv_tiles
