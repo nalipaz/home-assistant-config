@@ -59,7 +59,7 @@ config:
       icon: mdi:numeric-9-box
       row: 5
     - entity: script.irsend_tv_key_minus
-      label: '-'
+      icon: mdi:minus
       row: 6
     - entity: script.irsend_tv_key_0
       icon: mdi:numeric-0-box
@@ -101,3 +101,35 @@ config:
     - entity: script.irsend_tv_smart_hub
       image: /local/images/smarthub.png
       row: 9
+    - entity: script.irsend_tv_guide
+      label: Guide
+      row: 9
+    - entity: script.irsend_tv_tools
+      label: Tools
+      icon: mdi:open-in-new
+      row: 10
+    - entity: script.irsend_tv_up
+      icon: mdi:arrow-up-bold
+      row: 10
+    - entity: script.irsend_tv_info
+      label: Info
+      icon: mdi:information-variant
+      row: 10
+    - entity: script.irsend_tv_left
+      icon: mdi:arrow-left-bold
+      row: 11
+    - entity: script.irsend_tv_enter
+      icon: mdi:image-filter-center-focus
+      row: 11
+    - entity: script.irsend_tv_right
+      icon: mdi:arrow-right-bold
+      row: 11
+    - entity: script.irsend_tv_return
+      icon: mdi:keyboard-return
+      row: 12
+    - entity: script.irsend_tv_down
+      icon: mdi:arrow-down-bold
+      row: 12
+    - entity: script.irsend_tv_exit
+      icon: mdi:exit-to-app
+      row: 12
