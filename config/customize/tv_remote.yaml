@@ -2,7 +2,7 @@ custom_ui_state_card: state-card-tiles
 config:
   columns: 3
   column_width: 100px
-  row_height: 75px
+  row_height: 55px
   gap: 4px
   color: '#DDDDDD'
   font_color: '#000000'
