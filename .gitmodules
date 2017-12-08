@@ -1,3 +1,6 @@
 [submodule "submodules/dale3h-homeassistant-config"]
 	path = submodules/dale3h-homeassistant-config
 	url = https://github.com/dale3h/homeassistant-config.git
+[submodule "submodules/home-assistant-tiles"]
+	path = submodules/home-assistant-tiles
+	url = https://github.com/c727/home-assistant-tiles.git
