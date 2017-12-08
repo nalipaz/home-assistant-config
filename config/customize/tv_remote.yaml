@@ -68,7 +68,8 @@ config:
       label: Pre-Ch
       row: 6
     - entity: script.irsend_tv_key_volumeup
-      label: Vol+
+      label: Vol
+      icon: mdi:plus
       background_color: '#c8e4ff'
       row: 7
     - entity: script.irsend_tv_key_mute
@@ -76,18 +77,21 @@ config:
       label: Mute
       row: 7
     - entity: script.irsend_tv_key_channelup
-      label: Ch+
+      label: Ch
+      icon: mdi:chevron-up
       background_color: '#c8e4ff'
       row: 7
     - entity: script.irsend_tv_key_volumedown
-      label: Vol-
+      label: Vol
+      icon: mdi:minus
       background_color: '#c8e4ff'
       row: 8
     - entity: script.irsend_tv_channel_list
       label: Ch List
       row: 8
     - entity: script.irsend_tv_key_channeldown
-      label: Ch-
+      label: Ch
+      icon: mdi:chevron-down
       background_color: '#c8e4ff'
       row: 8
     - entity: script.irsend_tv_key_menu
