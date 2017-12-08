@@ -56,3 +56,4 @@ tv_buttons:
   name: TV
   entities:
     - input_text.tv_tiles
+    - input_text.tv_tiles2

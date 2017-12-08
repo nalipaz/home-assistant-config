@@ -71,3 +71,4 @@ zone.preschool:
 zone.work:
   friendly_name: Work
 input_text.tv_tiles: !include customize/tv_remote.yaml
+input_text.tv_tiles2: !include customize/tv_remote2.yaml

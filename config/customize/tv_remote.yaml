@@ -2,7 +2,7 @@ custom_ui_state_card: state-card-tiles
 config:
   columns: 3
   column_width: 75px
-  row_height: 75px
+  row_height: 55px
   gap: 4px
   color: '#DDDDDD'
   font_color: '#000000'
@@ -125,11 +125,13 @@ config:
       icon: mdi:arrow-right-bold
       row: 11
     - entity: script.irsend_tv_return
+      label: Return
       icon: mdi:keyboard-return
       row: 12
     - entity: script.irsend_tv_down
       icon: mdi:arrow-down-bold
       row: 12
     - entity: script.irsend_tv_exit
+      label: Exit
       icon: mdi:exit-to-app
       row: 12
