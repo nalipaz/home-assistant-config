@@ -97,3 +97,9 @@ switch.diningoutlet_switch:
     - Dining Room Outlet
     - Dining Room Outlet Switch
     - Christmas Tree
+script.go_to_bed:
+  google_assistant: True
+  google_assistant_name: Go to bed
+  aliases:
+    - Go to sleep
+    - Bedtime
