@@ -105,3 +105,12 @@ scene.bedtime:
     - Go to sleep
     - Bedtime
     - Bedtime scene
+script.irsend_tv_key_mute:
+  google_assistant: True
+  google_assistant_name: Mute
+  aliases:
+    - Mute the TV
+    - Mute the Living Room TV
+    - Unmute
+    - Unmute the TV
+    - Unmute the Living Room TV
