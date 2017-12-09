@@ -114,13 +114,13 @@ script.irsend_tv_key_mute:
     - Unmute
     - Unmute the TV
     - Unmute the Living Room TV
-script.home_phone_nicholas:
+switch.home_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Home Phone
   aliases:
     - Nicholas' Home Phone
     - Home Phone
-script.work_phone_nicholas:
+switch.work_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Work Phone
   aliases:
