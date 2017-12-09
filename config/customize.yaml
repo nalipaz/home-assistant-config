@@ -75,5 +75,7 @@ input_text.tv_tiles2: !include customize/tv_remote2.yaml
 input_text.tv_tiles3: !include customize/tv_remote3.yaml
 input_text.vacuum_tiles: !include customize/vacuum_remote.yaml
 zwave.livingroomlights:
-  google_assistant: false
   google_assistant_name: not the living room lights
+light.livingroomlights_level:
+  google_assistant: True
+  google_assistant_name: Living Room Lights

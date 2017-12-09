@@ -2,4 +2,4 @@ project_id: !secret ga-project_id
 client_id: !secret ga-client_id
 access_token: !secret ga-access_token
 api_key: !secret ga-api_key
-expose_by_default: True
+expose_by_default: False
