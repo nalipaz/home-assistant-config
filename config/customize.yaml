@@ -118,11 +118,13 @@ switch.home_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Home Phone
   aliases:
+    - Nicholases Home Phone
     - Nicholas' Home Phone
     - Home Phone
 switch.work_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Work Phone
   aliases:
+    - Nicholases Work Phone
     - Nicholas' Work Phone
     - Work Phone
