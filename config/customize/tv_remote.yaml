@@ -109,35 +109,35 @@ config:
       label: Tools
       icon: mdi:open-in-new
       row: 10
-    - entity: script.irsend_tv_up
+    - entity: script.irsend_tv_key_up
       icon: mdi:arrow-up-bold
       row: 10
       background_color: '#aedcd6'
-    - entity: script.irsend_tv_info
+    - entity: script.irsend_tv_key_info
       label: Info
       icon: mdi:information-variant
       row: 10
-    - entity: script.irsend_tv_left
+    - entity: script.irsend_tv_key_left
       icon: mdi:arrow-left-bold
       row: 11
       background_color: '#aedcd6'
-    - entity: script.irsend_tv_enter
+    - entity: script.irsend_tv_key_select
       icon: mdi:image-filter-center-focus
       row: 11
       background_color: '#aedcd6'
-    - entity: script.irsend_tv_right
+    - entity: script.irsend_tv_key_right
       icon: mdi:arrow-right-bold
       row: 11
       background_color: '#aedcd6'
-    - entity: script.irsend_tv_return
+    - entity: script.irsend_tv_key_return
       label: Return
       icon: mdi:keyboard-return
       row: 12
-    - entity: script.irsend_tv_down
+    - entity: script.irsend_tv_key_down
       icon: mdi:arrow-down-bold
       row: 12
       background_color: '#aedcd6'
-    - entity: script.irsend_tv_exit
+    - entity: script.irsend_tv_key_exit
       label: Exit
       icon: mdi:exit-to-app
       row: 12
