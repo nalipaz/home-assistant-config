@@ -118,6 +118,7 @@ switch.home_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Home Phone
   aliases:
+    - Home phone call forwarding for Nicholas
     - Nicholases Home Phone
     - Nicholas' Home Phone
     - Home Phone
@@ -125,6 +126,7 @@ switch.work_phone_nicholas:
   google_assistant: True
   google_assistant_name: Nicholases Work Phone
   aliases:
+    - Work phone call forwarding for Nicholas
     - Nicholases Work Phone
     - Nicholas' Work Phone
     - Work Phone
