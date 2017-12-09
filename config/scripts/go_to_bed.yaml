@@ -1,9 +1,0 @@
-go_to_bed:
-  alias: Go To Bed
-  sequence:
-    - alias: Turn off TV
-      service: switch.turn_off
-      entity_id: switch.living_room_tv
-    - alias: Turn off Living Room Lights
-      service: switch.turn_off
-      entity_id: light.livingroomlights_level

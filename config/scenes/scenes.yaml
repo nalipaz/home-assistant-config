@@ -26,3 +26,9 @@
       state: on
     switch.work_phone_nicholas:
       state: off
+- name: Bedtime
+  entities:
+    light.livingroomlights_level:
+      state: off
+    switch.living_room_tv:
+      state: off
