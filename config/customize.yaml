@@ -79,5 +79,9 @@ zwave.livingroomlights:
 light.livingroomlights_level:
   google_assistant: True
   google_assistant_name: Living Room Lights
-switch.headphones:
-  google_assistant: False
+switch.living_room_tv:
+  google_assistant: True
+  google_assistant_name: TV
+  aliases:
+    - Living Room TV
+    - Television
