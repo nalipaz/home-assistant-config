@@ -136,3 +136,13 @@ switch.work_phone_nicholas:
     - Nicholases Work Phone
     - Nicholas' Work Phone
     - Work Phone
+script.irsend_tv_key_stop:
+  google_assistant: True
+  google_assistant_type: switch
+  google_assistant_name: TV Playback
+  aliases:
+    - TV Playback
+    - Movie
+    - Movie Playback
+    - TV Show
+    - TV Show playback
