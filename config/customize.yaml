@@ -85,3 +85,13 @@ switch.living_room_tv:
   aliases:
     - Living Room TV
     - Television
+cover.garage_door:
+  google_assistant: True
+  google_assistant_name: Garage
+    - Garage Door
+switch.diningoutlet_switch:
+  google_assistant: True
+  google_assistant_name: Dining Outlet
+    - Dining Room Outlet
+    - Dining Room Outlet Switch
+    - Christmas Tree
