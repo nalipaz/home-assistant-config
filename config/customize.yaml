@@ -101,6 +101,7 @@ scene.bedtime:
   google_assistant: True
   google_assistant_name: Go to bed
   aliases:
+    - Go to bed scene
     - Go to sleep
     - Bedtime
     - Bedtime scene

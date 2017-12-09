@@ -1,6 +1,6 @@
 living_room_tv:
-  command_on: 'if [ $(ping -c 1 192.168.1.137 | grep "1 received" | wc -l) != "1" ]; then irsend SEND_ONCE Living_TV KEY_POWER; fi'
-  command_off: 'if [ $(ping -c 1 192.168.1.137 | grep "1 received" | wc -l) == "1" ]; then irsend SEND_ONCE Living_TV KEY_POWER; fi'
+  command_on: 'irsend SEND_ONCE Living_TV KEY_POWER'
+  command_off: 'irsend SEND_ONCE Living_TV KEY_POWER'
   command_state: 'ping -c 1 192.168.1.137 | grep "1 received" | wc -l'
   value_template: >
     {{ value == '1' }}
