@@ -4,3 +4,6 @@
 [submodule "submodules/home-assistant-tiles"]
 	path = submodules/home-assistant-tiles
 	url = https://github.com/c727/home-assistant-tiles.git
+[submodule "submodules/hass-variables"]
+	path = submodules/hass-variables
+	url = https://github.com/rogro82/hass-variables.git
