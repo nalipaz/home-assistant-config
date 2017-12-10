@@ -1,0 +1,25 @@
+script.router_reboot:
+  google_assistant: True
+  google_assistant_name: Reboot Router
+  aliases:
+    - Reboot Router
+    - Reboot the router
+    - Router reboot
+
+script.hass_restart:
+  google_assistant: True
+  google_assistant_name: Restart Home Assistant
+  aliases:
+    - Restart Home Assistant
+    - Home Assistant restart
+    - HASS Restart
+    - Restart HASS
+
+script.reboot:
+  google_assistant: True
+  google_assistant_name: Reboot Media Server
+  aliases:
+    - Reboot the Media Server
+    - Reboot the Home Server
+    - Reboot Media Server
+    - Reboot Home Server

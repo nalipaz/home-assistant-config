@@ -1,0 +1,5 @@
+router_reboot:
+  alias: Reboot router
+  sequence:
+    - alias: Reboot router
+      service: shell_command.reboot_router
