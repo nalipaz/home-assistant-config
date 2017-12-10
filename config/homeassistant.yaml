@@ -4,4 +4,4 @@ longitude: !secret longitude_home
 elevation: !secret elevation
 unit_system: imperial
 time_zone: !secret time_zone
-customize: !include customize.yaml
+customize: !include_dir_merge_named customize/

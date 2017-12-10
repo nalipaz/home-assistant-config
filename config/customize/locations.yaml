@@ -1,0 +1,4 @@
+sensor.los_angeles:
+  friendly_name: Torrance
+sensor.tokyo:
+  friendly_name: Yokohama

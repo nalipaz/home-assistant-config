@@ -1,143 +1,217 @@
-custom_ui_state_card: state-card-tiles
-config:
-  columns: 3
-  column_width: 100px
-  row_height: 55px
-  gap: 4px
-  color: '#DDDDDD'
-  font_color: '#000000'
-  entities:
-    - entity: script.irsend_tv_key_power
-      icon: mdi:power
-      label: TV
-      background_color: red
-      font_color: white
-      row: 1
-    - entity: script.irsend_tv_source
-      icon: mdi:login
-      label: Source
-      row: 1
-    - entity: script.irsend_tv_stb_power
-      icon: mdi:power
-      label: STB
-      background_color: red
-      font_color: white
-      row: 1
-    - entity: script.irsend_tv_stb_guide
-      label: STB Guide
-      column: 2
-      row: 2
-    - entity: script.irsend_tv_stb_menu
-      label: STB Menu
-      column: 3
-      row: 2
-    - entity: script.irsend_tv_key_1
-      icon: mdi:numeric-1-box
-      row: 3
-    - entity: script.irsend_tv_key_2
-      icon: mdi:numeric-2-box
-      row: 3
-    - entity: script.irsend_tv_key_3
-      icon: mdi:numeric-3-box
-      row: 3
-    - entity: script.irsend_tv_key_4
-      icon: mdi:numeric-4-box
-      row: 4
-    - entity: script.irsend_tv_key_5
-      icon: mdi:numeric-5-box
-      row: 4
-    - entity: script.irsend_tv_key_6
-      icon: mdi:numeric-6-box
-      row: 4
-    - entity: script.irsend_tv_key_7
-      icon: mdi:numeric-7-box
-      row: 5
-    - entity: script.irsend_tv_key_8
-      icon: mdi:numeric-8-box
-      row: 5
-    - entity: script.irsend_tv_key_9
-      icon: mdi:numeric-9-box
-      row: 5
-    - entity: script.irsend_tv_key_minus
-      icon: mdi:minus
-      row: 6
-    - entity: script.irsend_tv_key_0
-      icon: mdi:numeric-0-box
-      row: 6
-    - entity: script.irsend_tv_pre_ch
-      label: Pre-Ch
-      row: 6
-    - entity: script.irsend_tv_key_volumeup
-      label: Vol
-      icon: mdi:plus
-      background_color: '#c8e4ff'
-      row: 7
-    - entity: script.irsend_tv_key_mute
-      icon: mdi:volume-mute
-      label: Mute
-      row: 7
-    - entity: script.irsend_tv_key_channelup
-      label: Ch
-      icon: mdi:chevron-up
-      background_color: '#c8e4ff'
-      row: 7
-    - entity: script.irsend_tv_key_volumedown
-      label: Vol
-      icon: mdi:minus
-      background_color: '#c8e4ff'
-      row: 8
-    - entity: script.irsend_tv_channel_list
-      label: Ch List
-      row: 8
-    - entity: script.irsend_tv_key_channeldown
-      label: Ch
-      icon: mdi:chevron-down
-      background_color: '#c8e4ff'
-      row: 8
-    - entity: script.irsend_tv_key_menu
-      label: Menu
-      icon: mdi:menu
-      row: 9
-    - entity: script.irsend_tv_smart_hub
-      image: /local/images/smarthub.png
-      row: 9
-      background_color: 'transparent'
-    - entity: script.irsend_tv_guide
-      label: Guide
-      row: 9
-    - entity: script.irsend_tv_tools
-      label: Tools
-      icon: mdi:open-in-new
-      row: 10
-    - entity: script.irsend_tv_key_up
-      icon: mdi:arrow-up-bold
-      row: 10
-      background_color: '#aedcd6'
-    - entity: script.irsend_tv_key_info
-      label: Info
-      icon: mdi:information-variant
-      row: 10
-    - entity: script.irsend_tv_key_left
-      icon: mdi:arrow-left-bold
-      row: 11
-      background_color: '#aedcd6'
-    - entity: script.irsend_tv_key_select
-      icon: mdi:image-filter-center-focus
-      row: 11
-      background_color: '#aedcd6'
-    - entity: script.irsend_tv_key_right
-      icon: mdi:arrow-right-bold
-      row: 11
-      background_color: '#aedcd6'
-    - entity: script.irsend_tv_key_return
-      label: Return
-      icon: mdi:keyboard-return
-      row: 12
-    - entity: script.irsend_tv_key_down
-      icon: mdi:arrow-down-bold
-      row: 12
-      background_color: '#aedcd6'
-    - entity: script.irsend_tv_key_exit
-      label: Exit
-      icon: mdi:exit-to-app
-      row: 12
+input_text.tv_tiles:
+  custom_ui_state_card: state-card-tiles
+  config:
+    columns: 3
+    column_width: 100px
+    row_height: 55px
+    gap: 4px
+    color: '#DDDDDD'
+    font_color: '#000000'
+    entities:
+      - entity: script.irsend_tv_key_power
+        icon: mdi:power
+        label: TV
+        background_color: red
+        font_color: white
+        row: 1
+      - entity: script.irsend_tv_source
+        icon: mdi:login
+        label: Source
+        row: 1
+      - entity: script.irsend_tv_stb_power
+        icon: mdi:power
+        label: STB
+        background_color: red
+        font_color: white
+        row: 1
+      - entity: script.irsend_tv_stb_guide
+        label: STB Guide
+        column: 2
+        row: 2
+      - entity: script.irsend_tv_stb_menu
+        label: STB Menu
+        column: 3
+        row: 2
+      - entity: script.irsend_tv_key_1
+        icon: mdi:numeric-1-box
+        row: 3
+      - entity: script.irsend_tv_key_2
+        icon: mdi:numeric-2-box
+        row: 3
+      - entity: script.irsend_tv_key_3
+        icon: mdi:numeric-3-box
+        row: 3
+      - entity: script.irsend_tv_key_4
+        icon: mdi:numeric-4-box
+        row: 4
+      - entity: script.irsend_tv_key_5
+        icon: mdi:numeric-5-box
+        row: 4
+      - entity: script.irsend_tv_key_6
+        icon: mdi:numeric-6-box
+        row: 4
+      - entity: script.irsend_tv_key_7
+        icon: mdi:numeric-7-box
+        row: 5
+      - entity: script.irsend_tv_key_8
+        icon: mdi:numeric-8-box
+        row: 5
+      - entity: script.irsend_tv_key_9
+        icon: mdi:numeric-9-box
+        row: 5
+      - entity: script.irsend_tv_key_minus
+        icon: mdi:minus
+        row: 6
+      - entity: script.irsend_tv_key_0
+        icon: mdi:numeric-0-box
+        row: 6
+      - entity: script.irsend_tv_pre_ch
+        label: Pre-Ch
+        row: 6
+      - entity: script.irsend_tv_key_volumeup
+        label: Vol
+        icon: mdi:plus
+        background_color: '#c8e4ff'
+        row: 7
+      - entity: script.irsend_tv_key_mute
+        icon: mdi:volume-mute
+        label: Mute
+        row: 7
+      - entity: script.irsend_tv_key_channelup
+        label: Ch
+        icon: mdi:chevron-up
+        background_color: '#c8e4ff'
+        row: 7
+      - entity: script.irsend_tv_key_volumedown
+        label: Vol
+        icon: mdi:minus
+        background_color: '#c8e4ff'
+        row: 8
+      - entity: script.irsend_tv_channel_list
+        label: Ch List
+        row: 8
+      - entity: script.irsend_tv_key_channeldown
+        label: Ch
+        icon: mdi:chevron-down
+        background_color: '#c8e4ff'
+        row: 8
+      - entity: script.irsend_tv_key_menu
+        label: Menu
+        icon: mdi:menu
+        row: 9
+      - entity: script.irsend_tv_smart_hub
+        image: /local/images/smarthub.png
+        row: 9
+        background_color: 'transparent'
+      - entity: script.irsend_tv_guide
+        label: Guide
+        row: 9
+      - entity: script.irsend_tv_tools
+        label: Tools
+        icon: mdi:open-in-new
+        row: 10
+      - entity: script.irsend_tv_key_up
+        icon: mdi:arrow-up-bold
+        row: 10
+        background_color: '#aedcd6'
+      - entity: script.irsend_tv_key_info
+        label: Info
+        icon: mdi:information-variant
+        row: 10
+      - entity: script.irsend_tv_key_left
+        icon: mdi:arrow-left-bold
+        row: 11
+        background_color: '#aedcd6'
+      - entity: script.irsend_tv_key_select
+        icon: mdi:image-filter-center-focus
+        row: 11
+        background_color: '#aedcd6'
+      - entity: script.irsend_tv_key_right
+        icon: mdi:arrow-right-bold
+        row: 11
+        background_color: '#aedcd6'
+      - entity: script.irsend_tv_key_return
+        label: Return
+        icon: mdi:keyboard-return
+        row: 12
+      - entity: script.irsend_tv_key_down
+        icon: mdi:arrow-down-bold
+        row: 12
+        background_color: '#aedcd6'
+      - entity: script.irsend_tv_key_exit
+        label: Exit
+        icon: mdi:exit-to-app
+        row: 12
+input_text.tv_tiles2:
+  custom_ui_state_card: state-card-tiles
+  config:
+    columns: 4
+    column_width: 75px
+    row_height: 55px
+    gap: 3px
+    color: '#DDDDDD'
+    font_color: white
+    entities:
+      - entity: script.irsend_tv_key_a
+        label: A
+        background_color: red
+        row: 1
+      - entity: script.irsend_tv_key_b
+        label: B
+        background_color: green
+        row: 1
+      - entity: script.irsend_tv_key_c
+        label: C
+        background_color: yellow
+        row: 1
+      - entity: script.irsend_tv_key_d
+        label: D
+        background_color: blue
+        row: 1
+input_text.tv_tiles3:
+  custom_ui_state_card: state-card-tiles
+  config:
+    columns: 3
+    column_width: 100px
+    row_height: 55px
+    gap: 4px
+    color: '#DDDDDD'
+    font_color: '#000000'
+    entities:
+      - entity: script.irsend_tv_key_help
+        label: E-Manual
+        row: 1
+      - entity: script.irsend_tv_key_search
+        label: Search
+        row: 1
+      - entity: script.irsend_tv_key_keyboard
+        label: Keyboard
+        row: 1
+      - entity: script.irsend_tv_psize
+        label: P.Size
+        row: 2
+      - entity: script.irsend_tv_mts
+        label: MTS
+        row: 2
+      - entity: script.irsend_tv_cc
+        label: CC
+        row: 2
+      - entity: script.irsend_tv_rewind
+        icon: mdi:rewind
+        row: 3
+      - entity: script.irsend_tv_pause
+        icon: mdi:pause
+        row: 3
+      - entity: script.irsend_tv_forward
+        icon: mdi:fast-forward
+        row: 3
+      - entity: script.irsend_tv_record
+        icon: mdi:record-rec
+        row: 4
+        font_color: red
+      - entity: script.irsend_tv_play
+        icon: mdi:play
+        row: 4
+      - entity: script.irsend_tv_stop
+        icon: mdi:stop
+        row: 4

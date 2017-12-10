@@ -1,0 +1,27 @@
+switch.living_room_tv:
+  google_assistant: True
+  google_assistant_name: TV
+  aliases:
+    - Living Room TV
+    - Television
+
+script.irsend_tv_key_mute:
+  google_assistant: True
+  google_assistant_name: Mute
+  aliases:
+    - Mute the TV
+    - Mute the Living Room TV
+    - Unmute
+    - Unmute the TV
+    - Unmute the Living Room TV
+
+script.irsend_tv_key_stop:
+  google_assistant: True
+  google_assistant_type: switch
+  google_assistant_name: TV Playback
+  aliases:
+    - TV Playback
+    - Movie
+    - Movie Playback
+    - TV Show
+    - TV Show playback

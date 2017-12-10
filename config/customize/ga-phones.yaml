@@ -1,0 +1,23 @@
+switch.home_phone_nicholas:
+  google_assistant: True
+  google_assistant_name: Nicholases Home Phone
+  aliases:
+    - Home phone call forwarding for Nicholas
+    - Home phone call forwarding
+    - Home call forwarding
+    - Nicholases Home Phone call forwarding
+    - Nicholases Home Phone
+    - Nicholas' Home Phone
+    - Home Phone
+
+switch.work_phone_nicholas:
+  google_assistant: True
+  google_assistant_name: Nicholases Work Phone
+  aliases:
+    - Work phone call forwarding for Nicholas
+    - Work phone call forwarding
+    - Work phone forwarding
+    - Nicholases Work Phone call forwarding
+    - Nicholases Work Phone
+    - Nicholas' Work Phone
+    - Work Phone
