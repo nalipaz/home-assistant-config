@@ -30,13 +30,6 @@
       friendly_name: 'Local Time'
       entity_id:
         - sensor.los_angeles
-    lock_usercode_1:
-      value_template: >
-        {% set json = {
-          "node": 11,
-          "codeslot": 3
-        } %}
-        {{ lock.get_usercode(json) }}
 - platform: ups
   username: !secret ups_username
   password: !secret ups_password
