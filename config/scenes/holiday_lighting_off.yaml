@@ -8,6 +8,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting New Years Off
   entities:
     switch.outsideoutlet_switch:
@@ -17,6 +19,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Martin Luther King Day Off
   entities:
@@ -28,6 +32,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Valentines Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -37,6 +43,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Lincolns Birthday Off
   entities:
@@ -48,6 +56,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Presidents Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -57,6 +67,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting St Patricks Day Off
   entities:
@@ -68,6 +80,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Spring Equinox Off
   entities:
     switch.outsideoutlet_switch:
@@ -77,6 +91,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Easter Off
   entities:
@@ -88,6 +104,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Earth Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -97,6 +115,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Cinco de Mayo Off
   entities:
@@ -108,6 +128,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Mothers Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -117,6 +139,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Armed Forces Day Off
   entities:
@@ -128,6 +152,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Memorial Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -137,6 +163,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Flag Day Off
   entities:
@@ -148,6 +176,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Fathers Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -157,6 +187,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Independence Day Off
   entities:
@@ -168,6 +200,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Patriot Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -177,6 +211,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Citizenship Day Off
   entities:
@@ -188,6 +224,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Autumn Equinox Off
   entities:
     switch.outsideoutlet_switch:
@@ -197,6 +235,8 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
 - name: Holiday Lighting Halloween Off
   entities:
@@ -208,6 +248,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Veterans Day Off
   entities:
     switch.outsideoutlet_switch:
@@ -218,6 +260,8 @@
       state: off
     switch.garage_eaves_outlet_switch:
       state: off
+    switch.front_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Thanksgiving Off
   entities:
     switch.outsideoutlet_switch:
@@ -227,4 +271,6 @@
     switch.kitchen_eaves_outlet_switch:
       state: off
     switch.garage_eaves_outlet_switch:
+      state: off
+    switch.front_porch_outlet_switch:
       state: off
