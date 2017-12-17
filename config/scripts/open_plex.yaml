@@ -10,28 +10,37 @@ open_plex:
         {% endif -%}
 
       entity_id: switch.living_room_tv
+    - alias: TV online
+      wait_template: "{{ states['switch']['living_room_tv'].state == 'on' }}"
     - alias: Delay
-      delay: 00:00:09
+      delay:
+        milliseconds: 5
     - alias: Press exit
       service: shell_command.irsend_tv_key_exit
     - alias: Delay
-      delay: 00:00:01
+      delay:
+        milliseconds: 5
     - alias: Press right
       service: shell_command.irsend_tv_key_right
     - alias: Delay
-      delay: 00:00:01
+      delay:
+        milliseconds: 5
     - alias: Press enter
       service: shell_command.irsend_tv_key_select
     - alias: Delay
       delay: 00:00:04
     - alias: Press smart hub
       service: shell_command.irsend_tv_smart_hub
+    - alias: TV online
+      wait_template: "{{ states['switch']['living_room_tv'].state == 'on' }}"
     - alias: Delay
-      delay: 00:00:09
+      delay:
+        milliseconds: 5
     - alias: Press left
       service: shell_command.irsend_tv_key_left
     - alias: Delay
-      delay: 00:00:01
+      delay:
+        milliseconds: 5
     - alias: Press enter
       service: shell_command.irsend_tv_key_select
     - alias: Delay
@@ -43,6 +52,7 @@ open_plex:
     - alias: Press down
       service: shell_command.irsend_tv_key_down
     - alias: Delay
-      delay: 00:00:01
+      delay:
+        milliseconds: 5
     - alias: Press enter
       service: shell_command.irsend_tv_key_select
