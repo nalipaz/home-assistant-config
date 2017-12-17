@@ -32,8 +32,6 @@ open_plex:
         seconds: 4
     - alias: Press smart hub
       service: shell_command.irsend_tv_smart_hub
-    - alias: TV online
-      wait_template: "{{ states['switch']['living_room_tv'].state == 'on' }}"
     - alias: Delay
       delay:
         milliseconds: 5

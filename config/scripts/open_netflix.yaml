@@ -24,7 +24,7 @@ open_netflix:
       service: shell_command.irsend_tv_smart_hub
     - alias: Delay
       delay:
-        milliseconds: 5
+        seconds: 3
     - alias: Press left
       service: shell_command.irsend_tv_key_left
     - alias: Delay
