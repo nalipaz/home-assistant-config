@@ -1,0 +1,26 @@
+open_plex:
+  alias: Open Plex
+  sequence:
+    - alias: Turn on TV
+      service: switch.turn_on
+      entity_id: switch.living_room_tv
+    - alias: Delay
+      delay: 00:00:09
+    - alias: Press left
+      service: shell_command.irsend_tv_key_left
+    - alias: Delay
+      delay: 00:00:01
+    - alias: Press enter
+      service: shell_command.irsend_tv_key_select
+    - alias: Delay
+      delay: 00:00:03
+    - alias: Press enter
+      service: shell_command.irsend_tv_key_select
+    - alias: Delay
+      delay: 00:00:04
+    - alias: Press right
+      service: shell_command.irsend_tv_key_right
+    - alias: Delay
+      delay: 00:00:01
+    - alias: Press enter
+      service: shell_command.irsend_tv_key_select

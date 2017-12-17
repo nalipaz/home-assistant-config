@@ -1,0 +1,10 @@
+- name: Kids Plex
+  entities:
+    switch.living_room_tv:
+      state: on
+    delay:
+
+    switch.mobile_phone_nicholas:
+      state: on
+    switch.work_phone_nicholas:
+      state: off
