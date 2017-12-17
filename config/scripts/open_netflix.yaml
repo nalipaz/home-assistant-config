@@ -1,5 +1,5 @@
-open_plex:
-  alias: Open Plex
+open_netflix:
+  alias: Open Netflix
   sequence:
     - alias: Turn on TV
       service: switch.turn_on
