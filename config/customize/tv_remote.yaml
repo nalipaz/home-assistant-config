@@ -193,25 +193,25 @@ input_text.tv_tiles3:
       - entity: script.irsend_tv_mts
         label: MTS
         row: 2
-      - entity: script.irsend_tv_cc
+      - entity: script.irsend_tv_key_cc
         label: CC
         row: 2
-      - entity: script.irsend_tv_rewind
+      - entity: script.irsend_tv_key_rewind
         icon: mdi:rewind
         row: 3
-      - entity: script.irsend_tv_pause
+      - entity: script.irsend_tv_key_pause
         icon: mdi:pause
         row: 3
-      - entity: script.irsend_tv_forward
+      - entity: script.irsend_tv_key_forward
         icon: mdi:fast-forward
         row: 3
-      - entity: script.irsend_tv_record
+      - entity: script.irsend_tv_key_record
         icon: mdi:record-rec
         row: 4
         font_color: red
-      - entity: script.irsend_tv_play
+      - entity: script.irsend_tv_key_play
         icon: mdi:play
         row: 4
-      - entity: script.irsend_tv_stop
+      - entity: script.irsend_tv_key_stop
         icon: mdi:stop
         row: 4
