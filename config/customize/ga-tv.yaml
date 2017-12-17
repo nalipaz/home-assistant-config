@@ -51,3 +51,14 @@ script.irsend_tv_key_play:
     - Resume the Movie
     - Resume the TV Show
     - Resume the TV
+
+script.open_plex:
+  google_assistant: True
+  google_assistant_name: Open Plex
+  aliases:
+    - Open Plex
+    - Open up Plex
+    - Start up Plex
+    - Turn on Plex
+    - Let's watch something on Plex
+    - Let's watch Plex
