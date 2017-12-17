@@ -70,3 +70,15 @@ script.open_plex:
     - Let's watch something on Flex
     - Let's watch Plex
     - Let's watch Flex
+
+script.open_netflix:
+  google_assistant: True
+  google_assistant_name: Open Netflix
+  aliases:
+    - Open Netflix
+    - Open up Netflix
+    - Start up Netflix
+    - Start Netflix
+    - Turn on Netflix
+    - Let's watch something on Netflix
+    - Let's watch Netflix
