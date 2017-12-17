@@ -54,12 +54,12 @@ script.irsend_tv_key_play:
 
 script.open_plex:
   google_assistant: True
-  google_assistant_name: Open Plex
+  google_assistant_name: Open Flex
   aliases:
-    - Open Plex
-    - Open up Plex
-    - Start up Plex
-    - Start Plex
-    - Turn on Plex
-    - Let's watch something on Plex
-    - Let's watch Plex
+    - Open Flex
+    - Open up Flex
+    - Start up Flex
+    - Start Flex
+    - Turn on Flex
+    - Let's watch something on Flex
+    - Let's watch Flex
