@@ -2,7 +2,13 @@ open_netflix:
   alias: Open Netflix
   sequence:
     - alias: Turn on TV
-      service: switch.turn_on
+      service_template: >-
+        {%- if states['switch']['living_room_tv'].state == 'on' %}
+          shell_command.irsend_tv_smart_hub
+        {% else %}
+          switch.turn_on
+        {% endif -%}
+
       entity_id: switch.living_room_tv
     - alias: Delay
       delay: 00:00:09
