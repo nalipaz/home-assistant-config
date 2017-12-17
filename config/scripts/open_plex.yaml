@@ -28,8 +28,6 @@ open_plex:
       service: shell_command.irsend_tv_smart_hub
     - alias: Delay
       delay: 00:00:09
-    - alias: Press enter
-      service: shell_command.irsend_tv_key_select
     - alias: Press left
       service: shell_command.irsend_tv_key_left
     - alias: Delay
