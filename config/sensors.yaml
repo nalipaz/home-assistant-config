@@ -87,3 +87,16 @@
 - platform: mqtt
   state_topic: garage/opened
   name: Garage last opened
+- platform: ink
+  host: IP_ADDRESS
+  scan_interval: 120
+  colors:
+   - black
+   - cyan
+   - magenta
+   - yellow
+   - photoblack
+   - photocyan
+   - photomagenta
+   - photoyellow
+   - photogrey

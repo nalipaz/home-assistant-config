@@ -46,17 +46,3 @@ google_assistant: !include config/google_assistant.yaml
 #zone 1: !include config/zones/home.yaml
 #zone 2: !include config/zones/work.yaml
 zone: !include_dir_list config/zones/
-
-  - platform: ink
-    host: IP_ADDRESS
-    scan_interval: 120
-    colors:
-     - black
-     - cyan
-     - magenta
-     - yellow
-     - photoblack
-     - photocyan
-     - photomagenta
-     - photoyellow
-     - photogrey
