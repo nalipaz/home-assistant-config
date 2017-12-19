@@ -116,7 +116,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
     entities = []
 
-    for color in config[CONF_RESOURCES]:
+    for color in config[CONF_COLORS]:
         sensor_type = color.lower()
 
         if sensor_type not in SENSOR_TYPES:
@@ -126,7 +126,6 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
         entities.append(InkSensor(data, sensor_type))
 
     add_entities(entities)
-    add_devices(entities)
 
 
 # pylint: disable=abstract-method
