@@ -89,7 +89,7 @@
   name: Garage last opened
 - platform: ink
   host: 192.168.1.142
-  scan_interval: 30
+  scan_interval: 120
   resources:
    - black
    - cyan
