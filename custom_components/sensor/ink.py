@@ -142,21 +142,16 @@ class InkLevelData(object):
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def update(self):
         """Update the data from the printer."""
-        try:
-            cmd = subprocess.Popen('ink -b bjnp://{0}'.format(self._host), shell=True, stdout=subprocess.PIPE)
-            levels = {}
-            _LOGGER.debug("output: %s", cmd.stdout)
-            for line in cmd.stdout:
-                if b':' in line:
-                    color, level = line.lower().split()
-                    color = color.decode('utf-8').replace(':', '').replace(' ', '_').replace(',', '')
-                    levels[color] = int(level.decode('utf-8').replace('%', ''))
-            self.data = levels
-            _LOGGER.debug("Data = %s", self.data)
-        except requests.exceptions.RequestException:
-            _LOGGER.error("Error occurred while fetching data.")
-            self.data = None
-            return False
+        cmd = subprocess.Popen('ink -b bjnp://{0}'.format(self._host), shell=True, stdout=subprocess.PIPE)
+        levels = {}
+        _LOGGER.debug("output: %s", cmd.stdout)
+        for line in cmd.stdout:
+            if b':' in line:
+                color, level = line.lower().split()
+                color = color.decode('utf-8').replace(':', '').replace(' ', '_').replace(',', '')
+                levels[color] = int(level.decode('utf-8').replace('%', ''))
+        self.data = levels
+        _LOGGER.debug("Data = %s", self.data)
 
 
 class InkSensor(Entity):
