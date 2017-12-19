@@ -61,6 +61,8 @@ _LOGGER = logging.getLogger(__name__)
 
 MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=120)
 
+SENSOR_PREFIX = 'Ink '
+
 SENSOR_TYPES = {
     'not_present': ['Not Present', '', 'mdi:flash'],
     'black': ['Black', '', 'mdi:flash'],
@@ -159,7 +161,7 @@ class InkSensor(Entity):
         """Initialize the sensor."""
         self.data = data
         self.type = sensor_type
-        self._name = SENSOR_TYPES[self.type][0]
+        self._name = SENSOR_PREFIX + SENSOR_TYPES[self.type][0]
         self._unit = SENSOR_TYPES[self.type][1]
         self._icon = SENSOR_TYPES[self.type][2]
         self._state = None
