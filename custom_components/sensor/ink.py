@@ -48,6 +48,7 @@ import requests
 import voluptuous as vol
 import subprocess
 from subprocess import Popen, PIPE
+from pprint import pprint
 
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
@@ -193,6 +194,7 @@ class InkSensor(Entity):
     def update(self):
         """Get the latest data and use it to update our sensor state."""
         self.data.update()
+        pprint(self.data)
         data = self.data.data
 
         self._state = data[self.type]
