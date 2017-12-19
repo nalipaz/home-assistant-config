@@ -59,7 +59,7 @@ _LOGGER = logging.getLogger(__name__)
 
 MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=120)
 
-SENSOR_PREFIX = 'Toon '
+SENSOR_PREFIX = 'Ink '
 
 SENSOR_TYPES = {
     'not_present': ['Not Present', '', 'mdi:flash'],
@@ -123,7 +123,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
             SENSOR_TYPES[sensor_type] = [
                 sensor_type.title(), '', 'mdi:flash']
 
-        entities.append(InkLevelSensor(data, sensor_type))
+        entities.append(InkSensor(data, sensor_type))
 
     add_entities(entities)
 
@@ -156,7 +156,7 @@ class InkLevelData(object):
             return False
 
 
-class InkLevelSensor(Entity):
+class InkSensor(Entity):
     """Representation of a Ink Level sensor."""
 
     def __init__(self, data, sensor_type):
