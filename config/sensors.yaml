@@ -88,7 +88,7 @@
   state_topic: garage/opened
   name: Garage last opened
 - platform: ink
-  host: IP_ADDRESS
+  host: 192.168.1.142
   scan_interval: 120
   resources:
    - black
