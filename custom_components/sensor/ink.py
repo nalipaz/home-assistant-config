@@ -143,7 +143,7 @@ class InkLevelData(object):
         try:
             cmd = subprocess.Popen('ink -b bjnp://{0}'.format(self._host), shell=True, stdout=subprocess.PIPE)
             levels = {}
-            _LOGGER.debug("%s", cmd.stdout)
+            _LOGGER.debug("output: %s", cmd.stdout)
             for line in cmd.stdout:
                 if ":" in line:
                     color, level = line.lower().split()
