@@ -193,6 +193,6 @@ class InkSensor(Entity):
     def update(self):
         """Get the latest data and use it to update our sensor state."""
         self.data.update()
-        data = self.data
+        data = self.data.data
 
         self._state = data[self.type]
