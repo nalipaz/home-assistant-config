@@ -148,8 +148,8 @@ class InkLevelData(object):
             for line in cmd.stdout:
                 if b':' in line:
                     color, level = line.lower().split()
-                    color = color.replace(' ', '_').replace(',', '')
-                    levels[color] = level.replace('%', '')
+                    color = color.replace(b' ', b'_').replace(b',', b'')
+                    levels[color] = level.replace(b'%', b'')
             self.data = levels
             _LOGGER.debug("Data = %s", self.data)
         except requests.exceptions.RequestException:
