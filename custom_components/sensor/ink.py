@@ -189,7 +189,7 @@ class InkSensor(Entity):
     @property
     def unit_of_measurement(self):
         """Return the unit of measurement of this entity, if any."""
-        return self._unit
+        return '%'
 
     def update(self):
         """Get the latest data and use it to update our sensor state."""
