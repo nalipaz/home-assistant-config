@@ -146,7 +146,7 @@ class InkLevelData(object):
             levels = {}
             _LOGGER.debug("output: %s", cmd.stdout)
             for line in cmd.stdout:
-                if ":" in line:
+                if b':' in line:
                     color, level = line.lower().split()
                     color = color.replace(' ', '_').replace(',', '')
                     levels[color] = level.replace('%', '')
