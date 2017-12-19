@@ -51,7 +51,7 @@ import subprocess
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 from homeassistant.const import (
-    CONF_HOST, CONF_SCAN_INTERVAL, CONF_RESOURCES)
+    CONF_HOST, CONF_SCAN_INTERVAL, CONF_COLORS)
 from homeassistant.util import Throttle
 from homeassistant.helpers.entity import Entity
 
@@ -98,7 +98,7 @@ SENSOR_TYPES = {
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_HOST): cv.string,
-    vol.Required(CONF_RESOURCES, default=[]):
+    vol.Required(CONF_COLORS, default=[]):
         vol.All(cv.ensure_list, [vol.In(SENSOR_TYPES)]),
 })
 
@@ -116,7 +116,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
     entities = []
 
-    for color in config[CONF_RESOURCES]:
+    for color in config[CONF_COLORS]:
         sensor_type = color.lower()
 
         if sensor_type not in SENSOR_TYPES:
