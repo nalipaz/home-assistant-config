@@ -149,8 +149,8 @@ class InkLevelData(object):
             for line in cmd.stdout:
                 if b':' in line:
                     color, level = line.lower().split()
-                    color = color.replace(b' ', b'_').replace(b',', b'')
-                    levels[color] = level.replace(b'%', b'')
+                    color = color.decode('utf-8').replace(':', '').replace(' ', '_').replace(',', '')
+                    levels[color] = int(level.decode('utf-8').replace('%', ''))
             self.data = levels
             _LOGGER.debug("Data = %s", self.data)
         except requests.exceptions.RequestException:
@@ -194,7 +194,19 @@ class InkSensor(Entity):
     def update(self):
         """Get the latest data and use it to update our sensor state."""
         self.data.update()
-        pprint(self.data)
         data = self.data.data
 
         self._state = data[self.type]
+
+
+
+
+
+
+
+
+
+
+
+
+
