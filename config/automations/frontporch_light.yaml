@@ -17,6 +17,12 @@
   action:
     - service: switch.turn_on
       entity_id: switch.frontporchlight_switch
+    - service: notify.html5
+      data:
+        message: "front porch light on"
+        title: "Front Porch Lights"
+        data:
+          tag: "front_porch_on"
 #    - service: switch.turn_off
 #      entity_id: switch.outsideoutlet_switch
 - alias: "Turn Front Porch Lights Off"
@@ -38,6 +44,12 @@
   action:
     - service: switch.turn_off
       entity_id: switch.frontporchlight_switch
+    - service: notify.html5
+      data:
+        message: "front porch light off"
+        title: "Front Porch Lights"
+        data:
+          tag: "front_porch_off"
 #    - service: switch.turn_on
 #      entity_id: switch.outsideoutlet_switch
 - alias: "Ensure Front Porch Lights Stay On"
@@ -55,6 +67,12 @@
   action:
     - service: switch.turn_on
       entity_id: switch.frontporchlight_switch
+    - service: notify.html5
+      data:
+        message: "ensure front porch light stays on"
+        title: "Ensure Front Porch Lights"
+        data:
+          tag: "ensure_front_porch_on"
 - alias: "Ensure Front Porch Lights Stay Off"
   trigger:
     - platform: state
@@ -70,3 +88,9 @@
   action:
     - service: switch.turn_off
       entity_id: switch.frontporchlight_switch
+    - service: notify.html5
+      data:
+        message: "ensure front porch light stays off"
+        title: "Ensure Front Porch Lights"
+        data:
+          tag: "ensure_front_porch_off"
