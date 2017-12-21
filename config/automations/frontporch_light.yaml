@@ -22,6 +22,7 @@
         message: "front porch light on"
         title: "Front Porch Lights"
         data:
+          requireInteraction: True
           tag: "front_porch_on"
 #    - service: switch.turn_off
 #      entity_id: switch.outsideoutlet_switch
@@ -49,6 +50,7 @@
         message: "front porch light off"
         title: "Front Porch Lights"
         data:
+          requireInteraction: True
           tag: "front_porch_off"
 #    - service: switch.turn_on
 #      entity_id: switch.outsideoutlet_switch
@@ -72,6 +74,7 @@
         message: "ensure front porch light stays on"
         title: "Ensure Front Porch Lights"
         data:
+          requireInteraction: True
           tag: "ensure_front_porch_on"
 - alias: "Ensure Front Porch Lights Stay Off"
   trigger:
@@ -93,4 +96,5 @@
         message: "ensure front porch light stays off"
         title: "Ensure Front Porch Lights"
         data:
+          requireInteraction: True
           tag: "ensure_front_porch_off"
