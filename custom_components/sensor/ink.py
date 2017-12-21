@@ -8,7 +8,7 @@ sensor:
   - platform: ink
     host: IP_ADDRESS
     scan_interval: 120
-    colors:
+    resources:
      - not_present
      - black
      - color
