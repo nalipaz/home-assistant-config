@@ -97,11 +97,11 @@
    - yellow
    - photoblack
    - photogrey
-- platform: alpha_vantage
-  api_key: DIDEZUEGSCFTG14N
-  symbols:
-    - BTC
-    - MSP
-    - DOGE
-    - SC
-    - POT
+#- platform: alpha_vantage
+#  api_key: DIDEZUEGSCFTG14N
+#  symbols:
+#    - BTC
+#    - MSP
+#    - DOGE
+#    - SC
+#    - POT
