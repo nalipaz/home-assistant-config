@@ -12,6 +12,9 @@ My personal home-assistant config files.
      * Front porch light switch
  * GE In-Wall Dimmer Switch (1)
      * Living room light switch
+ * GE In-Wall Outlets (3)
+     * Front Porch outlet (Front Window Christmas lights)
+     * Dining room outlet (Christmas tree)
  * Chamberlain Garage door opener - myQ enabled (1)
      * Controls garage door
  * [Irdroid USB Transceiver](http://www.irdroid.com/irdroid-usb-ir-transceiver/) (1)
@@ -20,6 +23,7 @@ My personal home-assistant config files.
      * iClebo vacuum remote (only when in range of IR transceiver of course)
  * Android Phone
      * Used in conjunction with Owntracks to notify of arrivals and departures from home/work.
+ * Google Home (1)
 
 ## Software-based Integrations
 
@@ -29,8 +33,6 @@ My personal home-assistant config files.
      * Server has mosquitto running for communication with Owntracks on phone.
  * Plex server
      * Plex monitoring and control via the plex media player component
- * Pushbullet
-     * Send various messages through pushbullet to notify me of events. Examples include: garage open/close and tv playback of shows in plex
 
 ## Services
 
@@ -38,10 +40,13 @@ The server has many services running. These are the main ones:
 
  * Home Assistant (of course)
  * Plex media server
- * Deluge Daemon
- * Deluge Web
+ * HTPC Manager
+ * Mosquitto
+ * NZBGet
+ * Pi-Hole
+ * Plexpy
  * Sonarr
- * Couch Potato
+ * Radarr
  * Headphones
  * Jackett
  * Lirc
@@ -51,6 +56,6 @@ Most of these services are monitored via home-assistant and can be quickly resta
 ## Servers
 Home assistant is also setup to monitor a few servers in the house. The monitoring is a simple ping to be sure they are up, when they go down I receive notifications.
 
- * Obhai OBi200 - For voip with Google voice
+ * Obihai OBi200 - For voip with Google voice
  * Plex Client - A client running in our guest room. It runs on a raspberry pi using rasplex.
- * Canon Printer - This is a wifi printer and it is monitored to see that it stays on the network.
+ * Canon Printer - This is a wifi printer and it is monitored to see that it stays on the network as well as ink levels using a custom component.

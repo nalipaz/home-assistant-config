@@ -253,3 +253,13 @@ irsend_tv_key_stop:
   sequence:
     - alias: Stop
       service: shell_command.irsend_tv_KEY_STOP
+next_episode:
+  alias: Next Episode
+  sequence:
+    - alias: Right
+      service: shell_command.irsend_tv_key_right
+    - alias: Delay
+      delay:
+        milliseconds: 5
+    - alias: Enter
+      service: shell_command.irsend_tv_key_select

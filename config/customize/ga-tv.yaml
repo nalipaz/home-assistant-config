@@ -8,49 +8,42 @@ switch.living_room_tv:
 script.irsend_tv_key_mute:
   google_assistant: True
   google_assistant_name: Mute
-  aliases:
-    - Mute
-    - Press Mute
-    - Mute the TV
-    - Mute the Living Room TV
-    - Unmute
-    - Press Unmute
-    - Unmute the TV
-    - Unmute the Living Room TV
 
 script.irsend_tv_key_stop:
   google_assistant: True
   google_assistant_name: Stop
-  aliases:
-    - Stop
-    - Press Stop
-    - Stop the Movie
-    - Stop the TV Show
-    - Stop the TV
+
+script.irsend_tv_key_play:
+  google_assistant: True
+  google_assistant_name: Play
 
 script.irsend_tv_key_pause:
   google_assistant: True
   google_assistant_name: Pause
-  aliases:
-    - Pause
-    - Press Pause
-    - Pause the Movie
-    - Pause the TV Show
-    - Pause the TV
 
-script.irsend_tv_key_play:
+script.irsend_tv_key_select:
   google_assistant: True
-  google_assistant_name: Resume
-  aliases:
-    - Play
-    - Press play
-    - Play the Movie
-    - Play the TV Show
-    - Resume
-    - Press resume
-    - Resume the Movie
-    - Resume the TV Show
-    - Resume the TV
+  google_assistant_name: Enter
+
+script.irsend_tv_key_left:
+  google_assistant: True
+  google_assistant_name: Left
+
+script.irsend_tv_key_right:
+  google_assistant: True
+  google_assistant_name: Right
+
+script.irsend_tv_key_down:
+  google_assistant: True
+  google_assistant_name: Down
+
+script.irsend_tv_key_up:
+  google_assistant: True
+  google_assistant_name: Up
+
+script.next_episode:
+  google_assistant: True
+  google_assistant_name: Next Episode
 
 script.open_plex:
   google_assistant: True
