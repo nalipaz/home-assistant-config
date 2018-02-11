@@ -13,262 +13,262 @@
 - name: Holiday Lighting New Years On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Martin Luther King Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Valentines Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
+      state: off
 - name: Holiday Lighting Lincolns Birthday On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Presidents Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting St Patricks Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Spring Equinox On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Easter On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Earth Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Cinco de Mayo On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Mothers Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Armed Forces Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Memorial Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Flag Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Fathers Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Independence Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Patriot Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Citizenship Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Autumn Equinox On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Halloween On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Veterans Day On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
 - name: Holiday Lighting Thanksgiving On
   entities:
     switch.outsideoutlet_switch:
-      state: on
+      state: off
     switch.gabled_roof_outlet_switch:
-      state: on
+      state: off
     switch.kitchen_eaves_outlet_switch:
-      state: on
+      state: off
     switch.garage_eaves_outlet_switch:
-      state: on
-    switch.front_porch_outlet_switch:
-      state: on
+      state: off
+    switch.frofft_porch_outlet_switch:
+      state: off
