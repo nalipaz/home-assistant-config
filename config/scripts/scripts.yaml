@@ -40,4 +40,4 @@ google_test:
     - alias: Testing Google Home
       service: tts.google_say
       data:
-        message: 'May the Force be with you.'
+        message: 'Play Baby Lullaby on the Master Bedroom Speakers for 40 minutes.'
