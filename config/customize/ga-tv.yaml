@@ -24,6 +24,8 @@ script.irsend_tv_key_pause:
 script.irsend_tv_key_select:
   google_assistant: True
   google_assistant_name: Enter
+  aliases:
+    - Press Enter
 
 script.irsend_tv_key_left:
   google_assistant: True
