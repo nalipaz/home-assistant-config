@@ -34,3 +34,10 @@ plex_show:
   sequence:
     - alias: Plex Show
       service: shell_command.plex_show
+google_test:
+  alias: Google Test
+  sequence:
+    - alias: Testing Google Home
+      service: tts.google_say
+      data:
+        message: 'May the Force be with you.'
