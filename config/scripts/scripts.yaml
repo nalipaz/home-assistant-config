@@ -40,4 +40,5 @@ google_test:
     - alias: Testing Google Home
       service: tts.google_say
       data:
-        message: 'Okay Google, Play Baby Lullaby on the Master Bedroom Speakers for 40 minutes.'
+        message: 'Turn on the Living Room lights'
+        entity_id: media_player.living_room_speaker
