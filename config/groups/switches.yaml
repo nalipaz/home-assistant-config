@@ -9,6 +9,7 @@ switches:
     - switch.gabled_roof_outlet_switch
     - switch.garage_eaves_outlet_switch
     - switch.front_porch_outlet_switch
+    - switch.street_numbers_switch
     - cover.garage_door
     - switch.living_room_tv
     - script.away

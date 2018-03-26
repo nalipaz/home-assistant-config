@@ -17,6 +17,8 @@
   action:
     - service: switch.turn_on
       entity_id: switch.frontporchlight_switch
+    - service: switch.turn_on
+      entity_id: switch.street_numbers_switch
     - service: notify.html5
       data:
         message: "front porch light on"
@@ -45,6 +47,8 @@
   action:
     - service: switch.turn_off
       entity_id: switch.frontporchlight_switch
+    - service: switch.turn_off
+      entity_id: switch.street_numbers_switch
     - service: notify.html5
       data:
         message: "front porch light off"
@@ -61,6 +65,11 @@
       to: 'off'
       for:
         seconds: 30
+    - platform: state
+      entity_id: switch.street_numbers_switch
+      to: 'off'
+      for:
+        seconds: 30
   condition:
     - condition: numeric_state
       entity_id: sun.sun
@@ -69,6 +78,8 @@
   action:
     - service: switch.turn_on
       entity_id: switch.frontporchlight_switch
+    - service: switch.turn_on
+      entity_id: switch.street_numbers_switch
     - service: notify.html5
       data:
         message: "ensure front porch light stays on"
@@ -83,6 +94,11 @@
       to: 'on'
       for:
         seconds: 30
+    - platform: state
+      entity_id: switch.street_numbers_switch
+      to: 'on'
+      for:
+        seconds: 30
   condition:
     - condition: numeric_state
       entity_id: sun.sun
@@ -91,6 +107,8 @@
   action:
     - service: switch.turn_off
       entity_id: switch.frontporchlight_switch
+    - service: switch.turn_off
+      entity_id: switch.street_numbers_switch
     - service: notify.html5
       data:
         message: "ensure front porch light stays off"
