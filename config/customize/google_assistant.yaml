@@ -24,3 +24,11 @@ scene.bedtime:
     - Go to sleep
     - Bedtime
     - Bedtime scene
+
+script.reboot:
+  google_assistant: True
+  google_assistant_name: Reboot the Media Server
+  aliases:
+    - Reboot the Home Server
+    - Restart the Media Server
+    - Restart the Home Server
