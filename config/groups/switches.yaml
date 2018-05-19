@@ -15,3 +15,5 @@ switches:
     - script.away
     - scene.nicholas_mobile_phone_only
     - script.google_test
+    - lock.front_door_locked
+    
