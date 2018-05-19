@@ -32,3 +32,7 @@ script.reboot:
     - Reboot the Home Server
     - Restart the Media Server
     - Restart the Home Server
+
+lock.front_door_locked:
+  google_assistant: True
+  google_assistant_name: Front Door
