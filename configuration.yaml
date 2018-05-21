@@ -44,7 +44,6 @@ panel_iframe:
     title: MDI Icon Index
     icon: mdi:vector-square
     url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
-package: !include_dir_named config/packages
 google_assistant: !include config/google_assistant.yaml
 #input_slider: !include config/input_sliders.yaml
 #zone 1: !include config/zones/home.yaml
