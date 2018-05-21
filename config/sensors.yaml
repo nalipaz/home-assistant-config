@@ -87,16 +87,16 @@
 - platform: mqtt
   state_topic: garage/opened
   name: Garage last opened
-#- platform: ink
-#  host: !secret printer_ip
-#  scan_interval: 120
-#  resources:
-#   - black
-#   - cyan
-#   - magenta
-#   - yellow
-#   - photoblack
-#   - photogrey
+- platform: ink
+  host: !secret printer_ip
+  scan_interval: 120
+  resources:
+   - black
+   - cyan
+   - magenta
+   - yellow
+   - photoblack
+   - photogrey
 #- platform: alpha_vantage
 #  api_key: DIDEZUEGSCFTG14N
 #  symbols:
