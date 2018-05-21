@@ -1,0 +1,10 @@
+front_door:
+  turn_on:
+    - service: lock.lock
+      entity_id: lock.front_door_locked
+  turn_off:
+    - service: lock.unlock
+      entity_id: lock.front_door_locked
+  value_template: >
+    {% if states['lock']['front_door_locked']['state'] == 'locked' %} on {% else %} off {% endif %}
+  friendly_name: Front Door
