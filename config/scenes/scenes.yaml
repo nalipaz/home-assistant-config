@@ -32,3 +32,5 @@
       state: off
     switch.living_room_tv:
       state: off
+    lock.front_door_locked:
+      state: locked
