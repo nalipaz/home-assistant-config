@@ -7,6 +7,7 @@ frontend:
     - /local/custom_ui/state-card-custom-ui-es5.html
     - /local/custom_ui/state-card-tiles.html
 http:
+  server_port: 8124
   api_password: !secret http_password
   base_url: !secret base_url
 updater:
@@ -49,3 +50,4 @@ google_assistant: !include config/google_assistant.yaml
 #zone 1: !include config/zones/home.yaml
 #zone 2: !include config/zones/work.yaml
 zone: !include_dir_list config/zones/
+cloud:
