@@ -12,4 +12,5 @@ default_view:
     - sensor.tokyo
     - device_tracker.plex_na
     - group.phone_switches
+    - group.gass
 #    - group.forecast

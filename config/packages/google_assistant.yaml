@@ -1,0 +1,38 @@
+notify:
+  - name: Google Assistant Command
+    platform: rest
+    resource: http://127.0.0.1:5000/command
+
+input_text:
+  gass_command:
+    name: Google Assistant Command
+
+script:
+  send_command:
+    alias: Send Command
+    sequence:
+      - alias: Send Comand
+        service: notify.google_assistant_command
+        data_template:
+          message: '{{ states.input_text.gass_command.state }}'
+      - alias: Clear Command
+        service: input_text.set_value
+        data:
+          entity_id: input_text.gass_command
+          value: ''
+
+automation:
+  trigger:
+    platform: state
+    entity_id: input_text.gass_command
+  condition:
+    condition: template
+    value_template: '{{ (states.input_text.gass_command.state | length) > 0 }}'
+  action:
+    - service: script.send_command
+
+group:
+  gass:
+    name: Google Assistant
+    entities:
+      - input_text.gass_command
