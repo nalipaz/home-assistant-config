@@ -1,7 +1,7 @@
 notify:
   - name: Google Assistant Command
     platform: rest
-    resource: http://127.0.0.1:5000/command
+    resource: http://192.168.1.49:5000/command
 
 input_text:
   gass_command:
