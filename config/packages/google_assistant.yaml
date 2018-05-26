@@ -1,7 +1,7 @@
 notify:
   - name: Google Assistant Command
     platform: rest
-    resource: http://hassio.local:5000/command
+    resource: https://hass.alipaz.net:5000/command
 
 input_text:
   gass_command:
