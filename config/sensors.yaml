@@ -30,6 +30,8 @@
       friendly_name: 'Local Time'
       entity_id:
         - sensor.los_angeles
+    second_home_hass_url:
+      value_template: !secret second_home_hass_url
 - platform: ups
   username: !secret ups_username
   password: !secret ups_password
