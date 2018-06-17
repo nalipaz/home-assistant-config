@@ -1,12 +1,12 @@
 open_garage_at_second_home:
-  url: '{{states.sensor.second_home_hass_url}}/api/services/cover/open_cover'
+  url: '{{states.sensor.second_home_hass_url.state}}/api/services/cover/open_cover'
   method: post
   headers:
     Content-Type: application/json
     x-ha-access: !secret second_home_hass_password
   payload: '{"entity_id": "cover.garage_door"}'
 close_garage_at_second_home:
-  url: '{{states.sensor.second_home_hass_url}}/api/services/cover/close_cover'
+  url: '{{states.sensor.second_home_hass_url.state}}/api/services/cover/close_cover'
   method: post
   headers:
     Content-Type: application/json
