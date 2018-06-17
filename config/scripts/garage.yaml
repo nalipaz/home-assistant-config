@@ -16,3 +16,12 @@
 #    - service: cover.close_cover
 #      data:
 #        entity_id: cover.garage_door
+
+open_garage_at_second_home:
+  alias: "Open garage at second home"
+  sequence:
+    - service: rest_command.open_garage_at_second_home
+close_garage_at_second_home:
+  alias: "Close garage at second home"
+  sequence:
+    - service: rest_command.close_garage_at_second_home
